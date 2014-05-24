@@ -1,7 +1,9 @@
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
 import java.net.StandardSocketOptions;
 import java.nio.ByteBuffer;
+import java.nio.channels.MembershipKey;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -23,6 +25,7 @@ public class Main {
 	private void startEchoServer()
 	{
 		final int DEFAULT_PORT=5555;
+		//final String GROUP="225.4.5.6";
 		
 		//otwieram selector oraz socket przez metodê open
 		try(Selector selector =Selector.open();
@@ -31,12 +34,16 @@ public class Main {
 				//sprawdzam czy oba siê otworzy³y
 				if(serverSocketChannel.isOpen() && selector.isOpen())
 				{
+					//NetworkInterface networkInterface=NetworkInterface.getByName("eth0");
+					
 					//non-blocking mode
 					serverSocketChannel.configureBlocking(false);
 					
 					//dodanie opcji
 					serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
 					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
+					//serverSocketChannel.setOption(StandardSocketOptions.IP_MULTICAST_IF, networkInterface);
+					
 					
 					//po³¹cz adres z portem
 					serverSocketChannel.bind(new InetSocketAddress(DEFAULT_PORT));
@@ -49,6 +56,7 @@ public class Main {
 					
 					while(true)
 					{
+						//czekamy na nadchodz¹ce zdarzenia
 						selector.select();
 						
 						Iterator keys=selector.selectedKeys().iterator();
@@ -108,6 +116,88 @@ public class Main {
 	}
 	
 	//do zrobienia readOp
+	private void readOp(SelectionKey key)
+	{
+		try{
+			SocketChannel socketChannel=(SocketChannel) key.channel();
+			
+			buffer.clear();
+			
+			int numRead=-1;
+			try{
+				numRead=socketChannel.read(buffer);
+			} catch (IOException e){
+				System.err.println("Cannot rad error!");
+			}
+			
+			if(numRead==-1)
+			{
+				this.keepDataTrack.remove(socketChannel);
+				System.out.println("Connection closed by: " + socketChannel.getRemoteAddress());
+				socketChannel.close();
+				return;
+			}
+			byte[] data = new byte[numRead];
+			System.arraycopy(buffer.array(), 0, data, 0, numRead);
+			System.out.println(new String(data,"UTF-8") + " from" + socketChannel.getRemoteAddress());
+			
+			//write back to client
+			//doEchoJob(key, data);
+			
+			sendToOthers(key, data);
+		}
+		catch(IOException ex){
+			System.err.println(ex);
+		}
+		
+	}
+	
+	private void writeOp(SelectionKey key) throws IOException
+	{
+		SocketChannel socketChannel = (SocketChannel) key.channel();
+		
+		List<byte[]> channelData=keepDataTrack.get(socketChannel);
+		Iterator<byte[]> its=channelData.iterator();
+		
+		while(its.hasNext())
+		{
+			byte[] it=its.next();
+			its.remove();
+			socketChannel.write(ByteBuffer.wrap(it));
+		}
+		
+		key.interestOps(SelectionKey.OP_READ);
+	}
+	
+	private void sendToOthers(SelectionKey key, byte[] data)
+	{
+		SocketChannel socketChannel = (SocketChannel) key.channel();
+		
+		for(SocketChannel sc:keepDataTrack.keySet())
+		{
+			List<byte[]> channelData=keepDataTrack.get(sc);
+			channelData.add(data);
+			//sc.getLocalAddress()
+			
+		}
+		
+		key.interestOps(SelectionKey.OP_WRITE);
+	}
+	
+	private void doEchoJob(SelectionKey key, byte[] data)
+	{
+		SocketChannel socketChannel = (SocketChannel) key.channel();
+		List<byte[]> channelData=keepDataTrack.get(socketChannel);
+		channelData.add(data);
+		
+		key.interestOps(SelectionKey.OP_WRITE);
+	}
+	
+	public static void main(String[] args)
+	{
+		Main main=new Main();
+		main.startEchoServer();
+	}
 
 }
 
