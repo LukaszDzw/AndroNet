@@ -1,9 +1,7 @@
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.NetworkInterface;
 import java.net.StandardSocketOptions;
 import java.nio.ByteBuffer;
-import java.nio.channels.MembershipKey;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -15,14 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 
-
-
-public class Main {
+public class Server {
 
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
 	
-	private void startEchoServer()
+	public void startEchoServer()
 	{
 		final int DEFAULT_PORT=5555;
 		//final String GROUP="225.4.5.6";
@@ -192,12 +188,4 @@ public class Main {
 		
 		key.interestOps(SelectionKey.OP_WRITE);
 	}
-	
-	public static void main(String[] args)
-	{
-		Main main=new Main();
-		main.startEchoServer();
-	}
-
 }
-
