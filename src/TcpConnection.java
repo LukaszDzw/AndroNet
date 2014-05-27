@@ -8,7 +8,7 @@ import java.nio.channels.SocketChannel;
 
 public class TcpConnection {
 	
-	private final int DEFAULT_PORT;
+	private final int PORT;
 	private final String IP;
 	
 	private SocketChannel socketChannel;
@@ -16,9 +16,10 @@ public class TcpConnection {
 	
 	public TcpConnection(String ip, int port)
 	{
-		DEFAULT_PORT=port;
+		PORT=port;
 		IP=ip;
 	}
+	
 	
 	
 	public SelectionKey accept(Selector selector, SocketChannel socketChannel) throws IOException
@@ -52,8 +53,8 @@ public class TcpConnection {
 	{
 		//connect to remote host
 		try {
-			socketChannel.connect(new InetSocketAddress(IP, DEFAULT_PORT));
-			System.out.println("Localhost: " + socketChannel.getLocalAddress());
+			socketChannel.connect(new InetSocketAddress(IP, PORT));
+			System.out.println("127.0.0.1" + socketChannel.getLocalAddress());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -65,6 +66,7 @@ public class TcpConnection {
 	{
 		return socketChannel;
 	}
+	
 	
 	public SelectionKey getSelectionKey()
 	{

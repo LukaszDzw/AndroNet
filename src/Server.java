@@ -42,7 +42,7 @@ public class Server {
 					
 					
 					//po³¹cz adres z portem
-					serverSocketChannel.bind(new InetSocketAddress(DEFAULT_PORT));
+					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", DEFAULT_PORT));
 					
 					//rejestracja channelu do selectora
 					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
@@ -109,6 +109,7 @@ public class Server {
 		
 		keepDataTrack.put(socketChannel,new ArrayList<byte[]>());
 		socketChannel.register(selector, SelectionKey.OP_READ);
+		
 	}
 	
 	//do zrobienia readOp
@@ -161,7 +162,7 @@ public class Server {
 			its.remove();
 			socketChannel.write(ByteBuffer.wrap(it));
 		}
-		
+
 		key.interestOps(SelectionKey.OP_READ);
 	}
 	
