@@ -30,23 +30,13 @@ public class Client {
 			{
 				tcpConnection.accept(selector, socketChannel);
 				tcpConnection.connect();
-				//waitForConnection();
 				run();
 			}
 			
-			}
+		}
 		catch(IOException ex)
 		{
 			System.err.print(ex);
-		}
-	}
-	
-	private void waitForConnection() throws IOException
-	{			
-		//close pending connections
-		if(socketChannel.isConnectionPending())
-		{
-			socketChannel.finishConnect();
 		}
 	}
 	
@@ -118,7 +108,6 @@ public class Client {
     private void write(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 
-        // lets get ready to read.
-        //key.interestOps(SelectionKey.OP_READ);
+        //TODO
     }
 }

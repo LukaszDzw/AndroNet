@@ -141,7 +141,7 @@ public class Server {
 			//write back to client
 			//doEchoJob(key, data);
 			
-			sendToOthers(key, data);
+			//sendToOthers(key, data);
 		}
 		catch(IOException ex){
 			System.err.println(ex);
