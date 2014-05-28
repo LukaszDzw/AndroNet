@@ -166,6 +166,7 @@ public class Server {
 		key.interestOps(SelectionKey.OP_READ);
 	}
 	
+	/*
 	private void sendToOthers(SelectionKey key, byte[] data)
 	{
 		SocketChannel socketChannel = (SocketChannel) key.channel();
@@ -179,7 +180,7 @@ public class Server {
 		}
 		
 		key.interestOps(SelectionKey.OP_WRITE);
-	}
+	}*/
 	
 	private void doEchoJob(SelectionKey key, byte[] data)
 	{

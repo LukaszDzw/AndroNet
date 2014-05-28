@@ -6,9 +6,10 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
 
-public class Client {
+public class Client{
 
 	private TcpConnection tcpConnection;
 	private SocketChannel socketChannel;
@@ -25,14 +26,33 @@ public class Client {
 		{
 			socketChannel=SocketChannel.open();
 			selector=Selector.open();
-			
+					
 			if(socketChannel.isOpen()&&selector.isOpen())
 			{
 				tcpConnection.accept(selector, socketChannel);
 				tcpConnection.connect();
-				run();
+						
+				//puszczamy pêtlê na osobnym w¹tku
+				new Thread(new Runnable() 
+				{
+							
+					@Override
+					public void run() 
+					{
+						try 
+						{
+							listen();
+						} 
+						catch (IOException e) 
+						{
+							e.printStackTrace();
+						}
+								
+					}
+				}).start();
+						
 			}
-			
+					
 		}
 		catch(IOException ex)
 		{
@@ -40,7 +60,25 @@ public class Client {
 		}
 	}
 	
-	private void run() throws IOException
+	public void send(String message)
+	{
+		while(!socketChannel.isConnected())
+		{
+			try {
+				TimeUnit.MILLISECONDS.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		SelectionKey key=tcpConnection.getSelectionKey();
+		key.attach(message);
+		key.interestOps(SelectionKey.OP_WRITE);
+	}
+	
+	
+	
+	private void listen() throws IOException
 	{
         while (!Thread.interrupted()){
         	 
@@ -108,6 +146,25 @@ public class Client {
     private void write(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 
-        //TODO
+        
+        //TEMP
+        if(key.attachment()!=null)
+        try{
+        	 String messageString=(String)key.attachment();
+        	 ByteBuffer buteBuffer=ByteBuffer.wrap(messageString.getBytes("UTF-8"));
+        	 channel.write(buteBuffer);
+        }
+        catch(Exception ex)
+        {
+        	System.err.println("Wys³any pakiet nie mo¿na przerobiæ na stringa");
+        }
+        
+        //key.interestOps(key.interestOps()^SelectionKey.OP_WRITE);
+        key.interestOps(SelectionKey.OP_READ);
+       
+       
+        
     }
+
+
 }

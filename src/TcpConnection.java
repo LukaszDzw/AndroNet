@@ -54,7 +54,7 @@ public class TcpConnection {
 		//connect to remote host
 		try {
 			socketChannel.connect(new InetSocketAddress(IP, PORT));
-			System.out.println("127.0.0.1" + socketChannel.getLocalAddress());
+			System.out.println(IP + socketChannel.getLocalAddress());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
