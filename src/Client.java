@@ -14,10 +14,15 @@ public class Client{
 	private TcpConnection tcpConnection;
 	private SocketChannel socketChannel;
 	private Selector selector;
+	private final ByteBuffer readBuffer, writeBuffer;
+	
+	private final int BUFFERCAPACITY = 1000;
 	
 	public Client(String ip, int port)
 	{
-		 tcpConnection=new TcpConnection(ip, port);
+		 this.tcpConnection=new TcpConnection(ip, port);
+		 this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+		 this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 	}
 	
 	public void start()
@@ -27,12 +32,12 @@ public class Client{
 			socketChannel=SocketChannel.open();
 			selector=Selector.open();
 					
-			if(socketChannel.isOpen()&&selector.isOpen())
+			if(socketChannel.isOpen() && selector.isOpen())
 			{
 				tcpConnection.accept(selector, socketChannel);
 				tcpConnection.connect();
 						
-				//puszczamy pêtlê na osobnym w¹tku
+				//puszczamy pï¿½tlï¿½ na osobnym wï¿½tku
 				new Thread(new Runnable() 
 				{
 							
@@ -47,7 +52,6 @@ public class Client{
 						{
 							e.printStackTrace();
 						}
-								
 					}
 				}).start();
 						
@@ -73,7 +77,27 @@ public class Client{
 		}
 		SelectionKey key=tcpConnection.getSelectionKey();
 		key.attach(message);
-		key.interestOps(SelectionKey.OP_WRITE);
+		
+        int start=this.writeBuffer.position();
+        
+        
+        try 
+        {
+			this.write(key);
+		} 
+        catch (IOException e) {
+			e.printStackTrace();
+		}
+        /*
+        if(start==0) //jeÅ›li pusty to zapisujÄ™ dane
+        {
+        	key.interestOps(SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+        }
+        else
+        {
+        	key.selector().wakeup();
+        	key.selector().
+        }*/
 	}
 	
 	
@@ -82,7 +106,7 @@ public class Client{
 	{
         while (!Thread.interrupted()){
         	 
-            selector.select(1000);
+            selector.select();
             
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
@@ -103,7 +127,6 @@ public class Client{
                     read(key);
                 }
             }  
-            
         }
 	}
 	
@@ -120,11 +143,10 @@ public class Client{
     
     private void read (SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
-        ByteBuffer readBuffer = ByteBuffer.allocate(1000);
-        readBuffer.clear();
+        this.readBuffer.clear();
         int length;
         try{
-        length = channel.read(readBuffer);
+        length = channel.read(this.readBuffer);
         } catch (IOException e){
             System.out.println("Reading problem, closing connection");
             key.cancel();
@@ -137,33 +159,30 @@ public class Client{
             key.cancel();
             return;
         }
-        readBuffer.flip();
+        this.readBuffer.flip();
         byte[] buff = new byte[1024];
-        readBuffer.get(buff, 0, length);
+        this.readBuffer.get(buff, 0, length);
         System.out.println("Server said: "+new String(buff));
     }
 
     private void write(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 
-        
-        //TEMP
         if(key.attachment()!=null)
         try{
         	 String messageString=(String)key.attachment();
-        	 ByteBuffer buteBuffer=ByteBuffer.wrap(messageString.getBytes("UTF-8"));
-        	 channel.write(buteBuffer);
+        	 this.writeBuffer.put(messageString.getBytes("UTF-8"));
+        	 writeBuffer.flip();
+        	 channel.write(writeBuffer);
+        	 writeBuffer.compact();
+        	 writeBuffer.flip();
         }
         catch(Exception ex)
         {
-        	System.err.println("Wys³any pakiet nie mo¿na przerobiæ na stringa");
+        	System.err.println("Wysï¿½any pakiet nie moï¿½na przerobiï¿½ na stringa");
         }
         
-        //key.interestOps(key.interestOps()^SelectionKey.OP_WRITE);
         key.interestOps(SelectionKey.OP_READ);
-       
-       
-        
     }
 
 
