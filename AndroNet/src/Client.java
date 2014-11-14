@@ -80,7 +80,7 @@ public class Client{
 		
         int start=this.writeBuffer.position();
         
-        
+
         try 
         {
 			this.write(key);
@@ -96,7 +96,6 @@ public class Client{
         else
         {
         	key.selector().wakeup();
-        	key.selector().
         }*/
 	}
 	
@@ -175,11 +174,11 @@ public class Client{
         	 writeBuffer.flip();
         	 channel.write(writeBuffer);
         	 writeBuffer.compact();
-        	 writeBuffer.flip();
+        	 //writeBuffer.flip();
         }
         catch(Exception ex)
         {
-        	System.err.println("Wys�any pakiet nie mo�na przerobi� na stringa");
+        	System.err.println("Wysłany pakiet nie można przerobić na stringa");
         }
         
         key.interestOps(SelectionKey.OP_READ);

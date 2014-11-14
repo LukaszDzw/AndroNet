@@ -23,11 +23,11 @@ public class Server {
 		final int DEFAULT_PORT=5555;
 		//final String GROUP="225.4.5.6";
 		
-		//otwieram selector oraz socket przez metodê open
+		//otwieram selector oraz socket przez metodï¿½ open
 		try(Selector selector =Selector.open();
 			ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
 			{
-				//sprawdzam czy oba siê otworzy³y
+				//sprawdzam czy oba siï¿½ otworzyï¿½y
 				if(serverSocketChannel.isOpen() && selector.isOpen())
 				{
 					//NetworkInterface networkInterface=NetworkInterface.getByName("eth0");
@@ -41,18 +41,18 @@ public class Server {
 					//serverSocketChannel.setOption(StandardSocketOptions.IP_MULTICAST_IF, networkInterface);
 					
 					
-					//po³¹cz adres z portem
+					//poï¿½ï¿½cz adres z portem
 					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", DEFAULT_PORT));
 					
 					//rejestracja channelu do selectora
 					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 					
-					//pokazanie wiadomoœci, gdy serwer startuje
+					//pokazanie wiadomoï¿½ci, gdy serwer startuje
 					System.out.println("Waiting for connections...");
 					
 					while(true)
 					{
-						//czekamy na nadchodz¹ce zdarzenia
+						//czekamy na nadchodzï¿½ce zdarzenia
 						selector.select();
 						
 						Iterator keys=selector.selectedKeys().iterator();
@@ -61,7 +61,7 @@ public class Server {
 						{
 							SelectionKey key =(SelectionKey) keys.next();
 							
-							//usuwamy klucz, aby nie by³ obs³u¿ony ponownie
+							//usuwamy klucz, aby nie byï¿½ obsï¿½uï¿½ony ponownie
 							keys.remove();
 							if(!key.isValid())
 							{
@@ -93,7 +93,7 @@ public class Server {
 		
 
 		}
-	//isAcceptable zwróci³o true
+	//isAcceptable zwrï¿½ciï¿½o true
 	private void acceptOP(SelectionKey key, Selector selector) throws IOException
 	{
 		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
@@ -139,7 +139,7 @@ public class Server {
 			System.out.println(new String(data,"UTF-8") + " from" + socketChannel.getRemoteAddress());
 			
 			//write back to client
-			//doEchoJob(key, data);
+			doEchoJob(key, data);
 			
 			//sendToOthers(key, data);
 		}
