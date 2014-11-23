@@ -30,8 +30,6 @@ public class Server {
 				//sprawdzam czy oba si� otworzy�y
 				if(serverSocketChannel.isOpen() && selector.isOpen())
 				{
-					//NetworkInterface networkInterface=NetworkInterface.getByName("eth0");
-					
 					//non-blocking mode
 					serverSocketChannel.configureBlocking(false);
 					
@@ -103,7 +101,7 @@ public class Server {
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
 		
 		//welcome message
-		socketChannel.write(ByteBuffer.wrap("Hello!\n".getBytes("UTF-8")));
+		//socketChannel.write(ByteBuffer.wrap("Hello!\n".getBytes("UTF-8")));
 		
 		//register channel do selektora dla pozniejszego i/o
 		
@@ -135,9 +133,12 @@ public class Server {
 				return;
 			}
 			byte[] data = new byte[numRead];
+
+
 			System.arraycopy(buffer.array(), 0, data, 0, numRead);
-			System.out.println(new String(data,"UTF-8") + " from" + socketChannel.getRemoteAddress());
-			
+			//System.out.println(new String(data,"UTF-8") + " from" + socketChannel.getRemoteAddress());
+
+
 			//write back to client
 			doEchoJob(key, data);
 			
