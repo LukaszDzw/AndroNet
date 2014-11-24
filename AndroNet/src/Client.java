@@ -22,9 +22,10 @@ public class Client{
 	
 	public Client(String ip, int port)
 	{
-		 this.tcpConnection=new TcpConnection(ip, port);
-		 this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
-		 this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+		this.tcpConnection=new TcpConnection(ip, port);
+		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+
+		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.serialization=new Serialization();
 	}
 	
@@ -67,7 +68,7 @@ public class Client{
 		}
 	}
 	
-	public void send(String message)
+	public void send(Object object)
 	{
 		while(!socketChannel.isConnected())
 		{
@@ -78,10 +79,9 @@ public class Client{
 			}
 		}
 		SelectionKey key=tcpConnection.getSelectionKey();
-		key.attach(message);
+		key.attach(object);
 		
         int start=this.writeBuffer.position();
-        
 
         try 
         {
@@ -90,15 +90,6 @@ public class Client{
         catch (IOException e) {
 			e.printStackTrace();
 		}
-        /*
-        if(start==0) //jeśli pusty to zapisuję dane
-        {
-        	key.interestOps(SelectionKey.OP_WRITE | SelectionKey.OP_READ);
-        }
-        else
-        {
-        	key.selector().wakeup();
-        }*/
 	}
 	
 	
@@ -149,20 +140,33 @@ public class Client{
 		//odczytaj wielkość obiektu z bufora
 		if(this.objectLength==0)
 		{
-			this.socketChannel.read(readBuffer);
+			if(readBuffer.remaining()<objectLengthLength)
+			{
+				this.readBuffer.compact();
+				this.socketChannel.read(readBuffer);
+			}
+
 			this.readBuffer.flip();
-			
-			if(readBuffer.remaining()<objectLengthLength) return null;
+			if(readBuffer.remaining()<objectLengthLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
 			this.objectLength=serialization.getObjectLength(readBuffer);
 			System.out.println("dlugosc " + this.objectLength);
 		}
-		this.objectLength=0;
 
-		//objectLength jest większy od tego co zostalo w buforze
+		//dopełnij bufor, jeśli za mało wczytał
 		if(this.readBuffer.remaining()<this.objectLength)
 		{
-
+			readBuffer.compact();
+			this.socketChannel.read(readBuffer);
+			this.readBuffer.flip();
+			if(readBuffer.remaining()<this.objectLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
 		}
+
+		Object object = this.serialization.getObjectFromBuffer(readBuffer, objectLength);
+		this.objectLength=0;
+		this.readBuffer.compact();
+
+		System.out.println(object.toString()); //temp
+		return object;
     }
 
     private void write(SelectionKey key) throws IOException {
