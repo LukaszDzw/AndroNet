@@ -15,14 +15,18 @@ public class Client{
 	private SocketChannel socketChannel;
 	private Selector selector;
 	private final ByteBuffer readBuffer, writeBuffer;
+	private Serialization serialization;
 	
 	private final int BUFFERCAPACITY = 1000;
+	private int objectLength;
 	
 	public Client(String ip, int port)
 	{
-		 this.tcpConnection=new TcpConnection(ip, port);
-		 this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
-		 this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+		this.tcpConnection=new TcpConnection(ip, port);
+		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+
+		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+		this.serialization=new Serialization();
 	}
 	
 	public void start()
@@ -64,22 +68,20 @@ public class Client{
 		}
 	}
 	
-	public void send(String message)
+	public void send(Object object)
 	{
 		while(!socketChannel.isConnected())
 		{
 			try {
 				TimeUnit.MILLISECONDS.sleep(50);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		SelectionKey key=tcpConnection.getSelectionKey();
-		key.attach(message);
+		key.attach(object);
 		
         int start=this.writeBuffer.position();
-        
 
         try 
         {
@@ -88,15 +90,6 @@ public class Client{
         catch (IOException e) {
 			e.printStackTrace();
 		}
-        /*
-        if(start==0) //jeśli pusty to zapisuję dane
-        {
-        	key.interestOps(SelectionKey.OP_WRITE | SelectionKey.OP_READ);
-        }
-        else
-        {
-        	key.selector().wakeup();
-        }*/
 	}
 	
 	
@@ -140,46 +133,61 @@ public class Client{
         
     }
     
-    private void read (SelectionKey key) throws IOException {
+    private Object read (SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
-        this.readBuffer.clear();
-        int length;
-        try{
-        length = channel.read(this.readBuffer);
-        } catch (IOException e){
-            System.out.println("Reading problem, closing connection");
-            key.cancel();
-            channel.close();
-            return;
-        }
-        if (length == -1){
-            System.out.println("Nothing was read from server");
-            channel.close();
-            key.cancel();
-            return;
-        }
-        this.readBuffer.flip();
-        byte[] buff = new byte[1024];
-        this.readBuffer.get(buff, 0, length);
-        System.out.println("Server said: "+new String(buff));
+		int objectLengthLength=this.serialization.getObjectLengthLength();
+
+		//odczytaj wielkość obiektu z bufora
+		if(this.objectLength==0)
+		{
+			if(readBuffer.remaining()<objectLengthLength)
+			{
+				this.readBuffer.compact();
+				this.socketChannel.read(readBuffer);
+			}
+
+			this.readBuffer.flip();
+			if(readBuffer.remaining()<objectLengthLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
+			this.objectLength=serialization.getObjectLength(readBuffer);
+			System.out.println("dlugosc " + this.objectLength);
+		}
+
+		//dopełnij bufor, jeśli za mało wczytał
+		if(this.readBuffer.remaining()<this.objectLength)
+		{
+			readBuffer.compact();
+			this.socketChannel.read(readBuffer);
+			this.readBuffer.flip();
+			if(readBuffer.remaining()<this.objectLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
+		}
+
+		Object object = this.serialization.getObjectFromBuffer(readBuffer, objectLength);
+		this.objectLength=0;
+		this.readBuffer.compact();
+
+		System.out.println(object.toString()); //temp
+		return object;
     }
 
     private void write(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 
-        if(key.attachment()!=null)
-        try{
-        	 String messageString=(String)key.attachment();
-        	 this.writeBuffer.put(messageString.getBytes("UTF-8"));
-        	 writeBuffer.flip();
-        	 channel.write(writeBuffer);
-        	 writeBuffer.compact();
-        	 //writeBuffer.flip();
-        }
-        catch(Exception ex)
-        {
-        	System.err.println("Wysłany pakiet nie można przerobić na stringa");
-        }
+        if(key.attachment()!=null) {
+			try {
+				Object attachment = key.attachment();
+				String json = this.serialization.getJsonFromObject(attachment);
+
+				this.writeBuffer.putInt(json.getBytes().length);
+				this.writeBuffer.put(json.getBytes("UTF-8"));
+
+				writeBuffer.flip();
+				channel.write(writeBuffer);
+
+				writeBuffer.compact();
+			} catch (Exception ex) {
+				System.err.println("Wysłany pakiet nie można przerobić na stringa");
+			}
+		}
         
         key.interestOps(SelectionKey.OP_READ);
     }
