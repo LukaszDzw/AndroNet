@@ -17,17 +17,21 @@ public class Server {
 
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
+
+	public Server()
+	{
+
+	}
 	
 	public void startEchoServer()
 	{
-		final int DEFAULT_PORT=5555;
-		//final String GROUP="225.4.5.6";
+		final int port=5555;
 		
-		//otwieram selector oraz socket przez metod� open
+		//otwieram selector oraz socket przez metodę open
 		try(Selector selector =Selector.open();
 			ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
 			{
-				//sprawdzam czy oba si� otworzy�y
+				//sprawdzam czy oba się otworzyły
 				if(serverSocketChannel.isOpen() && selector.isOpen())
 				{
 					//non-blocking mode
@@ -36,21 +40,20 @@ public class Server {
 					//dodanie opcji
 					serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
 					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
-					//serverSocketChannel.setOption(StandardSocketOptions.IP_MULTICAST_IF, networkInterface);
 					
 					
-					//po��cz adres z portem
-					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", DEFAULT_PORT));
+					//poołącz adres z portem
+					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", port));
 					
 					//rejestracja channelu do selectora
 					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 					
-					//pokazanie wiadomo�ci, gdy serwer startuje
+					//pokazanie wiadomości, gdy serwer startuje
 					System.out.println("Waiting for connections...");
 					
 					while(true)
 					{
-						//czekamy na nadchodz�ce zdarzenia
+						//czekamy na nadchodzące zdarzenia
 						selector.select();
 						
 						Iterator keys=selector.selectedKeys().iterator();
@@ -59,7 +62,7 @@ public class Server {
 						{
 							SelectionKey key =(SelectionKey) keys.next();
 							
-							//usuwamy klucz, aby nie by� obs�u�ony ponownie
+							//usuwamy klucz, aby nie był obsłużony ponownie
 							keys.remove();
 							if(!key.isValid())
 							{
@@ -91,7 +94,7 @@ public class Server {
 		
 
 		}
-	//isAcceptable zwr�ci�o true
+	//isAcceptable zwróciło true
 	private void acceptOP(SelectionKey key, Selector selector) throws IOException
 	{
 		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
@@ -103,14 +106,11 @@ public class Server {
 		//welcome message
 		//socketChannel.write(ByteBuffer.wrap("Hello!\n".getBytes("UTF-8")));
 		
-		//register channel do selektora dla pozniejszego i/o
-		
 		keepDataTrack.put(socketChannel,new ArrayList<byte[]>());
 		socketChannel.register(selector, SelectionKey.OP_READ);
 		
 	}
-	
-	//do zrobienia readOp
+
 	private void readOp(SelectionKey key)
 	{
 		try{
@@ -134,15 +134,12 @@ public class Server {
 			}
 			byte[] data = new byte[numRead];
 
-
 			System.arraycopy(buffer.array(), 0, data, 0, numRead);
-			//System.out.println(new String(data,"UTF-8") + " from" + socketChannel.getRemoteAddress());
-
 
 			//write back to client
-			doEchoJob(key, data);
+			//doEchoJob(key, data);
 			
-			//sendToOthers(key, data);
+			sendToOthers(key, data);
 		}
 		catch(IOException ex){
 			System.err.println(ex);
@@ -167,7 +164,7 @@ public class Server {
 		key.interestOps(SelectionKey.OP_READ);
 	}
 	
-	/*
+
 	private void sendToOthers(SelectionKey key, byte[] data)
 	{
 		SocketChannel socketChannel = (SocketChannel) key.channel();
@@ -176,12 +173,11 @@ public class Server {
 		{
 			List<byte[]> channelData=keepDataTrack.get(sc);
 			channelData.add(data);
-			//sc.getLocalAddress()
-			
+			//TODO this.writeOp(sc.);
 		}
 		
 		key.interestOps(SelectionKey.OP_WRITE);
-	}*/
+	}
 	
 	private void doEchoJob(SelectionKey key, byte[] data)
 	{

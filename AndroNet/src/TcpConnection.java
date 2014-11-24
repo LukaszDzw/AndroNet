@@ -19,12 +19,9 @@ public class TcpConnection {
 		this.PORT=port;
 		this.IP=ip;
 	}
-	
-	
-	
-	public SelectionKey accept(Selector selector, SocketChannel socketChannel) throws IOException
+
+	public void accept(Selector selector, SocketChannel socketChannel) throws IOException
 	{
-		
 		this.socketChannel=socketChannel;
 		try {
 			//configure non-blocking mode
@@ -34,19 +31,12 @@ public class TcpConnection {
 			this.socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024);
 			this.socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024);
 			this.socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
-			
-			//register the current channel with the given selector
-			this.selectionKey= this.socketChannel.register(selector, SelectionKey.OP_CONNECT);
-			
 
-			return selectionKey;
+			this.selectionKey=this.socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
 		} catch (IOException ex) {
-			// TODO Auto-generated catch block
 			ex.printStackTrace();
 			throw ex;
 		}
-
-		
 	}
 	
 	public void connect()
@@ -54,20 +44,22 @@ public class TcpConnection {
 		//connect to remote host
 		try {
 			this.socketChannel.connect(new InetSocketAddress(IP, PORT));
-			System.out.println(IP + socketChannel.getLocalAddress());
+			System.out.println(IP + this.socketChannel.getLocalAddress());
+
+			if (this.socketChannel.isConnectionPending()){
+				this.socketChannel.finishConnect();
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public SocketChannel getSocketChannel()
 	{
 		return this.socketChannel;
 	}
-	
-	
+
 	public SelectionKey getSelectionKey()
 	{
 		return this.selectionKey;

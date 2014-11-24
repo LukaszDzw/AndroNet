@@ -41,7 +41,7 @@ public class Client{
 				tcpConnection.accept(selector, socketChannel);
 				tcpConnection.connect();
 						
-				//puszczamy p�tl� na osobnym w�tku
+				//pętla na osobnym wątku
 				new Thread(new Runnable() 
 				{
 							
@@ -98,9 +98,9 @@ public class Client{
 	{
         while (!Thread.interrupted()){
         	 
-            selector.select();
+            this.selector.select();
             
-            Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
+            Iterator<SelectionKey> keys = this.selector.selectedKeys().iterator();
 
             while (keys.hasNext()){
                 SelectionKey key = keys.next();
@@ -108,30 +108,15 @@ public class Client{
 
                 if (!key.isValid()) continue;
 
-                if (key.isConnectable()){
-                    System.out.println("I am connected to the server");
-                    connect(key);
-                }  
                 if (key.isWritable()){
-                    write(key);
+                    this.write(key);
                 }
                 if (key.isReadable()){
-                    read(key);
+                    this.read(key);
                 }
             }  
         }
 	}
-	
-    private void connect(SelectionKey key) throws IOException {
-        SocketChannel channel = (SocketChannel) key.channel();
-        if (channel.isConnectionPending()){
-            channel.finishConnect();
-        }
-        
-        channel.configureBlocking(false);
-        channel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
-        
-    }
     
     private Object read (SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
