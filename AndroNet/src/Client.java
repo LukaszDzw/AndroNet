@@ -163,6 +163,7 @@ public class Client{
 				String json = this.serialization.getJsonFromObject(attachment);
 
 				this.writeBuffer.putInt(json.getBytes().length);
+
 				this.writeBuffer.put(json.getBytes("UTF-8"));
 
 				writeBuffer.flip();

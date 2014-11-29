@@ -6,11 +6,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Server {
@@ -40,8 +36,7 @@ public class Server {
 					//dodanie opcji
 					serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
 					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
-					
-					
+
 					//poołącz adres z portem
 					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", port));
 					
@@ -90,9 +85,6 @@ public class Server {
 			{
 				System.err.println(ex);
 			}
-		
-		
-
 		}
 	//isAcceptable zwróciło true
 	private void acceptOP(SelectionKey key, Selector selector) throws IOException
@@ -139,7 +131,7 @@ public class Server {
 			//write back to client
 			//doEchoJob(key, data);
 			
-			sendToOthers(key, data);
+			sendToAll(key, data);
 		}
 		catch(IOException ex){
 			System.err.println(ex);
@@ -153,7 +145,7 @@ public class Server {
 		
 		List<byte[]> channelData=keepDataTrack.get(socketChannel);
 		Iterator<byte[]> its=channelData.iterator();
-		
+
 		while(its.hasNext())
 		{
 			byte[] it=its.next();
@@ -165,18 +157,20 @@ public class Server {
 	}
 	
 
-	private void sendToOthers(SelectionKey key, byte[] data)
+	private void sendToAll(SelectionKey key, byte[] data)
 	{
-		SocketChannel socketChannel = (SocketChannel) key.channel();
-		
-		for(SocketChannel sc:keepDataTrack.keySet())
+		Selector selector=key.selector();
+		Iterator<SelectionKey> keys=selector.keys().iterator();
+
+		while(keys.hasNext())
 		{
-			List<byte[]> channelData=keepDataTrack.get(sc);
+			SelectionKey selKey = keys.next();
+			if(selKey.channel() instanceof ServerSocketChannel) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
+			SocketChannel channel = (SocketChannel) selKey.channel();
+			List<byte[]> channelData=keepDataTrack.get(channel);
 			channelData.add(data);
-			//TODO this.writeOp(sc.);
+			selKey.interestOps(SelectionKey.OP_WRITE);
 		}
-		
-		key.interestOps(SelectionKey.OP_WRITE);
 	}
 	
 	private void doEchoJob(SelectionKey key, byte[] data)
