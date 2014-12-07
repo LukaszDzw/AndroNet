@@ -13,16 +13,15 @@ public class Server {
 
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
+	private final int port;
 
-	public Server()
+	public Server(int port)
 	{
-
+		this.port=port;
 	}
 	
 	public void startEchoServer()
 	{
-		final int port=5555;
-		
 		//otwieram selector oraz socket przez metodę open
 		try(Selector selector =Selector.open();
 			ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
@@ -37,13 +36,12 @@ public class Server {
 					serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
 					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
 
-					//poołącz adres z portem
+					//połącz adres z portem
 					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", port));
 					
 					//rejestracja channelu do selectora
 					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-					
-					//pokazanie wiadomości, gdy serwer startuje
+
 					System.out.println("Waiting for connections...");
 					
 					while(true)
@@ -59,10 +57,8 @@ public class Server {
 							
 							//usuwamy klucz, aby nie był obsłużony ponownie
 							keys.remove();
-							if(!key.isValid())
-							{
-								continue;
-							}
+							if(!key.isValid()) continue;
+
 							if(key.isAcceptable()){
 								acceptOP(key, selector);
 							}
@@ -166,6 +162,7 @@ public class Server {
 		{
 			SelectionKey selKey = keys.next();
 			if(selKey.channel() instanceof ServerSocketChannel) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
+
 			SocketChannel channel = (SocketChannel) selKey.channel();
 			List<byte[]> channelData=keepDataTrack.get(channel);
 			channelData.add(data);

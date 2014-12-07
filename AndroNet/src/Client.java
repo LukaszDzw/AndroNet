@@ -111,7 +111,7 @@ public class Client{
                 if (key.isWritable()){
                     this.write(key);
                 }
-                if (key.isReadable()){
+                else if (key.isReadable()){
                     this.read(key);
                 }
             }  
@@ -125,7 +125,7 @@ public class Client{
 		//odczytaj wielkość obiektu z bufora
 		if(this.objectLength==0)
 		{
-			if(readBuffer.remaining()<objectLengthLength)
+			if(this.readBuffer.remaining()<objectLengthLength)
 			{
 				this.readBuffer.compact();
 				this.socketChannel.read(readBuffer);
@@ -146,7 +146,7 @@ public class Client{
 			if(readBuffer.remaining()<this.objectLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
 		}
 
-		Object object = this.serialization.getObjectFromBuffer(readBuffer, objectLength);
+		Object object = this.serialization.getObjectFromBuffer(this.readBuffer, objectLength);
 		this.objectLength=0;
 		this.readBuffer.compact();
 
