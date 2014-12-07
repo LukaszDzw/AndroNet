@@ -1,3 +1,5 @@
+import interfaces.IListener;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.StandardSocketOptions;
@@ -11,13 +13,18 @@ import java.util.*;
 
 public class Server {
 
+	private final int PORT;
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
-	private final int port;
+	private SelectionKey serverSelectionKey;
 
-	public Server(int port)
+	private Map<String, IListener> listeners;
+
+
+	public Server(int PORT)
 	{
-		this.port=port;
+		this.PORT = PORT;
+		this.listeners=new HashMap<>();
 	}
 	
 	public void startEchoServer()
@@ -37,10 +44,10 @@ public class Server {
 					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
 
 					//połącz adres z portem
-					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", port));
+					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.PORT));
 					
 					//rejestracja channelu do selectora
-					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+					this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
 					System.out.println("Waiting for connections...");
 					
@@ -64,7 +71,7 @@ public class Server {
 							}
 							else if(key.isReadable())
 							{
-								this.readOp(key);
+								Object object=this.readOp(key);
 							}
 							else if(key.isWritable())
 							{
@@ -91,15 +98,11 @@ public class Server {
 		
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
 		
-		//welcome message
-		//socketChannel.write(ByteBuffer.wrap("Hello!\n".getBytes("UTF-8")));
-		
 		keepDataTrack.put(socketChannel,new ArrayList<byte[]>());
 		socketChannel.register(selector, SelectionKey.OP_READ);
-		
 	}
 
-	private void readOp(SelectionKey key)
+	private Object readOp(SelectionKey key)
 	{
 		try{
 			SocketChannel socketChannel=(SocketChannel) key.channel();
@@ -118,16 +121,16 @@ public class Server {
 				this.keepDataTrack.remove(socketChannel);
 				System.out.println("Connection closed by: " + socketChannel.getRemoteAddress());
 				socketChannel.close();
-				return;
+				return null;
 			}
 			byte[] data = new byte[numRead];
 
 			System.arraycopy(buffer.array(), 0, data, 0, numRead);
 
 			//write back to client
-			//doEchoJob(key, data);
+			//doEcho(key, data);
 			
-			sendToAll(key, data);
+			this.sendToAll(key, data);
 		}
 		catch(IOException ex){
 			System.err.println(ex);
@@ -170,7 +173,7 @@ public class Server {
 		}
 	}
 	
-	private void doEchoJob(SelectionKey key, byte[] data)
+	private void doEcho(SelectionKey key, byte[] data)
 	{
 		SocketChannel socketChannel = (SocketChannel) key.channel();
 		List<byte[]> channelData=keepDataTrack.get(socketChannel);
