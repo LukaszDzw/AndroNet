@@ -12,7 +12,6 @@ import java.util.*;
 
 
 public class Server {
-
 	private final int PORT;
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
@@ -36,18 +35,7 @@ public class Server {
 				//sprawdzam czy oba się otworzyły
 				if(serverSocketChannel.isOpen() && selector.isOpen())
 				{
-					//non-blocking mode
-					serverSocketChannel.configureBlocking(false);
-					
-					//dodanie opcji
-					serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
-					serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
-
-					//połącz adres z portem
-					serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.PORT));
-					
-					//rejestracja channelu do selectora
-					this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+					this.setServerOptions(serverSocketChannel, selector);
 
 					System.out.println("Waiting for connections...");
 					
@@ -55,7 +43,6 @@ public class Server {
 					{
 						//czekamy na nadchodzące zdarzenia
 						selector.select();
-						
 						Iterator keys=selector.selectedKeys().iterator();
 						
 						while(keys.hasNext())
@@ -67,11 +54,11 @@ public class Server {
 							if(!key.isValid()) continue;
 
 							if(key.isAcceptable()){
-								acceptOP(key, selector);
+								this.acceptOP(key, selector);
 							}
 							else if(key.isReadable())
 							{
-								Object object=this.readOp(key);
+								this.readOp(key);
 							}
 							else if(key.isWritable())
 							{
@@ -102,7 +89,7 @@ public class Server {
 		socketChannel.register(selector, SelectionKey.OP_READ);
 	}
 
-	private Object readOp(SelectionKey key)
+	private void readOp(SelectionKey key)
 	{
 		try{
 			SocketChannel socketChannel=(SocketChannel) key.channel();
@@ -121,10 +108,10 @@ public class Server {
 				this.keepDataTrack.remove(socketChannel);
 				System.out.println("Connection closed by: " + socketChannel.getRemoteAddress());
 				socketChannel.close();
-				return null;
+				return;
 			}
-			byte[] data = new byte[numRead];
 
+			byte[] data = new byte[numRead];
 			System.arraycopy(buffer.array(), 0, data, 0, numRead);
 
 			//write back to client
@@ -132,10 +119,9 @@ public class Server {
 			
 			this.sendToAll(key, data);
 		}
-		catch(IOException ex){
+		catch(IOException ex) {
 			System.err.println(ex);
 		}
-		
 	}
 	
 	private void writeOp(SelectionKey key) throws IOException
@@ -180,5 +166,26 @@ public class Server {
 		channelData.add(data);
 		
 		key.interestOps(SelectionKey.OP_WRITE);
+	}
+
+	private void setServerOptions(ServerSocketChannel serverSocketChannel, Selector selector) throws IOException
+	{
+		//non-blocking mode
+		serverSocketChannel.configureBlocking(false);
+
+		//dodanie opcji
+		serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
+		serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
+
+		//połącz adres z portem
+		serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.PORT));
+
+		//rejestracja channelu do selectora
+		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+	}
+
+	private void listen()
+	{
+
 	}
 }

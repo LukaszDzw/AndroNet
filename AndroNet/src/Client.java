@@ -12,8 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class Client{
 
 	private TcpConnection tcpConnection;
-	private SocketChannel socketChannel;
-	private Selector selector;
 	private final ByteBuffer readBuffer, writeBuffer;
 	private Serialization serialization;
 	
@@ -23,61 +21,37 @@ public class Client{
 	public Client(String ip, int port)
 	{
 		this.tcpConnection=new TcpConnection(ip, port);
-		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 
+		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.serialization=new Serialization();
 	}
 	
 	public void start()
 	{
-		try
+		new Thread(new Runnable()
 		{
-			socketChannel=SocketChannel.open();
-			selector=Selector.open();
-					
-			if(socketChannel.isOpen() && selector.isOpen())
-			{
-				tcpConnection.accept(selector, socketChannel);
-				tcpConnection.connect();
-						
-				//pętla na osobnym wątku
-				new Thread(new Runnable() 
-				{
-							
-					@Override
-					public void run() 
-					{
-						try 
-						{
-							listen();
-						} 
-						catch (IOException e) 
-						{
-							e.printStackTrace();
-						}
+			@Override
+			public void run() {
+				try (final Selector selector = Selector.open();
+					 final SocketChannel socketChannel = SocketChannel.open()) {
+					if (socketChannel.isOpen() && selector.isOpen()) {
+						tcpConnection.accept(selector, socketChannel);
+						tcpConnection.connect();
+
+						listen(selector);
 					}
-				}).start();
-						
+				}
+				catch(IOException ex)
+				{
+					System.err.print(ex);
+				}
 			}
-					
-		}
-		catch(IOException ex)
-		{
-			System.err.print(ex);
-		}
-	}
+
+	}).start();}
 	
 	public void send(Object object)
 	{
-		while(!socketChannel.isConnected())
-		{
-			try {
-				TimeUnit.MILLISECONDS.sleep(50);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		SelectionKey key=tcpConnection.getSelectionKey();
 		key.attach(object);
 		
@@ -92,15 +66,13 @@ public class Client{
 		}
 	}
 	
-	
-	
-	private void listen() throws IOException
+	private void listen(Selector selector) throws IOException
 	{
         while (!Thread.interrupted()){
         	 
-            this.selector.select();
+            selector.select();
             
-            Iterator<SelectionKey> keys = this.selector.selectedKeys().iterator();
+            Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
             while (keys.hasNext()){
                 SelectionKey key = keys.next();
@@ -128,7 +100,7 @@ public class Client{
 			if(this.readBuffer.remaining()<objectLengthLength)
 			{
 				this.readBuffer.compact();
-				this.socketChannel.read(readBuffer);
+				channel.read(readBuffer);
 			}
 
 			this.readBuffer.flip();
@@ -141,7 +113,7 @@ public class Client{
 		if(this.readBuffer.remaining()<this.objectLength)
 		{
 			readBuffer.compact();
-			this.socketChannel.read(readBuffer);
+			channel.read(readBuffer);
 			this.readBuffer.flip();
 			if(readBuffer.remaining()<this.objectLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
 		}
@@ -163,10 +135,9 @@ public class Client{
 				String json = this.serialization.getJsonFromObject(attachment);
 
 				this.writeBuffer.putInt(json.getBytes().length);
-
 				this.writeBuffer.put(json.getBytes("UTF-8"));
 
-				writeBuffer.flip();
+				this.writeBuffer.flip();
 				channel.write(writeBuffer);
 
 				writeBuffer.compact();
