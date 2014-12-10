@@ -14,6 +14,8 @@ import java.util.*;
 public class Server {
 	private final int PORT;
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
+	private Map<SelectionKey, Connection>
+
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
 	private SelectionKey serverSelectionKey;
 

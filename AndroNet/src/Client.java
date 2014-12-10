@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
@@ -38,7 +39,7 @@ public class Client{
 					 final SocketChannel socketChannel = SocketChannel.open()) {
 					if (socketChannel.isOpen() && selector.isOpen()) {
 						tcpConnection.accept(selector, socketChannel);
-						tcpConnection.connect();
+						tcpConnection.connect(socketChannel);
 
 						listen(selector);
 					}
@@ -53,11 +54,20 @@ public class Client{
 	
 	public void send(Object object)
 	{
+		/*
 		SelectionKey key=tcpConnection.getSelectionKey();
 		key.attach(object);
 
 		key.interestOps(SelectionKey.OP_WRITE);
-		key.selector().wakeup();
+		key.selector().wakeup();*/
+		try {
+			this.tcpConnection.send(object);
+		}
+		catch (UnsupportedEncodingException ex)
+		{
+			System.out.println(ex.toString());
+		}
+
 	}
 	
 	private void listen(Selector selector) throws IOException
