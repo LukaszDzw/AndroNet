@@ -26,7 +26,6 @@ public class Client{
 		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.serialization=new Serialization();
-
 	}
 	
 	public void start()
@@ -49,8 +48,8 @@ public class Client{
 					System.err.print(ex);
 				}
 			}
-
-	}).start();}
+		}).start();
+	}
 	
 	public void send(Object object)
 	{
@@ -140,8 +139,8 @@ public class Client{
 				System.err.println("Wysłany pakiet nie można przerobić na stringa");
 			}
 		}
-        
-        key.interestOps(SelectionKey.OP_READ);
+
+		key.interestOps(SelectionKey.OP_READ);
     }
 
 

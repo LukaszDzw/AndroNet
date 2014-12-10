@@ -19,7 +19,6 @@ public class Server {
 
 	private Map<String, IListener> listeners;
 
-
 	public Server(int PORT)
 	{
 		this.PORT = PORT;
@@ -86,7 +85,7 @@ public class Server {
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
 		
 		keepDataTrack.put(socketChannel,new ArrayList<byte[]>());
-		socketChannel.register(selector, SelectionKey.OP_READ);
+		socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
 	}
 
 	private void readOp(SelectionKey key)
