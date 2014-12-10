@@ -5,6 +5,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +26,7 @@ public class Client{
 		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
 		this.serialization=new Serialization();
+
 	}
 	
 	public void start()
@@ -54,16 +56,9 @@ public class Client{
 	{
 		SelectionKey key=tcpConnection.getSelectionKey();
 		key.attach(object);
-		
-        int start=this.writeBuffer.position();
 
-        try 
-        {
-			this.write(key);
-		} 
-        catch (IOException e) {
-			e.printStackTrace();
-		}
+		key.interestOps(SelectionKey.OP_WRITE);
+		key.selector().wakeup();
 	}
 	
 	private void listen(Selector selector) throws IOException
