@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.StandardSocketOptions;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
@@ -14,19 +15,13 @@ import java.util.concurrent.TimeUnit;
 public class Client{
 
 	private TcpConnection tcpConnection;
-	private final ByteBuffer readBuffer, writeBuffer;
-	private Serialization serialization;
-	
-	private final int BUFFERCAPACITY = 1000;
-	private int objectLength;
-	
+	private final String ip;
+	private final int port;
+
 	public Client(String ip, int port)
 	{
-		this.tcpConnection=new TcpConnection(ip, port);
-
-		this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
-		this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
-		this.serialization=new Serialization();
+		this.ip=ip;
+		this.port=port;
 	}
 	
 	public void start()
@@ -38,8 +33,8 @@ public class Client{
 				try (final Selector selector = Selector.open();
 					 final SocketChannel socketChannel = SocketChannel.open()) {
 					if (socketChannel.isOpen() && selector.isOpen()) {
-						tcpConnection.accept(selector, socketChannel);
-						tcpConnection.connect(socketChannel);
+						accept(selector,socketChannel);
+						tcpConnection.connect(ip, port);
 
 						listen(selector);
 					}
@@ -52,16 +47,15 @@ public class Client{
 		}).start();
 	}
 	
-	public void send(Object object)
+	public void send(String tag, Object object)
 	{
 		try {
-			this.tcpConnection.send(object);
+			this.tcpConnection.send(object, tag);
 		}
 		catch (UnsupportedEncodingException ex)
 		{
 			System.out.println(ex.toString());
 		}
-
 	}
 	
 	private void listen(Selector selector) throws IOException
@@ -80,74 +74,34 @@ public class Client{
 
                 if (key.isWritable()){
                     //this.write(key);
-					this.tcpConnection.write(key);
+					this.tcpConnection.write();
                 }
                 else if (key.isReadable()){
                     //this.read(key);
-					this.tcpConnection.read(key);
+					this.tcpConnection.read();
                 }
             }  
         }
 	}
-    /*
-    private Object read (SelectionKey key) throws IOException {
-        SocketChannel channel = (SocketChannel) key.channel();
-		int objectLengthLength=this.serialization.getObjectLengthLength();
 
-		//odczytaj wielkość obiektu z bufora
-		if(this.objectLength==0)
-		{
-			if(this.readBuffer.remaining()<objectLengthLength)
-			{
-				this.readBuffer.compact();
-				channel.read(readBuffer);
-			}
+	public void accept(Selector selector, SocketChannel socketChannel) throws IOException
+	{
+		try {
+			//configure non-blocking mode
+			socketChannel.configureBlocking(false);
 
-			this.readBuffer.flip();
-			if(readBuffer.remaining()<objectLengthLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
-			this.objectLength=serialization.getObjectLength(readBuffer);
-			System.out.println("dlugosc " + this.objectLength);
+			//set some options
+			socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024); //standard setting
+			socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024); //standard setting
+			socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true); //TODO
+
+			SelectionKey selectionKey;
+			selectionKey=socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+			this.tcpConnection=new TcpConnection(selectionKey);
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			throw ex;
 		}
-
-		//dopełnij bufor, jeśli za mało wczytał
-		if(this.readBuffer.remaining()<this.objectLength)
-		{
-			readBuffer.compact();
-			channel.read(readBuffer);
-			this.readBuffer.flip();
-			if(readBuffer.remaining()<this.objectLength) return null; //jeżeli bufor się jeszcze odpowiednio nie zapełnił
-		}
-
-		Object object = this.serialization.getObjectFromBuffer(this.readBuffer, objectLength);
-		this.objectLength=0;
-		this.readBuffer.compact();
-
-		System.out.println(object.toString()); //temp
-		return object;
-    }*/
-	/*
-    private void write(SelectionKey key) throws IOException {
-        SocketChannel channel = (SocketChannel) key.channel();
-
-        if(key.attachment()!=null) {
-			try {
-				Object attachment = key.attachment();
-				String json = this.serialization.getJsonFromObject(attachment);
-
-				this.writeBuffer.putInt(json.getBytes().length);
-				this.writeBuffer.put(json.getBytes("UTF-8"));
-
-				this.writeBuffer.flip();
-				channel.write(writeBuffer);
-
-				writeBuffer.compact();
-			} catch (Exception ex) {
-				System.err.println("Wysłany pakiet nie można przerobić na stringa");
-			}
-		}
-
-		key.interestOps(SelectionKey.OP_READ);
-    }*/
-
-
+	}
 }

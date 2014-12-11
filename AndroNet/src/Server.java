@@ -13,8 +13,8 @@ import java.util.*;
 
 public class Server {
 	private final int PORT;
-	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
-	private Map<SelectionKey, Connection> Connections; //TODO
+	//private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
+	//private Map<SelectionKey, Connection> connections; //TODO
 
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
 	private SelectionKey serverSelectionKey;
@@ -25,58 +25,39 @@ public class Server {
 	{
 		this.PORT = PORT;
 		this.listeners=new HashMap<>();
+		//this.connections=new HashMap<>();
 	}
 	
-	public void startEchoServer()
+	public void start()
 	{
-		//otwieram selector oraz socket przez metodę open
-		try(Selector selector =Selector.open();
-			ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
-			{
-				//sprawdzam czy oba się otworzyły
-				if(serverSocketChannel.isOpen() && selector.isOpen())
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+
+				//otwieram selector oraz socket przez metodę open
+				try(Selector selector =Selector.open();
+					ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
 				{
-					this.setServerOptions(serverSocketChannel, selector);
-
-					System.out.println("Waiting for connections...");
-					
-					while(true)
+					//sprawdzam czy oba się otworzyły
+					if(serverSocketChannel.isOpen() && selector.isOpen())
 					{
-						//czekamy na nadchodzące zdarzenia
-						selector.select();
-						Iterator keys=selector.selectedKeys().iterator();
-						
-						while(keys.hasNext())
-						{
-							SelectionKey key =(SelectionKey) keys.next();
-							
-							//usuwamy klucz, aby nie był obsłużony ponownie
-							keys.remove();
-							if(!key.isValid()) continue;
+						setServerOptions(serverSocketChannel, selector);
 
-							if(key.isAcceptable()){
-								this.acceptOP(key, selector);
-							}
-							else if(key.isReadable())
-							{
-								this.readOp(key);
-							}
-							else if(key.isWritable())
-							{
-								this.writeOp(key);
-							}
-						}
+						System.out.println("Waiting for connections...");
+						listen(selector);
+					}
+					else {
+						System.out.println("The server socket channel or selector cannot be opened!");
 					}
 				}
-				else {
-					System.out.println("The server socket channel or selector cannot be opened!");
+				catch(IOException ex)
+				{
+					System.err.println(ex);
 				}
 			}
-			catch(IOException ex)
-			{
-				System.err.println(ex);
-			}
-		}
+		}).start();
+	}
+
 	//isAcceptable zwróciło true
 	private void acceptOP(SelectionKey key, Selector selector) throws IOException
 	{
@@ -85,11 +66,36 @@ public class Server {
 		socketChannel.configureBlocking(false);
 		
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
-		
-		keepDataTrack.put(socketChannel,new ArrayList<byte[]>());
-		socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+
+		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+		Connection connection=new Connection(selectionKey);
+		selectionKey.attach(connection);
 	}
 
+	private void read(SelectionKey key)
+	{
+		Connection connection = (Connection) key.attachment();
+		try {
+			connection.read();
+		}
+		catch (IOException ex)
+		{
+			System.out.println(ex.toString());
+		}
+	}
+
+	private void write(SelectionKey key)
+	{
+		Connection connection = (Connection) key.attachment();
+		try {
+			connection.write();
+		}
+		catch (IOException ex)
+		{
+			System.out.println(ex.toString());
+		}
+	}
+	/*
 	private void readOp(SelectionKey key)
 	{
 		try{
@@ -106,7 +112,7 @@ public class Server {
 			
 			if(numRead==-1)
 			{
-				this.keepDataTrack.remove(socketChannel);
+				this.connections.remove(key);
 				System.out.println("Connection closed by: " + socketChannel.getRemoteAddress());
 				socketChannel.close();
 				return;
@@ -123,8 +129,9 @@ public class Server {
 		catch(IOException ex) {
 			System.err.println(ex);
 		}
-	}
-	
+	}*/
+
+	/*
 	private void writeOp(SelectionKey key) throws IOException
 	{
 		SocketChannel socketChannel = (SocketChannel) key.channel();
@@ -140,10 +147,11 @@ public class Server {
 		}
 
 		key.interestOps(SelectionKey.OP_READ);
-	}
-	
+	}*/
 
-	private void sendToAll(SelectionKey key, byte[] data)
+	//TODO
+	/*
+	public void sendToAll(SelectionKey key, byte[] data)
 	{
 		Selector selector=key.selector();
 		Iterator<SelectionKey> keys=selector.keys().iterator();
@@ -158,16 +166,18 @@ public class Server {
 			channelData.add(data);
 			selKey.interestOps(SelectionKey.OP_WRITE);
 		}
-	}
-	
-	private void doEcho(SelectionKey key, byte[] data)
+	}*/
+
+	//TODO
+	/*
+	public void doEcho(SelectionKey key, byte[] data)
 	{
 		SocketChannel socketChannel = (SocketChannel) key.channel();
 		List<byte[]> channelData=keepDataTrack.get(socketChannel);
 		channelData.add(data);
 		
 		key.interestOps(SelectionKey.OP_WRITE);
-	}
+	}*/
 
 	private void setServerOptions(ServerSocketChannel serverSocketChannel, Selector selector) throws IOException
 	{
@@ -181,8 +191,36 @@ public class Server {
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 	}
 
-	private void listen()
+	private void listen(Selector selector) throws IOException
 	{
+		while(true)
+		{
+			//czekamy na nadchodzące zdarzenia
+			selector.select();
+			Iterator keys=selector.selectedKeys().iterator();
 
+			while(keys.hasNext())
+			{
+				SelectionKey key =(SelectionKey) keys.next();
+
+				//usuwamy klucz, aby nie był obsłużony ponownie
+				keys.remove();
+				if(!key.isValid()) continue;
+
+				if(key.isAcceptable()){
+					this.acceptOP(key, selector);
+				}
+				else if(key.isReadable())
+				{
+					this.read(key);
+					//this.readOp(key);
+				}
+				else if(key.isWritable())
+				{
+					this.write(key);
+					//this.writeOp(key);
+				}
+			}
+		}
 	}
 }

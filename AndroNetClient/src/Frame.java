@@ -24,7 +24,7 @@ public class Frame extends JFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                client.send(textField1.getText());
+                client.send("test", textField1.getText());
             }
         });
 
