@@ -54,12 +54,6 @@ public class Client{
 	
 	public void send(Object object)
 	{
-		/*
-		SelectionKey key=tcpConnection.getSelectionKey();
-		key.attach(object);
-
-		key.interestOps(SelectionKey.OP_WRITE);
-		key.selector().wakeup();*/
 		try {
 			this.tcpConnection.send(object);
 		}
@@ -85,15 +79,17 @@ public class Client{
                 if (!key.isValid()) continue;
 
                 if (key.isWritable()){
-                    this.write(key);
+                    //this.write(key);
+					this.tcpConnection.write(key);
                 }
                 else if (key.isReadable()){
-                    this.read(key);
+                    //this.read(key);
+					this.tcpConnection.read(key);
                 }
             }  
         }
 	}
-    
+    /*
     private Object read (SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 		int objectLengthLength=this.serialization.getObjectLengthLength();
@@ -128,8 +124,8 @@ public class Client{
 
 		System.out.println(object.toString()); //temp
 		return object;
-    }
-
+    }*/
+	/*
     private void write(SelectionKey key) throws IOException {
         SocketChannel channel = (SocketChannel) key.channel();
 
@@ -151,7 +147,7 @@ public class Client{
 		}
 
 		key.interestOps(SelectionKey.OP_READ);
-    }
+    }*/
 
 
 }

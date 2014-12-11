@@ -11,9 +11,8 @@ public class TcpConnection extends Connection {
 	private final int PORT;
 	private final String IP;
 	
-	public TcpConnection(String ip, int port, SelectionKey selectionKey)
+	public TcpConnection(String ip, int port)
 	{
-		super(selectionKey);
 		this.PORT=port;
 		this.IP=ip;
 	}
@@ -25,9 +24,9 @@ public class TcpConnection extends Connection {
 			socketChannel.configureBlocking(false);
 			
 			//set some options
-			socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024);
-			socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024);
-			socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
+			//socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024);
+			//socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024);
+			//socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
 
 			this.selectionKey=socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
 		} catch (IOException ex) {

@@ -14,7 +14,7 @@ import java.util.*;
 public class Server {
 	private final int PORT;
 	private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
-	private Map<SelectionKey, Connection>
+	private Map<SelectionKey, Connection> Connections; //TODO
 
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
 	private SelectionKey serverSelectionKey;
@@ -173,10 +173,6 @@ public class Server {
 	{
 		//non-blocking mode
 		serverSocketChannel.configureBlocking(false);
-
-		//dodanie opcji
-		serverSocketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 256*1024);
-		serverSocketChannel.setOption(StandardSocketOptions.SO_REUSEADDR, true);
 
 		//połącz adres z portem
 		serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.PORT));

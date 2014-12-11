@@ -38,7 +38,7 @@ public class Connection {
         selector.wakeup();
     }
 
-    private Object read(SelectionKey selectionKey) throws IOException {
+    public Object read(SelectionKey selectionKey) throws IOException {
         int objectLengthLength=this.serialization.getObjectLengthLength();
         SocketChannel socketChannel=(SocketChannel)selectionKey.channel();
         //odczytaj wielkość obiektu z bufora
@@ -73,7 +73,7 @@ public class Connection {
         return object;
     }
 
-    private void writeOp(SelectionKey selectionKey) throws IOException
+    public void write(SelectionKey selectionKey) throws IOException
     {
         SocketChannel socketChannel=(SocketChannel)selectionKey.channel();
 
