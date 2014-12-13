@@ -14,10 +14,9 @@ import java.util.Iterator;
 import java.util.Map;
 
 
-public class Server {
+public class Server extends EndPoint {
 	private final int port;
 	private SelectionKey serverSelectionKey;
-	private Map<String, IListener> listeners;
 
 	public Server(int port)
 	{
@@ -55,7 +54,7 @@ public class Server {
 		}).start();
 	}
 
-	public void sendToAll(String tag, Object object) throws UnsupportedEncodingException
+	public void sendToAll(String tag, Object object)
 	{
 		Selector selector=this.serverSelectionKey.selector();
 		Iterator<SelectionKey> keys=selector.keys().iterator();
@@ -66,13 +65,19 @@ public class Server {
 			if(selKey.channel() instanceof ServerSocketChannel) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
 
 			Connection connection = (Connection) selKey.attachment();
-			connection.send(object, tag);
-			selKey.interestOps(SelectionKey.OP_WRITE);
+			try {
+				connection.send(object, tag);
+				selKey.interestOps(SelectionKey.OP_WRITE);
+			}
+			catch (UnsupportedEncodingException ex)
+			{
+				System.err.println(ex.toString());
+			}
 		}
 	}
 
 	//isAcceptable zwróciło true
-	private void acceptOP(SelectionKey key, Selector selector) throws IOException
+	private void accept(SelectionKey key, Selector selector) throws IOException
 	{
 		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
 		SocketChannel socketChannel =serverChannel.accept();
@@ -99,15 +104,15 @@ public class Server {
 				Connection connection = (Connection) key.attachment();
 
 				//usuwamy klucz, aby nie był obsłużony ponownie
-				keys.remove(); //TODO sprawdzić czy na pewno potrzebne
+				keys.remove();
 				try {
 					if (!key.isValid()) continue;
 
 					if (key.isAcceptable()) {
-						this.acceptOP(key, selector);
+						this.accept(key, selector);
 					} else if (key.isReadable()) {
 						Object object=connection.read().object;
-						this.sendToAll("test", object);
+						this.sendToAll("test", object); // temp
 					} else if (key.isWritable()) {
 						connection.write();
 					}
@@ -115,6 +120,7 @@ public class Server {
 				catch (IOException ex)
 				{
 					connection.close();
+					System.out.println("Connection closed by host");
 				}
 			}
 		}
