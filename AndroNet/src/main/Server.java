@@ -1,12 +1,17 @@
+package main;
+
 import interfaces.IListener;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 
 public class Server {
@@ -50,25 +55,9 @@ public class Server {
 		}).start();
 	}
 
-	//isAcceptable zwróciło true
-	private void acceptOP(SelectionKey key, Selector selector) throws IOException
+	public void sendToAll(String tag, Object object) throws UnsupportedEncodingException
 	{
-		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
-		SocketChannel socketChannel =serverChannel.accept();
-		socketChannel.configureBlocking(false);
-		
-		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
-
-		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-		Connection connection=new Connection(selectionKey);
-		selectionKey.attach(connection);
-	}
-
-	//TODO
-	/*
-	public void sendToAll(SelectionKey key, byte[] data)
-	{
-		Selector selector=key.selector();
+		Selector selector=this.serverSelectionKey.selector();
 		Iterator<SelectionKey> keys=selector.keys().iterator();
 
 		while(keys.hasNext())
@@ -76,23 +65,25 @@ public class Server {
 			SelectionKey selKey = keys.next();
 			if(selKey.channel() instanceof ServerSocketChannel) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
 
-			SocketChannel channel = (SocketChannel) selKey.channel();
-			List<byte[]> channelData=keepDataTrack.get(channel);
-			channelData.add(data);
+			Connection connection = (Connection) selKey.attachment();
+			connection.send(object, tag);
 			selKey.interestOps(SelectionKey.OP_WRITE);
 		}
-	}*/
+	}
 
-	//TODO
-	/*
-	public void doEcho(SelectionKey key, byte[] data)
+	//isAcceptable zwróciło true
+	private void acceptOP(SelectionKey key, Selector selector) throws IOException
 	{
-		SocketChannel socketChannel = (SocketChannel) key.channel();
-		List<byte[]> channelData=keepDataTrack.get(socketChannel);
-		channelData.add(data);
-		
-		key.interestOps(SelectionKey.OP_WRITE);
-	}*/
+		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
+		SocketChannel socketChannel =serverChannel.accept();
+		socketChannel.configureBlocking(false);
+
+		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
+
+		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+		Connection connection=new Connection(selectionKey);
+		selectionKey.attach(connection);
+	}
 
 	private void listen(Selector selector) throws IOException
 	{
@@ -115,7 +106,8 @@ public class Server {
 					if (key.isAcceptable()) {
 						this.acceptOP(key, selector);
 					} else if (key.isReadable()) {
-						connection.read();
+						Object object=connection.read().object;
+						this.sendToAll("test", object);
 					} else if (key.isWritable()) {
 						connection.write();
 					}

@@ -1,4 +1,4 @@
-import javax.swing.*;
+import main.Client;
 
 /**
  * Created by Lukasz on 2014-11-17.

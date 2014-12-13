@@ -1,3 +1,7 @@
+package main;
+
+import interfaces.IListener;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.StandardSocketOptions;
@@ -5,6 +9,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
+import java.util.Map;
 
 
 public class Client{
@@ -12,6 +17,7 @@ public class Client{
 	private ClientConnection clientConnection;
 	private final String ip;
 	private final int port;
+	private Map<String, IListener> listeners;
 
 	public Client(String ip, int port)
 	{
@@ -85,7 +91,7 @@ public class Client{
 			//set some options
 			socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024); //standard setting
 			socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024); //standard setting
-			socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true); //TODO
+			socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
 
 			SelectionKey selectionKey;
 			selectionKey=socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);

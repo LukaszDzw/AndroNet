@@ -1,3 +1,5 @@
+package main;
+
 import com.esotericsoftware.jsonbeans.Json;
 
 import java.nio.ByteBuffer;
