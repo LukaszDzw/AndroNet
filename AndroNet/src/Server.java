@@ -12,18 +12,15 @@ import java.util.*;
 
 
 public class Server {
-	private final int PORT;
-	//private Map<SocketChannel, List<byte[]>> keepDataTrack = new HashMap<>();
-	//private Map<SelectionKey, Connection> connections; //TODO
-
+	private final int port;
 	private ByteBuffer buffer = ByteBuffer.allocate(2*1024);
 	private SelectionKey serverSelectionKey;
 
 	private Map<String, IListener> listeners;
 
-	public Server(int PORT)
+	public Server(int port)
 	{
-		this.PORT = PORT;
+		this.port = port;
 		this.listeners=new HashMap<>();
 		//this.connections=new HashMap<>();
 	}
@@ -72,6 +69,7 @@ public class Server {
 		selectionKey.attach(connection);
 	}
 
+	/*
 	private void read(SelectionKey key)
 	{
 		Connection connection = (Connection) key.attachment();
@@ -94,7 +92,7 @@ public class Server {
 		{
 			System.out.println(ex.toString());
 		}
-	}
+	}*/
 	/*
 	private void readOp(SelectionKey key)
 	{
@@ -185,7 +183,7 @@ public class Server {
 		serverSocketChannel.configureBlocking(false);
 
 		//połącz adres z portem
-		serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.PORT));
+		serverSocketChannel.bind(new InetSocketAddress("127.0.0.1", this.port));
 
 		//rejestracja channelu do selectora
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
@@ -201,24 +199,25 @@ public class Server {
 
 			while(keys.hasNext())
 			{
-				SelectionKey key =(SelectionKey) keys.next();
+				SelectionKey key = (SelectionKey) keys.next();
+				Connection connection = (Connection) key.attachment();
 
 				//usuwamy klucz, aby nie był obsłużony ponownie
-				keys.remove();
-				if(!key.isValid()) continue;
+				keys.remove(); //TODO sprawdzić czy na pewno potrzebne
+				try {
+					if (!key.isValid()) continue;
 
-				if(key.isAcceptable()){
-					this.acceptOP(key, selector);
+					if (key.isAcceptable()) {
+						this.acceptOP(key, selector);
+					} else if (key.isReadable()) {
+						connection.read();
+					} else if (key.isWritable()) {
+						connection.write();
+					}
 				}
-				else if(key.isReadable())
+				catch (IOException ex)
 				{
-					this.read(key);
-					//this.readOp(key);
-				}
-				else if(key.isWritable())
-				{
-					this.write(key);
-					//this.writeOp(key);
+					connection.close();
 				}
 			}
 		}

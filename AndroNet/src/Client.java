@@ -1,20 +1,15 @@
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.StandardSocketOptions;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.concurrent.TimeUnit;
 
 
 public class Client{
 
-	private TcpConnection tcpConnection;
+	private ClientConnection clientConnection;
 	private final String ip;
 	private final int port;
 
@@ -34,7 +29,7 @@ public class Client{
 					 final SocketChannel socketChannel = SocketChannel.open()) {
 					if (socketChannel.isOpen() && selector.isOpen()) {
 						accept(selector,socketChannel);
-						tcpConnection.connect(ip, port);
+						clientConnection.connect(ip, port);
 
 						listen(selector);
 					}
@@ -50,7 +45,7 @@ public class Client{
 	public void send(String tag, Object object)
 	{
 		try {
-			this.tcpConnection.send(object, tag);
+			this.clientConnection.send(object, tag);
 		}
 		catch (UnsupportedEncodingException ex)
 		{
@@ -63,7 +58,6 @@ public class Client{
         while (!Thread.interrupted()){
         	 
             selector.select();
-            
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
             while (keys.hasNext()){
@@ -73,12 +67,10 @@ public class Client{
                 if (!key.isValid()) continue;
 
                 if (key.isWritable()){
-                    //this.write(key);
-					this.tcpConnection.write();
+					this.clientConnection.write();
                 }
                 else if (key.isReadable()){
-                    //this.read(key);
-					this.tcpConnection.read();
+					this.clientConnection.read();
                 }
             }  
         }
@@ -97,7 +89,7 @@ public class Client{
 
 			SelectionKey selectionKey;
 			selectionKey=socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
-			this.tcpConnection=new TcpConnection(selectionKey);
+			this.clientConnection =new ClientConnection(selectionKey);
 
 		} catch (IOException ex) {
 			ex.printStackTrace();

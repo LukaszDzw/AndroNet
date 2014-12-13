@@ -6,10 +6,10 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 
 
-public class TcpConnection extends Connection {
+public class ClientConnection extends Connection {
 
 
-	public TcpConnection(SelectionKey selectionKey)
+	public ClientConnection(SelectionKey selectionKey)
 	{
 		super(selectionKey);
 	}

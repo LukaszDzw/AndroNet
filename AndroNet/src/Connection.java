@@ -2,6 +2,7 @@ import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -12,7 +13,7 @@ import java.nio.channels.SocketChannel;
  */
 public class Connection {
 
-    protected SelectionKey selectionKey; //TODO accept method
+    protected SelectionKey selectionKey;
     private Serialization serialization;
     private final ByteBuffer readBuffer, writeBuffer;
 
@@ -47,9 +48,11 @@ public class Connection {
         int bytesRead=0;
 
         SocketChannel socketChannel=(SocketChannel)this.selectionKey.channel();
+
         //odczytaj wielkość obiektu z bufora
         if(this.objectLength==0)
         {
+            this.readBuffer.flip();
             if(this.readBuffer.remaining()<objectLengthLength)
             {
                 this.readBuffer.compact();
@@ -59,7 +62,7 @@ public class Connection {
             this.readBuffer.flip();
             if(readBuffer.remaining()<objectLengthLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
             {
-                if(bytesRead==-1) socketChannel.close(); // gdy kanał się rozłączył
+                if(bytesRead==-1) throw new SocketException("Channel is closed");
                 return null;
             }
 
@@ -75,7 +78,7 @@ public class Connection {
             this.readBuffer.flip();
             if(readBuffer.remaining()<this.objectLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
             {
-                if(bytesRead==-1) socketChannel.close(); // gdy kanał się rozłączył
+                if(bytesRead==-1) throw new SocketException("Channel is closed");
                 return null;
             }
         }
@@ -100,5 +103,11 @@ public class Connection {
         }
 
         this.selectionKey.interestOps(SelectionKey.OP_READ);
+    }
+
+    public void close() throws IOException
+    {
+        SocketChannel channel = (SocketChannel) this.selectionKey.channel();
+        channel.close();
     }
 }
