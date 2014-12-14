@@ -66,7 +66,7 @@ public class Server extends EndPoint {
 
 			Connection connection = (Connection) selKey.attachment();
 			try {
-				connection.send(object, tag);
+				connection.send(tag, object);
 				selKey.interestOps(SelectionKey.OP_WRITE);
 			}
 			catch (UnsupportedEncodingException ex)
@@ -80,7 +80,7 @@ public class Server extends EndPoint {
 	private void accept(SelectionKey key, Selector selector) throws IOException
 	{
 		ServerSocketChannel serverChannel=(ServerSocketChannel) key.channel();
-		SocketChannel socketChannel =serverChannel.accept();
+		SocketChannel socketChannel = serverChannel.accept();
 		socketChannel.configureBlocking(false);
 
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
@@ -90,7 +90,7 @@ public class Server extends EndPoint {
 		selectionKey.attach(connection);
 	}
 
-	private void listen(Selector selector) throws IOException
+	protected void listen(Selector selector) throws IOException
 	{
 		while(true)
 		{

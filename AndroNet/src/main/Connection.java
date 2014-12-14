@@ -28,7 +28,7 @@ public class Connection {
         this.serialization=new Serialization();
     }
 
-    public void send(Object object, String tag) throws UnsupportedEncodingException
+    public void send(String tag, Object object) throws UnsupportedEncodingException
     {
         Packet packet=new Packet();
         packet.object=object;

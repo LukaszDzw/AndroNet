@@ -20,7 +20,6 @@ public class Client extends EndPoint{
 
 	public Client(String ip, int port)
 	{
-		super();
 		this.ip=ip;
 		this.port=port;
 	}
@@ -51,7 +50,7 @@ public class Client extends EndPoint{
 	public void send(String tag, Object object)
 	{
 		try {
-			this.clientConnection.send(object, tag);
+			this.clientConnection.send(tag, object);
 		}
 		catch (UnsupportedEncodingException ex)
 		{
@@ -74,7 +73,7 @@ public class Client extends EndPoint{
 		this.clientConnection =new ClientConnection(selectionKey);
 	}
 	
-	private void listen(Selector selector) throws IOException
+	protected void listen(Selector selector) throws IOException
 	{
         while (!Thread.interrupted()){
         	 
@@ -91,7 +90,11 @@ public class Client extends EndPoint{
 					if (key.isWritable()) {
 						this.clientConnection.write();
 					} else if (key.isReadable()) {
-						this.clientConnection.read();
+						Packet packet = this.clientConnection.read();
+						IListener listener = this.listeners.get(packet.tag);
+						if(listener!=null) {
+							listener.received(clientConnection, packet.object);
+						}
 					}
 				}
 				catch (IOException ex)

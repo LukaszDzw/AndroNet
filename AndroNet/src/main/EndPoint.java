@@ -2,8 +2,8 @@ package main;
 
 import interfaces.IListener;
 
+import java.io.IOException;
 import java.nio.channels.Selector;
-import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,11 +19,10 @@ public abstract class EndPoint {
     }
 
     public abstract void start();
-    public abstract void listen(Selector selector);
-    public abstract void accept(Selector selector, SocketChannel socketChannel);
+    protected abstract void listen(Selector selector) throws IOException;
 
-    public void addListener(IListener listener)
+    public void addListener(String tag, IListener listener)
     {
-
+        this.listeners.put(tag, listener);
     }
 }
