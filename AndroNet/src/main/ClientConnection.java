@@ -20,7 +20,6 @@ public class ClientConnection extends Connection {
 		//connect to remote host
 		try {
 			socketChannel.connect(new InetSocketAddress(ip, port));
-			System.out.println(ip + socketChannel.getLocalAddress());
 
 			if (socketChannel.isConnectionPending()){
 				socketChannel.finishConnect();

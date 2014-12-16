@@ -34,10 +34,12 @@ public class Connection {
         packet.object=object;
         packet.tag=tag;
 
-        String json = this.serialization.getJsonFromObject(packet);
-        this.writeBuffer.putInt(json.getBytes().length);
-        this.writeBuffer.put(json.getBytes("UTF-8"));
-        this.selectionKey.interestOps(SelectionKey.OP_WRITE);
+        synchronized(writeBuffer) {
+            String json = this.serialization.getJsonFromObject(packet);
+            this.writeBuffer.putInt(json.getBytes().length);
+            this.writeBuffer.put(json.getBytes("UTF-8"));
+            this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        }
 
         Selector selector = this.selectionKey.selector();
         selector.wakeup();

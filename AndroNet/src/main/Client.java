@@ -33,7 +33,13 @@ public class Client extends EndPoint{
 				try (final Selector selector = Selector.open();
 					 final SocketChannel socketChannel = SocketChannel.open()) {
 					if (socketChannel.isOpen() && selector.isOpen()) {
-						accept(selector,socketChannel);
+						//accept(selector,socketChannel);
+
+						socketChannel.configureBlocking(false);
+						SelectionKey selectionKey;
+						selectionKey=socketChannel.register(selector, SelectionKey.OP_CONNECT);
+						clientConnection=new ClientConnection(selectionKey);
+
 						clientConnection.connect(ip, port);
 
 						listen(selector);
@@ -58,18 +64,19 @@ public class Client extends EndPoint{
 		}
 	}
 
-	public void accept(Selector selector, SocketChannel socketChannel) throws IOException
+	private void accept(Selector selector, SocketChannel socketChannel) throws IOException
 	{
 		//configure non-blocking mode
-		socketChannel.configureBlocking(false);
+		//socketChannel.configureBlocking(false);
 
+		/*
 		//set some options
 		socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024); //standard setting
 		socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024); //standard setting
-		socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);
+		socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);*/
 
 		SelectionKey selectionKey;
-		selectionKey=socketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+		selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
 		this.clientConnection =new ClientConnection(selectionKey);
 	}
 	
@@ -95,6 +102,14 @@ public class Client extends EndPoint{
 						if(listener!=null) {
 							listener.received(clientConnection, packet.object);
 						}
+					}
+					else if (key.isAcceptable())
+					{
+						this.accept(selector, (SocketChannel)key.channel());
+					}
+					else  if (key.isConnectable())
+					{
+						this.accept(selector, (SocketChannel)key.channel());
 					}
 				}
 				catch (IOException ex)
