@@ -18,7 +18,7 @@ public class Connection {
     private final ByteBuffer readBuffer, writeBuffer;
 
     private int objectLength;
-    private final static int BUFFERCAPACITY = 1000;
+    private final static int BUFFERCAPACITY = 1024;
 
     public Connection(SelectionKey selectionKey)
     {

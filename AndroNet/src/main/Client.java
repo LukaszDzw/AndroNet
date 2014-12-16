@@ -4,6 +4,8 @@ import interfaces.IListener;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.net.StandardSocketOptions;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -33,15 +35,7 @@ public class Client extends EndPoint{
 				try (final Selector selector = Selector.open();
 					 final SocketChannel socketChannel = SocketChannel.open()) {
 					if (socketChannel.isOpen() && selector.isOpen()) {
-						//accept(selector,socketChannel);
-
-						socketChannel.configureBlocking(false);
-						SelectionKey selectionKey;
-						selectionKey=socketChannel.register(selector, SelectionKey.OP_CONNECT);
-						clientConnection=new ClientConnection(selectionKey);
-
-						clientConnection.connect(ip, port);
-
+						connect(selector, socketChannel);
 						listen(selector);
 					}
 				}
@@ -64,20 +58,16 @@ public class Client extends EndPoint{
 		}
 	}
 
-	private void accept(Selector selector, SocketChannel socketChannel) throws IOException
+	private void connect(Selector selector, SocketChannel socketChannel) throws IOException
 	{
-		//configure non-blocking mode
-		//socketChannel.configureBlocking(false);
+		Socket socket=socketChannel.socket();
+		socket.setTcpNoDelay(true); // TODO przeczytać więcej
+		socket.connect(new InetSocketAddress(ip, port), 5000); // connecting in blocking mode
 
-		/*
-		//set some options
-		socketChannel.setOption(StandardSocketOptions.SO_RCVBUF, 128*1024); //standard setting
-		socketChannel.setOption(StandardSocketOptions.SO_SNDBUF, 128*1024); //standard setting
-		socketChannel.setOption(StandardSocketOptions.SO_KEEPALIVE, true);*/
+		socketChannel.configureBlocking(false);
+		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
+		this.clientConnection=new ClientConnection(selectionKey);
 
-		SelectionKey selectionKey;
-		selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
-		this.clientConnection =new ClientConnection(selectionKey);
 	}
 	
 	protected void listen(Selector selector) throws IOException
@@ -102,14 +92,6 @@ public class Client extends EndPoint{
 						if(listener!=null) {
 							listener.received(clientConnection, packet.object);
 						}
-					}
-					else if (key.isAcceptable())
-					{
-						this.accept(selector, (SocketChannel)key.channel());
-					}
-					else  if (key.isConnectable())
-					{
-						this.accept(selector, (SocketChannel)key.channel());
 					}
 				}
 				catch (IOException ex)

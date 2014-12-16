@@ -13,10 +13,11 @@ public class Main {
 
         Frame frame=new Frame(client);
         client.start();
+
         client.addListener("test", new IListener() {
             @Override
             public void received(Connection connection, Object object) {
-                System.out.println("dupa");
+                System.out.println(object.toString());
 
             }
         });

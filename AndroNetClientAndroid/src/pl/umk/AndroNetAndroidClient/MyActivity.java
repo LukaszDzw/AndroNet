@@ -45,8 +45,13 @@ public class MyActivity extends Activity {
     {
         client.addListener("test", new IListener() {
             @Override
-            public void received(Connection connection, Object object) {
-                Toast.makeText(MyActivity.this, "dupa", Toast.LENGTH_SHORT).show();
+            public void received(Connection connection, final Object object) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(MyActivity.this, object.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

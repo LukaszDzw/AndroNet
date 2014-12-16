@@ -25,4 +25,9 @@ public abstract class EndPoint {
     {
         this.listeners.put(tag, listener);
     }
+
+    public void removeListener(String tag)
+    {
+        this.listeners.remove(tag);
+    }
 }

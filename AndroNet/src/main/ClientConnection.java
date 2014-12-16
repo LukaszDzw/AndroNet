@@ -2,6 +2,8 @@ package main;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 
@@ -18,16 +20,8 @@ public class ClientConnection extends Connection {
 	{
 		SocketChannel socketChannel = (SocketChannel) this.selectionKey.channel();
 		//connect to remote host
-		try {
-			socketChannel.connect(new InetSocketAddress(ip, port));
 
-			if (socketChannel.isConnectionPending()){
-				socketChannel.finishConnect();
-			}
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 	
 }
