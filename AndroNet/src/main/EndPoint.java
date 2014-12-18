@@ -30,4 +30,12 @@ public abstract class EndPoint {
     {
         this.listeners.remove(tag);
     }
+
+    protected void notifyReceived(Packet packet, Connection connection)
+    {
+        IListener listener = this.listeners.get(packet.tag);
+        if(listener!=null) {
+            listener.received(connection, packet.object);
+        }
+    }
 }

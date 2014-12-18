@@ -90,7 +90,6 @@ public class Connection {
         this.objectLength=0;
         this.readBuffer.compact();
 
-        System.out.println(packet.object.toString()); //temp
         return packet;
     }
 

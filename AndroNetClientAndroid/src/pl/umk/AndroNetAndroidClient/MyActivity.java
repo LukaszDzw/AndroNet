@@ -24,7 +24,6 @@ public class MyActivity extends Activity {
         this.client.start();
         this.initialize();
         this.addListeners();
-
     }
 
     private void initialize()

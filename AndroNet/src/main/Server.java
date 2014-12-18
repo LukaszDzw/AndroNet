@@ -111,8 +111,8 @@ public class Server extends EndPoint {
 					if (key.isAcceptable()) {
 						this.accept(key, selector);
 					} else if (key.isReadable()) {
-						Object object=connection.read().object; // TODO
-						this.sendToAll("test", object); // temp
+						Packet packet = connection.read();
+						this.notifyReceived(packet, connection);
 					} else if (key.isWritable()) {
 						connection.write();
 					}
@@ -132,7 +132,7 @@ public class Server extends EndPoint {
 		serverSocketChannel.configureBlocking(false);
 
 		//połącz adres z portem
-		serverSocketChannel.bind(new InetSocketAddress("192.168.2.242", this.port));
+		serverSocketChannel.bind(new InetSocketAddress("localhost", this.port));
 
 		//rejestracja channelu do selectora
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);

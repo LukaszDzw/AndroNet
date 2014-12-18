@@ -67,7 +67,6 @@ public class Client extends EndPoint{
 		socketChannel.configureBlocking(false);
 		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
 		this.clientConnection=new ClientConnection(selectionKey);
-
 	}
 	
 	protected void listen(Selector selector) throws IOException
@@ -88,10 +87,7 @@ public class Client extends EndPoint{
 						this.clientConnection.write();
 					} else if (key.isReadable()) {
 						Packet packet = this.clientConnection.read();
-						IListener listener = this.listeners.get(packet.tag);
-						if(listener!=null) {
-							listener.received(clientConnection, packet.object);
-						}
+						this.notifyReceived(packet, clientConnection);
 					}
 				}
 				catch (IOException ex)

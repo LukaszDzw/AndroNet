@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Client client=new Client("192.168.2.242", 5555);
+        Client client=new Client("localhost", 5555);
 
         Frame frame=new Frame(client);
         client.start();
