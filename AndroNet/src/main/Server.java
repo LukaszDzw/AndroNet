@@ -64,15 +64,34 @@ public class Server extends EndPoint {
 			SelectionKey selKey = keys.next();
 			if(selKey.channel() instanceof ServerSocketChannel) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
 
-			Connection connection = (Connection) selKey.attachment();
-			try {
-				connection.send(tag, object);
-				selKey.interestOps(SelectionKey.OP_WRITE);
-			}
-			catch (UnsupportedEncodingException ex)
-			{
-				System.err.println(ex.toString());
-			}
+			this.send(selKey, tag, object);
+		}
+	}
+
+	public void sendToAllExcept(Connection connection, String tag, Object object)
+	{
+		Selector selector=this.serverSelectionKey.selector();
+		Iterator<SelectionKey> keys=selector.keys().iterator();
+
+		while(keys.hasNext())
+		{
+			SelectionKey selKey = keys.next();
+			if(selKey.channel() instanceof ServerSocketChannel || selKey.equals(connection.selectionKey)) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
+
+			this.send(selKey, tag, object);
+		}
+	}
+
+	private void send(SelectionKey selKey, String tag, Object object)
+	{
+		Connection keyConnection = (Connection) selKey.attachment();
+		try {
+			keyConnection.send(tag, object);
+			selKey.interestOps(SelectionKey.OP_WRITE);
+		}
+		catch (UnsupportedEncodingException ex)
+		{
+			System.err.println(ex.toString());
 		}
 	}
 
