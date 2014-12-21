@@ -18,7 +18,6 @@ public class Main {
             @Override
             public void received(Connection connection, Object object) {
                 System.out.println(object.toString());
-
             }
         });
     }

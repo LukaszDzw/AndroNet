@@ -28,7 +28,7 @@ public class Client extends EndPoint{
 
 	public void start()
 	{
-		new Thread(new Runnable()
+		Runnable listeningTask = new Runnable()
 		{
 			@Override
 			public void run() {
@@ -44,7 +44,9 @@ public class Client extends EndPoint{
 					System.err.print(ex);
 				}
 			}
-		}).start();
+		};
+
+		this.startListeningThread(listeningTask);
 	}
 
 	public void send(String tag, Object object)

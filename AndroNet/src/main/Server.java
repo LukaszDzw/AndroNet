@@ -21,15 +21,13 @@ public class Server extends EndPoint {
 	public Server(int port)
 	{
 		this.port = port;
-		this.listeners=new HashMap<>();
 	}
 	
 	public void start()
 	{
-		new Thread(new Runnable() {
+		Runnable listeningTask = new Runnable() {
 			@Override
 			public void run() {
-
 				//otwieram selector oraz socket przez metodę open
 				try(Selector selector =Selector.open();
 					ServerSocketChannel serverSocketChannel=ServerSocketChannel.open())
@@ -51,7 +49,9 @@ public class Server extends EndPoint {
 					System.err.println(ex);
 				}
 			}
-		}).start();
+		};
+
+		this.startListeningThread(listeningTask);
 	}
 
 	public void sendToAll(String tag, Object object)
@@ -132,7 +132,7 @@ public class Server extends EndPoint {
 		serverSocketChannel.configureBlocking(false);
 
 		//połącz adres z portem
-		serverSocketChannel.bind(new InetSocketAddress("localhost", this.port));
+		serverSocketChannel.bind(new InetSocketAddress("192.168.2.242", this.port));
 
 		//rejestracja channelu do selectora
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
