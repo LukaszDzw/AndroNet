@@ -132,7 +132,7 @@ public class Server extends EndPoint {
 		serverSocketChannel.configureBlocking(false);
 
 		//połącz adres z portem
-		serverSocketChannel.bind(new InetSocketAddress("192.168.2.242", this.port));
+		serverSocketChannel.bind(new InetSocketAddress(this.port));
 
 		//rejestracja channelu do selectora
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
