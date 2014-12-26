@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AndroNet:jar">
+    <output-path>$PROJECT_DIR$/build/classes/artifacts/AndroNet_jar</output-path>
+    <root id="archive" name="AndroNet.jar">
+      <element id="module-output" name="AndroNet" />
+    </root>
+  </artifact>
+</component>
