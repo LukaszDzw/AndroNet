@@ -2,6 +2,7 @@ package server;
 
 import interfaces.IListener;
 import main.Connection;
+import main.Dupa;
 import main.Server;
 
 public class Main {
@@ -16,5 +17,6 @@ public class Main {
 			}
 		});
 		server.start();
+		Dupa aa;
 	}
 }

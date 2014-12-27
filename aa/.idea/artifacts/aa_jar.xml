@@ -3,6 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/aa_jar</output-path>
     <root id="archive" name="aa.jar">
       <element id="module-output" name="aa" />
+      <element id="module-output" name="AndroNet" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../AndroNet/lib/kryo-3.0.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../AndroNet/lib/jsonbeans-0.7.jar" path-in-jar="/" />
     </root>
   </artifact>

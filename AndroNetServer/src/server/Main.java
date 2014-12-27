@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args)
 	{
-		final Server server=new Server(5555);
+		final main.Server server=new main.Server(5555);
 		server.addListener("drawPosition", new IListener() {
 			@Override
 			public void received(Connection connection, Object object) {

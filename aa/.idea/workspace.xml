@@ -7,20 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aab98d00-d94c-409f-8b08-8bf164cce9db" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AndroNet/AndroNet1.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/artifacts/AndroNet1_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aa.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/aa_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/libraries/lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AndroNet/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AndroNet/.idea/libraries/lib.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\libs\Andronet.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\AndroNet\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\AndroNet\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\AndroNet\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\AndroNet\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\Frame.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\Main.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\AbstractLayout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\DimensionInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\GridConstraints.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\GridLayoutManager.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\HorizontalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\LayoutState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\Spacer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\SupportCode$TextWithMnemonic.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\SupportCode.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\Util.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\out\production\AndroNetClient\com\intellij\uiDesigner\core\VerticalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetServer\bin\server\Main$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetServer\bin\server\Main.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\out\artifacts\AndroNet_jar\AndroNet.jar" afterPath="" />
       <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\src\META-INF\MANIFEST.MF" afterPath="" />
       <change type="DELETED" beforePath="C:\Projekty\AndroNet\WithoutGradle\.idea\.name" afterPath="" />
@@ -157,39 +176,24 @@
       <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\Frame.form" afterPath="$PROJECT_DIR$/../AndroNetClient/src/client/Frame.form" />
       <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\Frame.java" afterPath="$PROJECT_DIR$/../AndroNetClient/src/client/Frame.java" />
       <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\Main.java" afterPath="$PROJECT_DIR$/../AndroNetClient/src/client/Main.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.classpath" afterPath="$PROJECT_DIR$/AndroNet/.classpath" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.gitignore" afterPath="$PROJECT_DIR$/AndroNet/.gitignore" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\.name" afterPath="$PROJECT_DIR$/AndroNet/.idea/.name" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\artifacts\AndroNet_jar.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/artifacts/AndroNet_jar.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\gradle.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/gradle.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\libraries\src.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/libraries/src.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\misc.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/misc.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\modules.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/modules.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.idea\vcs.xml" afterPath="$PROJECT_DIR$/AndroNet/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\.project" afterPath="$PROJECT_DIR$/AndroNet/.project" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\AndroNet.iml" afterPath="$PROJECT_DIR$/AndroNet/AndroNet1.iml" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\lib\jsonbeans-0.7.jar" afterPath="$PROJECT_DIR$/AndroNet/lib/jsonbeans-0.7.jar" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\out\production\AndroNet\Client$1.class" afterPath="$PROJECT_DIR$/AndroNet/out/production/AndroNet/Client$1.class" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\out\production\AndroNet\Client.class" afterPath="$PROJECT_DIR$/AndroNet/out/production/AndroNet/Client.class" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\out\production\AndroNet\Server.class" afterPath="$PROJECT_DIR$/AndroNet/out/production/AndroNet/Server.class" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\out\production\AndroNet\TcpConnection.class" afterPath="$PROJECT_DIR$/AndroNet/out/production/AndroNet/TcpConnection.class" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\interfaces\IListener.java" afterPath="$PROJECT_DIR$/AndroNet/src/interfaces/IListener.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\Client.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/Client.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\ClientConnection.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/ClientConnection.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\Connection.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/Connection.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\EndPoint.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/EndPoint.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\Packet.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/Packet.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\Serialization.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/Serialization.java" />
-      <change type="MOVED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\Server.java" afterPath="$PROJECT_DIR$/AndroNet/src/main/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/AndroNet.iml" afterPath="$PROJECT_DIR$/../AndroNet/AndroNet.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/AndroNetAndroidClient.iml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/AndroNetAndroidClient.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetClient/AndroNetClient.iml" afterPath="$PROJECT_DIR$/../AndroNetClient/AndroNetClient.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" afterPath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" />
+      <change type="MODIFICATION" beforePath="C:\Projekty\AndroNet\AndroNetServer\AndroNetServer.iml" afterPath="C:\Projekty\AndroNet\AndroNetServer\AndroNetServer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/artifacts/AndroNet_jar.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/artifacts/AndroNet_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/.idea/artifacts/AndroNet_jar.xml" afterPath="$PROJECT_DIR$/../AndroNet/.idea/artifacts/AndroNet_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/src/main/Client.java" afterPath="$PROJECT_DIR$/../AndroNet/src/main/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/src/main/ClientConnection.java" afterPath="$PROJECT_DIR$/../AndroNet/src/main/ClientConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/src/main/java/pl/umk/andronetandroidclient/app/fragment/DrawerFragment.java" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/src/main/java/pl/umk/andronetandroidclient/app/fragment/DrawerFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/src/main/Serialization.java" afterPath="$PROJECT_DIR$/../AndroNet/src/main/Serialization.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/app.iml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/gradle.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/.idea/misc.xml" afterPath="$PROJECT_DIR$/../AndroNet/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../AndroNet/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNet/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AndroNet/.idea/workspace.xml" />
     </list>
     <ignored path="aa.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -228,11 +232,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36335877" vertical-offset="0" max-vertical-offset="655">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
               <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Serialization.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../AndroNet/src/main/Serialization.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="833">
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EndPoint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AndroNet/src/main/EndPoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -532,6 +556,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/../AndroNet/src/main/Serialization.java" />
       </list>
     </option>
   </component>
@@ -578,7 +603,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="AndroNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="aa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,10 +646,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="aa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroNet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -609,7 +662,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndroNet/lib/jsonbeans-0.7.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndroNet/lib/kryo-3.0.0.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.159612" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -776,6 +829,9 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="aab98d00-d94c-409f-8b08-8bf164cce9db" name="Default" comment="" />
@@ -786,7 +842,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -802,7 +858,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -851,8 +907,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36335877" vertical-offset="0" max-vertical-offset="655">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNet/src/main/EndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNet/src/main/Serialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="833">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
           <folding />
         </state>
       </provider>

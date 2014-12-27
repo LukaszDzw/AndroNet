@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
+import pl.umk.andronetandroidclient.app.Dupa;
 import pl.umk.andronetandroidclient.app.R;
 import pl.umk.andronetandroidclient.app.widgets.DrawingView;
 
@@ -53,8 +54,10 @@ public class DrawerFragment extends Fragment {
     private void initialize()
     {
         mClient.start();
-        setupDrawing();
+        //setupDrawing();
         setupNetworking();
+        mClient.send("drawPosition", new Dupa());
+        //mClient.send("lol", 15);
     }
 
     private void setupDrawing(){
@@ -72,8 +75,7 @@ public class DrawerFragment extends Fragment {
         mClient.addListener("drawPosition", new IListener() {
             @Override
             public void received(Connection connection, Object o) {
-                MotionEvent motionEvent = (MotionEvent) o;
-                //mDrawingView.onTouchEvent(motionEvent);
+                Dupa kk=(Dupa)o;
             }
         });
     }
