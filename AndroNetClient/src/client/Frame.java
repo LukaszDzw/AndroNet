@@ -1,3 +1,5 @@
+package client;
+
 import main.Client;
 
 import javax.swing.*;

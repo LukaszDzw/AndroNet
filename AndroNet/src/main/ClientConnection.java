@@ -9,19 +9,20 @@ import java.nio.channels.SocketChannel;
 
 
 public class ClientConnection extends Connection {
-
+	private static boolean isConnected;
 
 	public ClientConnection(SelectionKey selectionKey)
 	{
 		super(selectionKey);
 	}
-	
-	public void connect(String ip, int port)
+
+	public static void setConnected(boolean value)
 	{
-		SocketChannel socketChannel = (SocketChannel) this.selectionKey.channel();
-		//connect to remote host
-
-
+		isConnected=value;
 	}
-	
+
+	public static boolean isConnected()
+	{
+		return isConnected;
+	}
 }

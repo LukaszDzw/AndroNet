@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.StandardSocketOptions;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
@@ -19,6 +18,7 @@ public class Client extends EndPoint{
 	private ClientConnection clientConnection;
 	private final String ip;
 	private final int port;
+	private boolean isConnected;
 
 	public Client(String ip, int port)
 	{
@@ -45,8 +45,16 @@ public class Client extends EndPoint{
 				}
 			}
 		};
-
 		this.startListeningThread(listeningTask);
+
+		//block thread for connection
+		try {
+			while (!this.isConnected) Thread.sleep(50);
+		}
+		catch (InterruptedException ex)
+		{
+			System.err.print(ex.toString());
+		}
 	}
 
 	public void send(String tag, Object object)
@@ -69,6 +77,8 @@ public class Client extends EndPoint{
 		socketChannel.configureBlocking(false);
 		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
 		this.clientConnection=new ClientConnection(selectionKey);
+		//ClientConnection.setConnected(true);
+		this.isConnected=true;
 	}
 	
 	protected void listen(Selector selector) throws IOException

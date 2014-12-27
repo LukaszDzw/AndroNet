@@ -1,3 +1,5 @@
+package client;
+
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
@@ -20,6 +22,8 @@ public class Main {
                 System.out.println(object.toString());
             }
         });
+
+        //client.send("aaa", "ff");
     }
 
 }
