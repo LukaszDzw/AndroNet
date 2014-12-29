@@ -8,6 +8,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import main.Packet;
 import pl.umk.andronetandroidclient.network.DrawPoint;
 
 /**
@@ -25,6 +26,8 @@ public class DrawingView extends View {
     private Canvas mDrawCanvas;
     //canvas bitmap
     private Bitmap mCanvasBitmap;
+
+    private boolean isdown;
 
     public DrawingView(Context context) {
         super(context);
@@ -75,13 +78,19 @@ public class DrawingView extends View {
         switch (point.action) {
             case ACTION_DOWN:
                 mDrawPath.moveTo(touchX, touchY);
+                isdown=true;
                 break;
             case ACTION_MOVE:
+                if(!isdown) {
+                    mDrawPath.moveTo(touchX, touchY);
+                    isdown=true;
+                }
                 mDrawPath.lineTo(touchX, touchY);
                 break;
             case ACTION_UP:
                 mDrawCanvas.drawPath(mDrawPath, mDrawPaint);
                 mDrawPath.reset();
+                isdown=false;
                 break;
             default:
 

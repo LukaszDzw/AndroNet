@@ -37,7 +37,6 @@ public class Serialization {
 
         //Input input=new Input(bufferBytes);
         //return kryo.readObject(input, Object.class);
-
         return this.json.fromJson(Object.class, new String(bufferBytes));
 
     }

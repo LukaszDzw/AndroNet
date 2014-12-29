@@ -1,6 +1,7 @@
 package pl.umk.andronetandroidclient.fragment;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
+import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.network.Action;
 import pl.umk.andronetandroidclient.network.DrawPoint;
@@ -23,8 +25,8 @@ public class DrawerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mClient=new Client("192.168.2.242",5555);
+        AndroNetApplication app=(AndroNetApplication)getActivity().getApplication();
+        mClient=app.getClient();
     }
 
     @Override
@@ -43,7 +45,6 @@ public class DrawerFragment extends Fragment {
     @Override
     public void onStop()
     {
-        mClient.close();
         super.onStop();
     }
 
@@ -55,10 +56,7 @@ public class DrawerFragment extends Fragment {
 
     private void initialize()
     {
-        mClient.start();
-        //setupDrawing();
         setupNetworking();
-        //mClient.send("lol", 15);
         setupDrawing();
     }
 
@@ -88,8 +86,10 @@ public class DrawerFragment extends Fragment {
                 point.action=Action.ACTION_MOVE;
                 break;
             case MotionEvent.ACTION_UP:
-                point.action=Action.ACTION_DOWN;
+                point.action=Action.ACTION_UP;
                 break;
+            default:
+                point.action=Action.ACTION_UP;
         }
 
         return point;

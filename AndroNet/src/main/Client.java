@@ -1,8 +1,5 @@
 package main;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-import interfaces.IListener;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
@@ -11,7 +8,6 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
-import java.util.Map;
 
 
 public class Client extends EndPoint{
@@ -29,6 +25,8 @@ public class Client extends EndPoint{
 
 	public void start()
 	{
+		if(this.updateThread!=null) return; //jeżeli klient już nasłuchuje
+
 		Runnable listeningTask = new Runnable()
 		{
 			@Override
@@ -73,6 +71,13 @@ public class Client extends EndPoint{
 	public void close()
 	{
 		this.isConnected=false;
+		SocketChannel channel=(SocketChannel)this.clientConnection.selectionKey.channel();
+
+		/*
+		if(channel.isConnected())
+		{
+			channel.close();
+		}*/
 		super.close();
 	}
 
@@ -106,8 +111,9 @@ public class Client extends EndPoint{
 				}
 				catch (IOException ex)
 				{
-					this.clientConnection.close();
 					System.out.println("Connection closed by host");
+					this.clientConnection.close();
+					this.close();
 				}
             }  
         }
@@ -122,7 +128,6 @@ public class Client extends EndPoint{
 		socketChannel.configureBlocking(false);
 		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
 		this.clientConnection=new Connection(selectionKey);
-		//ClientConnection.setConnected(true);
 		this.isConnected=true;
 	}
 }

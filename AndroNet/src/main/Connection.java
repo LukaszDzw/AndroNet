@@ -25,6 +25,8 @@ public class Connection {
         this.selectionKey=selectionKey;
         this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
         this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+        this.readBuffer.clear();
+        this.writeBuffer.clear();
         this.serialization=new Serialization();
     }
 
@@ -108,6 +110,8 @@ public class Connection {
     public void close() throws IOException
     {
         SocketChannel channel = (SocketChannel) this.selectionKey.channel();
-        channel.close();
+        if(channel.isOpen()) {
+            channel.close();
+        }
     }
 }
