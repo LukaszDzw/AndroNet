@@ -7,136 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a0f876-ea53-4c22-a3e0-2c8cde657417" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AndroNetServer/.idea/libraries/java.xml" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.gradle\2.1\taskArtifacts\taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\artifacts\AndroNetGradle_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\libraries\Gradle__junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\libraries\Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\AndroNetGradle.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\interfaces\IListener.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Client$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Client.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\ClientConnection.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Connection.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\EndPoint$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\EndPoint.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Packet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Serialization.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Server$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\build\classes\main\main\Server.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\gradlew" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\settings.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\interfaces\IListener.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\Client.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\ClientConnection.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\Connection.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\EndPoint.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\Packet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\Serialization.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetGradle\src\main\Server.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.gradle\2.1\taskArtifacts\taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\artifacts\aa_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\libraries\Gradle__junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\libraries\Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\aa.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\gradlew" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\out\artifacts\aa_jar\aa.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\aa\settings.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.1\taskArtifacts\taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.gradle\2.2\taskArtifacts\taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\Gradle__junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\aa.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\appcompat_v7_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\play_services_6_5_87.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\support_annotations_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\libraries\support_v4_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\build\classes\main\server\Main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\build\classes\main\server\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\build\libs\untitled-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\build\tmp\jar\MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\gradlew" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\settings.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\src\server\Main.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\untitled\untitled.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" afterPath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\src\main\ClientConnection.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Connection.java" afterPath="$PROJECT_DIR$/src/main/Connection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/EndPoint.java" afterPath="$PROJECT_DIR$/src/main/EndPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Server.java" afterPath="$PROJECT_DIR$/src/main/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/app.iml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/misc.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/.idea/misc.xml" afterPath="$PROJECT_DIR$/../AndroNetServer/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AndroNetServer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" />
     </list>
     <ignored path="AndroNet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -178,29 +54,31 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="2006">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="104" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="2210">
+              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1595#1596#0" expanded="true" />
+                <element signature="e#1625#1626#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2550">
-              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+            <state vertical-scroll-proportion="2.4359756" vertical-offset="0" max-vertical-offset="2550">
+              <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EndPoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EndPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1143292" vertical-offset="0" max-vertical-offset="1003">
+            <state vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="1003">
               <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
               <folding />
             </state>
@@ -210,18 +88,8 @@
       <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1921">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
               <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientConnection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -352,9 +220,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/Serialization.java" />
         <option value="$PROJECT_DIR$/src/main/Connection.java" />
-        <option value="$PROJECT_DIR$/src/main/Client.java" />
         <option value="$PROJECT_DIR$/src/main/Server.java" />
         <option value="$PROJECT_DIR$/src/main/EndPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/ClientConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/Client.java" />
       </list>
     </option>
   </component>
@@ -629,12 +498,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -699,6 +568,8 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -707,14 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2516">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="340">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -735,6 +598,8 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,14 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="2516">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="340">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -771,6 +628,8 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -779,14 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="2567">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="340">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -807,6 +658,8 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,14 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="2567">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="340">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -843,6 +688,8 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -851,14 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1210" max-vertical-offset="2516">
           <caret line="101" column="15" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="340">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -880,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
@@ -900,34 +731,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1921">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
           <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="2006">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="104" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2550">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1143292" vertical-offset="0" max-vertical-offset="1003">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
           <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="2210">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4359756" vertical-offset="0" max-vertical-offset="2550">
+          <caret line="111" column="19" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="19" />
           <folding />
         </state>
       </provider>

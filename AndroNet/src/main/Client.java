@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class Client extends EndPoint{
 
-	private ClientConnection clientConnection;
+	private Connection clientConnection;
 	private final String ip;
 	private final int port;
 	private boolean isConnected;
@@ -69,17 +69,16 @@ public class Client extends EndPoint{
 		}
 	}
 
-	private void connect(Selector selector, SocketChannel socketChannel) throws IOException
+	@Override
+	public void close()
 	{
-		Socket socket=socketChannel.socket();
-		socket.setTcpNoDelay(true); // TODO przeczytać więcej
-		socket.connect(new InetSocketAddress(ip, port), 5000); // connecting in blocking mode
+		this.isConnected=false;
+		super.close();
+	}
 
-		socketChannel.configureBlocking(false);
-		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
-		this.clientConnection=new ClientConnection(selectionKey);
-		//ClientConnection.setConnected(true);
-		this.isConnected=true;
+	public boolean isConnected()
+	{
+		return this.isConnected;
 	}
 	
 	protected void listen(Selector selector) throws IOException
@@ -112,5 +111,18 @@ public class Client extends EndPoint{
 				}
             }  
         }
+	}
+
+	private void connect(Selector selector, SocketChannel socketChannel) throws IOException
+	{
+		Socket socket=socketChannel.socket();
+		socket.setTcpNoDelay(true); // TODO przeczytać więcej
+		socket.connect(new InetSocketAddress(ip, port), 5000); // connecting in blocking mode
+
+		socketChannel.configureBlocking(false);
+		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);
+		this.clientConnection=new Connection(selectionKey);
+		//ClientConnection.setConnected(true);
+		this.isConnected=true;
 	}
 }
