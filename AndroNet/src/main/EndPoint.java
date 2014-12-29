@@ -52,8 +52,9 @@ public abstract class EndPoint {
         this.updateThread.start();
     }
 
-    protected void notifyReceived(final Packet packet, final Connection connection)
+    protected void notifyReceived(Object object, final Connection connection)
     {
+        final Packet packet=(Packet)object;
         Runnable runnable = new Runnable() {
             @Override
             public void run() {

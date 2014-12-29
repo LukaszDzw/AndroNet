@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import interfaces.IListener;
 
 import java.io.IOException;
@@ -98,8 +99,10 @@ public class Client extends EndPoint{
 					if (key.isWritable()) {
 						this.clientConnection.write();
 					} else if (key.isReadable()) {
-						Packet packet = this.clientConnection.read();
-						this.notifyReceived(packet, clientConnection);
+						Object object = this.clientConnection.read();
+						if(object!=null) {
+							this.notifyReceived(object, clientConnection);
+						}
 					}
 				}
 				catch (IOException ex)

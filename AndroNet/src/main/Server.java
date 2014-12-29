@@ -130,8 +130,10 @@ public class Server extends EndPoint {
 					if (key.isAcceptable()) {
 						this.accept(key, selector);
 					} else if (key.isReadable()) {
-						Packet packet = connection.read();
-						this.notifyReceived(packet, connection);
+						Object object = connection.read();
+						if(object!=null) {
+							this.notifyReceived(object, connection);
+						}
 					} else if (key.isWritable()) {
 						connection.write();
 					}

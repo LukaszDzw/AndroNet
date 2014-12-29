@@ -45,7 +45,7 @@ public class Connection {
         selector.wakeup();
     }
 
-    public Packet read() throws IOException {
+    public Object read() throws IOException {
         int objectLengthLength=this.serialization.getObjectLengthLength();
         int bytesRead=0;
 
@@ -86,11 +86,10 @@ public class Connection {
         }
 
         Object object = this.serialization.getObjectFromBuffer(this.readBuffer, this.objectLength);
-        Packet packet = (Packet) object;
         this.objectLength=0;
         this.readBuffer.compact();
 
-        return packet;
+        return object;
     }
 
     public void write() throws IOException
