@@ -93,29 +93,29 @@ public class Client extends EndPoint{
             selector.select();
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
-            while (keys.hasNext()){
-                SelectionKey key = keys.next();
-                keys.remove();
+			synchronized (keys) {
+				while (keys.hasNext()) {
+					SelectionKey key = keys.next();
+					keys.remove();
 
-                if (!key.isValid()) continue;
+					if (!key.isValid()) continue;
 
-				try {
-					if (key.isWritable()) {
-						this.clientConnection.write();
-					} else if (key.isReadable()) {
-						Object object = this.clientConnection.read();
-						if(object!=null) {
-							this.notifyReceived(object, clientConnection);
+					try {
+						if (key.isWritable()) {
+							this.clientConnection.write();
+						} else if (key.isReadable()) {
+							Object object = this.clientConnection.read();
+							if (object != null) {
+								this.notifyReceived(object, clientConnection);
+							}
 						}
+					} catch (IOException ex) {
+						System.out.println("Connection closed by host");
+						this.clientConnection.close();
+						this.close();
 					}
 				}
-				catch (IOException ex)
-				{
-					System.out.println("Connection closed by host");
-					this.clientConnection.close();
-					this.close();
-				}
-            }  
+			}
         }
 	}
 

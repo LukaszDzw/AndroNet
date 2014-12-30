@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.support.v4.widget.DrawerLayout;
 import main.Client;
+import pl.umk.andronetandroidclient.fragment.ChatFragment;
 import pl.umk.andronetandroidclient.fragment.DrawerFragment;
 import pl.umk.andronetandroidclient.fragment.NavigationDrawerFragment;
 import pl.umk.andronetandroidclient.R;
@@ -55,7 +56,7 @@ public class MainActivity extends ActionBarActivity
                 fragment=new DrawerFragment();
                 break;
             default:
-                fragment=new DrawerFragment();
+                fragment=new ChatFragment();
                 break;
         }
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,6 +16,7 @@ import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.network.Action;
 import pl.umk.andronetandroidclient.network.DrawPoint;
+import pl.umk.andronetandroidclient.network.Tags;
 import pl.umk.andronetandroidclient.widgets.DrawingView;
 
 public class DrawerFragment extends Fragment {
@@ -65,7 +67,7 @@ public class DrawerFragment extends Fragment {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 DrawPoint point=getDrawPointPacket(motionEvent);
-                mClient.send("drawPosition", point);
+                mClient.send(Tags.drawPosition.name(), point);
                 return true;
             }
         });
@@ -97,15 +99,16 @@ public class DrawerFragment extends Fragment {
 
     private void setupNetworking()
     {
-        mClient.addListener("drawPosition", new IListener() {
+        mClient.removeListeners();
+        mClient.addListener(Tags.drawPosition.name(), new IListener() {
             @Override
             public void received(Connection connection, final Object o) {
+                final DrawPoint point=(DrawPoint)o;
 
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        final DrawPoint kk=(DrawPoint)o;
-                        mDrawingView.draw(kk);
+                            mDrawingView.draw(point);
                     }
                 });
             }

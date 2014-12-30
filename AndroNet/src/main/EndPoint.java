@@ -37,6 +37,11 @@ public abstract class EndPoint {
         this.listeners.remove(tag);
     }
 
+    public void removeListeners()
+    {
+        this.listeners.clear();
+    }
+
     public void close()
     {
         this.executorService.shutdownNow();
@@ -65,5 +70,6 @@ public abstract class EndPoint {
             }
         };
         this.executorService.execute(runnable);
+
     }
 }

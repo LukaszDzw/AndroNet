@@ -75,6 +75,7 @@ public class DrawingView extends View {
         float touchX = point.x;
         float touchY = point.y;
 
+
         switch (point.action) {
             case ACTION_DOWN:
                 mDrawPath.moveTo(touchX, touchY);

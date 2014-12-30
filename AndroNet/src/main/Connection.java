@@ -38,7 +38,9 @@ public class Connection {
 
         synchronized(writeBuffer) {
             String json = this.serialization.getJsonFromObject(packet);
+            int bufferStart = writeBuffer.position();
             this.writeBuffer.putInt(json.getBytes().length);
+            writeBuffer.position(bufferStart + serialization.getObjectLengthLength());
             this.writeBuffer.put(json.getBytes("UTF-8"));
             this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
         }

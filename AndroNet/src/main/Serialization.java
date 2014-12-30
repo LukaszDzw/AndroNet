@@ -5,13 +5,14 @@ import com.esotericsoftware.jsonbeans.Json;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
 /**
  * Created by Lukasz on 2014-11-24.
  */
 public class Serialization {
-    private final int ObjectLengthLength=4;
+    private final int objectLengthLength=4;
 
     private final Json json;
     //private final Kryo kryo;
@@ -41,13 +42,19 @@ public class Serialization {
 
     }
 
-    public Integer getObjectLength(ByteBuffer buffer)
+    public Integer getObjectLength(ByteBuffer byteBuffer)
     {
-        return buffer.getInt();
+        int startPos=byteBuffer.position();
+        int limit = byteBuffer.limit();
+        byteBuffer.limit(startPos+objectLengthLength);
+        int number = byteBuffer.getInt();
+        byteBuffer.limit(limit);
+
+        return number;
     }
 
     public Integer getObjectLengthLength()
     {
-        return this.ObjectLengthLength;
+        return this.objectLengthLength;
     }
 }

@@ -7,24 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a0f876-ea53-4c22-a3e0-2c8cde657417" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNet\build\main\ClientConnection.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragment/ChatFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/Tags.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_chat.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/copyright/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/view_chat_list_text.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/withoutGradle.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.apk" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.unaligned.apk" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.unaligned.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/AndroNetApplication.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/AndroNetApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client$1.class" afterPath="$PROJECT_DIR$/build/main/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client.class" afterPath="$PROJECT_DIR$/build/main/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Connection.class" afterPath="$PROJECT_DIR$/build/main/Connection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragment\DrawerFragment$2$1.class" afterPath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragment\DrawerFragment$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment$2.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/DrawerFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Serialization.class" afterPath="$PROJECT_DIR$/build/main/Serialization.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EndPoint$1.class" afterPath="$PROJECT_DIR$/build/main/EndPoint$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EndPoint.class" afterPath="$PROJECT_DIR$/build/main/EndPoint.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/activity/MainActivity.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/activity/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/NavigationDrawerFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragment/NavigationDrawerFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$id.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$integer.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/android/support/v7/appcompat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$layout.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$menu.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$string.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$style.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$styleable.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Connection.java" afterPath="$PROJECT_DIR$/src/main/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/DrawPoint.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/DrawPoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragment/DrawerFragment.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragment/DrawerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/widgets/DrawingView.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/widgets/DrawingView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/EndPoint.java" afterPath="$PROJECT_DIR$/src/main/EndPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/activity/MainActivity.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/activity/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Serialization.java" afterPath="$PROJECT_DIR$/src/main/Serialization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/strings.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" />
     </list>
@@ -56,10 +84,12 @@
       <file leaf-file-name="Serialization.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.0" vertical-offset="182" max-vertical-offset="901">
-              <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1122">
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1440#1441#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,35 +98,43 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.862069" vertical-offset="0" max-vertical-offset="2295">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2244">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1702#1703#0" expanded="true" />
-                <element signature="e#1732#1733#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2393293" vertical-offset="0" max-vertical-offset="2550">
-              <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="2550">
+              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-40.793102" vertical-offset="755" max-vertical-offset="2091">
-              <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+            <state vertical-scroll-proportion="-0.33383685" vertical-offset="1292" max-vertical-offset="2125">
+              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Packet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Packet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,9 +142,12 @@
       <file leaf-file-name="EndPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.206897" vertical-offset="233" max-vertical-offset="1003">
-              <caret line="39" column="23" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <element signature="e#952#953#0" expanded="true" />
+                <element signature="e#990#991#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -234,19 +275,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/EndPoint.java" />
         <option value="$PROJECT_DIR$/src/main/ClientConnection.java" />
-        <option value="$PROJECT_DIR$/src/main/Connection.java" />
         <option value="$PROJECT_DIR$/src/main/Server.java" />
         <option value="$PROJECT_DIR$/src/main/Serialization.java" />
+        <option value="$PROJECT_DIR$/src/main/EndPoint.java" />
         <option value="$PROJECT_DIR$/src/main/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/Connection.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -272,6 +313,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -324,10 +369,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,7 +382,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../withoutGradle" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -516,24 +557,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32286555" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1431624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -544,6 +584,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -573,10 +614,63 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="901">
+          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2363">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2601">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="2091">
+          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1054">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,8 +681,6 @@
           <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,7 +707,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1054">
           <caret line="50" column="25" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -625,6 +720,8 @@
           <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,8 +732,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,6 +750,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,8 +762,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,6 +780,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -695,8 +792,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -715,6 +810,8 @@
           <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -725,8 +822,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -745,6 +840,8 @@
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,8 +852,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -775,6 +870,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,51 +883,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.862069" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="2550">
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1122">
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1702#1703#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2244">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.793102" vertical-offset="755" max-vertical-offset="2091">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
+        <state vertical-scroll-proportion="-0.33383685" vertical-offset="1292" max-vertical-offset="2125">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="182" max-vertical-offset="901">
-          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.206897" vertical-offset="233" max-vertical-offset="1003">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2393293" vertical-offset="0" max-vertical-offset="2550">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
