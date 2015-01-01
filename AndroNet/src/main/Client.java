@@ -72,12 +72,6 @@ public class Client extends EndPoint{
 	{
 		this.isConnected=false;
 		SocketChannel channel=(SocketChannel)this.clientConnection.selectionKey.channel();
-
-		/*
-		if(channel.isConnected())
-		{
-			channel.close();
-		}*/
 		super.close();
 	}
 
@@ -93,7 +87,7 @@ public class Client extends EndPoint{
             selector.select();
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
-			synchronized (keys) {
+			//synchronized (keys) {
 				while (keys.hasNext()) {
 					SelectionKey key = keys.next();
 					keys.remove();
@@ -115,7 +109,7 @@ public class Client extends EndPoint{
 						this.close();
 					}
 				}
-			}
+			//}
         }
 	}
 

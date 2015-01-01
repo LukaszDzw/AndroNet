@@ -117,33 +117,32 @@ public class Server extends EndPoint {
 			selector.select();
 			Iterator keys=selector.selectedKeys().iterator();
 
-			while(keys.hasNext())
-			{
-				SelectionKey key = (SelectionKey) keys.next();
-				Connection connection = (Connection) key.attachment();
+			//synchronized (keys) {
+				while (keys.hasNext()) {
+					SelectionKey key = (SelectionKey) keys.next();
+					Connection connection = (Connection) key.attachment();
 
-				//usuwamy klucz, aby nie był obsłużony ponownie
-				keys.remove();
-				try {
-					if (!key.isValid()) continue;
+					//usuwamy klucz, aby nie był obsłużony ponownie
+					keys.remove();
+					try {
+						if (!key.isValid()) continue;
 
-					if (key.isAcceptable()) {
-						this.accept(key, selector);
-					} else if (key.isReadable()) {
-						Object object = connection.read();
-						if(object!=null) {
-							this.notifyReceived(object, connection);
+						if (key.isAcceptable()) {
+							this.accept(key, selector);
+						} else if (key.isReadable()) {
+							Object object = connection.read();
+							if (object != null) {
+								this.notifyReceived(object, connection);
+							}
+						} else if (key.isWritable()) {
+							connection.write();
 						}
-					} else if (key.isWritable()) {
-						connection.write();
+					} catch (IOException ex) {
+						connection.close();
+						System.out.println("Connection closed by host");
 					}
 				}
-				catch (IOException ex)
-				{
-					connection.close();
-					System.out.println("Connection closed by host");
-				}
-			}
+			//}
 		}
 	}
 

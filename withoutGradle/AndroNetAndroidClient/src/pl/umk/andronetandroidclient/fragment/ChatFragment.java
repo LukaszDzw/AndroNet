@@ -77,10 +77,11 @@ public class ChatFragment extends Fragment {
             @Override
             public void received(Connection connection, Object o) {
                 final String message = (String) o;
+                mMessages.add(message);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mMessages.add(message);
+                        mTextAdapter.notifyDataSetChanged();
                     }
                 });
             }}

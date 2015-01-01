@@ -18,7 +18,8 @@ public class Connection {
     private final ByteBuffer readBuffer, writeBuffer;
 
     private int objectLength;
-    private final static int BUFFERCAPACITY = 1024;
+    //private final static int BUFFERCAPACITY = 1024;
+    private final static int BUFFERCAPACITY = 4096;
 
     public Connection(SelectionKey selectionKey)
     {
@@ -36,15 +37,16 @@ public class Connection {
         packet.object=object;
         packet.tag=tag;
 
+        String json = this.serialization.getJsonFromObject(packet);
+
         synchronized(writeBuffer) {
-            String json = this.serialization.getJsonFromObject(packet);
             int bufferStart = writeBuffer.position();
             this.writeBuffer.putInt(json.getBytes().length);
             writeBuffer.position(bufferStart + serialization.getObjectLengthLength());
             this.writeBuffer.put(json.getBytes("UTF-8"));
-            this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
         }
 
+        this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
         Selector selector = this.selectionKey.selector();
         selector.wakeup();
     }
@@ -73,6 +75,8 @@ public class Connection {
             }
 
             this.objectLength=serialization.getObjectLength(readBuffer);
+            if(this.objectLength>readBuffer.capacity()) throw new IOException("Object is bigger than buffer capacity. Closing connection");
+
             System.out.println("dlugosc " + this.objectLength);
         }
 
@@ -102,7 +106,9 @@ public class Connection {
 
         synchronized (this.writeBuffer) {
             this.writeBuffer.flip();
-            socketChannel.write(writeBuffer);
+            while(writeBuffer.hasRemaining()) {
+                socketChannel.write(writeBuffer);
+            }
             writeBuffer.compact();
         }
 
