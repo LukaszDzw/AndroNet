@@ -6,10 +6,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
-import main.Packet;
 import pl.umk.andronetandroidclient.network.DrawPoint;
+
+import java.util.Iterator;
 
 /**
  * Created by Lukasz on 2014-12-26.
@@ -24,6 +24,7 @@ public class DrawingView extends View {
     private int mPaintColor = 0xFF660000;
     //canvas
     private Canvas mDrawCanvas;
+
     //canvas bitmap
     private Bitmap mCanvasBitmap;
 
@@ -44,37 +45,10 @@ public class DrawingView extends View {
         setupDrawing();
     }
 
-
-    /*
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        float touchX = event.getX();
-        float touchY = event.getY();
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                mDrawPath.moveTo(touchX, touchY);
-                break;
-            case MotionEvent.ACTION_MOVE:
-                mDrawPath.lineTo(touchX, touchY);
-                break;
-            case MotionEvent.ACTION_UP:
-                mDrawCanvas.drawPath(mDrawPath, mDrawPaint);
-                mDrawPath.reset();
-                break;
-            default:
-                return false;
-        }
-
-        invalidate();
-        return true;
-    }*/
-
     public void draw(DrawPoint point)
     {
         float touchX = point.x;
         float touchY = point.y;
-
 
         switch (point.action) {
             case ACTION_DOWN:
@@ -94,14 +68,12 @@ public class DrawingView extends View {
                 isdown=false;
                 break;
             default:
-
         }
         invalidate();
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh)
-    {
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mCanvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         mDrawCanvas = new Canvas(mCanvasBitmap);

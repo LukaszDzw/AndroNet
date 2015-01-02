@@ -3,6 +3,8 @@ package pl.umk.andronetandroidclient;
 import android.app.Application;
 import main.Client;
 
+import java.util.UUID;
+
 /**
  * Created by Lukasz on 2014-12-26.
  */

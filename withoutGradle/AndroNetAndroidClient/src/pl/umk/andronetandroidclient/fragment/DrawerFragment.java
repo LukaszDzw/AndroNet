@@ -1,44 +1,34 @@
 package pl.umk.andronetandroidclient.fragment;
 
-import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.provider.Settings;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
-import pl.umk.andronetandroidclient.network.Action;
+import pl.umk.andronetandroidclient.network.enums.Action;
 import pl.umk.andronetandroidclient.network.DrawPoint;
-import pl.umk.andronetandroidclient.network.Tags;
+import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.widgets.DrawingView;
 
-public class DrawerFragment extends Fragment {
+public class DrawerFragment extends BaseFragment {
 
     private DrawingView mDrawingView;
-    private Client mClient;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AndroNetApplication app=(AndroNetApplication)getActivity().getApplication();
-        mClient=app.getClient();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View v = inflater.inflate(R.layout.fragment_drawer, container, false);
-
         mDrawingView=(DrawingView)v.findViewById(R.id.drawer_field);
+
         initialize();
 
         return v;
@@ -78,6 +68,7 @@ public class DrawerFragment extends Fragment {
         DrawPoint point=new DrawPoint();
         point.x=motionEvent.getX();
         point.y=motionEvent.getY();
+        point.id=1;
 
         switch (motionEvent.getAction())
         {
@@ -95,6 +86,8 @@ public class DrawerFragment extends Fragment {
         }
 
         return point;
+
+
     }
 
     private void setupNetworking()
@@ -108,7 +101,7 @@ public class DrawerFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                            mDrawingView.draw(point);
+                        mDrawingView.draw(point);
                     }
                 });
             }

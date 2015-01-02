@@ -1,5 +1,6 @@
 package main;
 
+import interfaces.IDisconnected;
 import interfaces.IListener;
 
 import java.io.IOException;
@@ -16,11 +17,13 @@ import java.util.Map;
 
 public class Server extends EndPoint {
 	private final int port;
+	private int idNumber;
 	private SelectionKey serverSelectionKey;
 
 	public Server(int port)
 	{
 		this.port = port;
+		this.idNumber = 0;
 	}
 	
 	public void start()
@@ -76,7 +79,7 @@ public class Server extends EndPoint {
 		while(keys.hasNext())
 		{
 			SelectionKey selKey = keys.next();
-			if(selKey.channel() instanceof ServerSocketChannel || selKey.equals(connection.selectionKey)) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
+			if(selKey.channel() instanceof ServerSocketChannel || selKey.equals(connection.getSelectionKey())) continue; //omijamy serverSocketChannel, który także jest dodany do selektora
 
 			this.send(selKey, tag, object);
 		}
@@ -105,7 +108,7 @@ public class Server extends EndPoint {
 		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
 
 		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-		Connection connection=new Connection(selectionKey);
+		Connection connection=new Connection(selectionKey, idNumber++);
 		selectionKey.attach(connection);
 	}
 
@@ -117,7 +120,7 @@ public class Server extends EndPoint {
 			selector.select();
 			Iterator keys=selector.selectedKeys().iterator();
 
-			//synchronized (keys) {
+			synchronized (keys) {
 				while (keys.hasNext()) {
 					SelectionKey key = (SelectionKey) keys.next();
 					Connection connection = (Connection) key.attachment();
@@ -138,11 +141,11 @@ public class Server extends EndPoint {
 							connection.write();
 						}
 					} catch (IOException ex) {
-						connection.close();
+						this.closeConnection(connection);
 						System.out.println("Connection closed by host");
 					}
 				}
-			//}
+			}
 		}
 	}
 

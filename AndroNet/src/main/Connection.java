@@ -1,5 +1,7 @@
 package main;
 
+import interfaces.IDisconnected;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.SocketException;
@@ -12,14 +14,18 @@ import java.nio.channels.SocketChannel;
  * Created by Lukasz on 2014-12-08.
  */
 public class Connection {
-
-    protected SelectionKey selectionKey;
+    private SelectionKey selectionKey;
     private Serialization serialization;
     private final ByteBuffer readBuffer, writeBuffer;
 
-    private int objectLength;
-    //private final static int BUFFERCAPACITY = 1024;
+    private int objectLength, id;
     private final static int BUFFERCAPACITY = 4096;
+
+    public Connection(SelectionKey selectionKey, int id)
+    {
+        this(selectionKey);
+        this.id=id;
+    }
 
     public Connection(SelectionKey selectionKey)
     {
@@ -29,6 +35,14 @@ public class Connection {
         this.readBuffer.clear();
         this.writeBuffer.clear();
         this.serialization=new Serialization();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public SelectionKey getSelectionKey() {
+        return selectionKey;
     }
 
     public void send(String tag, Object object) throws UnsupportedEncodingException

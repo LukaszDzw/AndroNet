@@ -1,5 +1,6 @@
 package main;
 
+import interfaces.IDisconnected;
 import interfaces.IListener;
 
 import java.io.IOException;
@@ -15,12 +16,24 @@ import java.util.concurrent.Executors;
 public abstract class EndPoint {
     protected final Map<String, IListener> listeners;
     protected Thread updateThread;
-    private ExecutorService executorService;
+    protected ExecutorService executorService;
+
+    private IDisconnected disconnectedAction;
 
     public EndPoint()
     {
         this.listeners=new HashMap<>();
         this.executorService = Executors.newSingleThreadExecutor();
+    }
+
+    public IDisconnected getDisconnectedAction()
+    {
+        return this.disconnectedAction;
+    }
+
+    public void setDisconnectedAction(IDisconnected disconnectedAction)
+    {
+        this.disconnectedAction=disconnectedAction;
     }
 
     public abstract void start();
@@ -71,5 +84,22 @@ public abstract class EndPoint {
         };
         this.executorService.execute(runnable);
 
+    }
+
+    protected void closeConnection(final Connection connection) throws IOException
+    {
+        final IDisconnected disconnectedAction = this.getDisconnectedAction();
+        if(disconnectedAction!=null)
+        {
+            Runnable task=new Runnable() {
+                @Override
+                public void run() {
+                    disconnectedAction.disconnected(connection);
+                }
+            };
+
+            this.executorService.execute(task);
+            connection.close();
+        }
     }
 }

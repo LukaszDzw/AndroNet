@@ -1,4 +1,4 @@
-package pl.umk.andronetandroidclient.network;
+package pl.umk.andronetandroidclient.network.enums;
 
 /**
  * Created by Lukasz on 2014-12-29.

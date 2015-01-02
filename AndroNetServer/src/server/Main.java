@@ -1,9 +1,10 @@
 package server;
 
+import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Connection;
 import main.Server;
-import pl.umk.andronetandroidclient.network.Tags;
+import pl.umk.andronetandroidclient.network.enums.Tags;
 
 public class Main {
 	private static Server server;
@@ -28,6 +29,13 @@ public class Main {
 			@Override
 			public void received(Connection connection, Object o) {
 				server.sendToAll(Tags.chatMessage.name(), o);
+			}
+		});
+
+		server.setDisconnectedAction(new IDisconnected() {
+			@Override
+			public void disconnected(Connection connection) {
+				System.out.println("bye connection " + connection.getId());
 			}
 		});
 	}

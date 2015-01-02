@@ -71,7 +71,7 @@ public class Client extends EndPoint{
 	public void close()
 	{
 		this.isConnected=false;
-		SocketChannel channel=(SocketChannel)this.clientConnection.selectionKey.channel();
+		SocketChannel channel=(SocketChannel)this.clientConnection.getSelectionKey().channel();
 		super.close();
 	}
 
@@ -87,7 +87,7 @@ public class Client extends EndPoint{
             selector.select();
             Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
-			//synchronized (keys) {
+			synchronized (keys) {
 				while (keys.hasNext()) {
 					SelectionKey key = keys.next();
 					keys.remove();
@@ -105,12 +105,18 @@ public class Client extends EndPoint{
 						}
 					} catch (IOException ex) {
 						System.out.println("Connection closed by host");
-						this.clientConnection.close();
-						this.close();
+						this.closeConnection(clientConnection);
 					}
 				}
-			//}
+			}
         }
+	}
+
+	@Override
+	protected void closeConnection(final Connection connection) throws IOException
+	{
+		super.closeConnection(connection);
+		this.close();
 	}
 
 	private void connect(Selector selector, SocketChannel socketChannel) throws IOException

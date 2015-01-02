@@ -3,28 +3,24 @@ package pl.umk.andronetandroidclient.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
-import pl.umk.andronetandroidclient.network.Action;
-import pl.umk.andronetandroidclient.network.DrawPoint;
-import pl.umk.andronetandroidclient.network.Tags;
-import pl.umk.andronetandroidclient.widgets.DrawingView;
+import pl.umk.andronetandroidclient.network.enums.Tags;
 
 import java.util.ArrayList;
 
-public class ChatFragment extends Fragment {
-    
-    private Client mClient;
+public class ChatFragment extends BaseFragment {
+
     private ListView mChatListView;
     private Button mChatButton;
     private EditText mChatText;
@@ -35,15 +31,10 @@ public class ChatFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AndroNetApplication app=(AndroNetApplication)getActivity().getApplication();
-        mClient=app.getClient();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chat, container, false);
         mChatListView=(ListView)v.findViewById(R.id.chat_list);
         mChatButton=(Button)v.findViewById(R.id.chat_button);
@@ -53,8 +44,8 @@ public class ChatFragment extends Fragment {
         mTextAdapter=new ArrayAdapter<String>(this.getActivity(), R.layout.view_chat_list_text, mMessages);
         mChatListView.setAdapter(mTextAdapter);
 
-        //initialize();
-        setupNetworking();
+        setup();
+
         return v;
     }
 
@@ -70,7 +61,7 @@ public class ChatFragment extends Fragment {
         super.onPause();
     }
 
-    private void setupNetworking()
+    private void setup()
     {
         mClient.removeListeners();
         mClient.addListener(Tags.chatMessage.name(), new IListener() {
@@ -98,11 +89,12 @@ public class ChatFragment extends Fragment {
                 });
             }
         });
+
+        mClient.setDisconnectedAction(new IDisconnected() {
+            @Override
+            public void disconnected(Connection connection) {
+                System.out.println("koniec połączenia");
+            }
+        });
     }
-
-    private void initialize()
-    {
-
-    }
-
 }
