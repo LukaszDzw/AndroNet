@@ -5,32 +5,28 @@ import interfaces.IListener;
 import main.Connection;
 import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
+import server.interfaces.IModule;
+import server.modules.ChatModule;
+import server.modules.DrawModule;
 
 public class Main {
 	private static Server server;
 
+	private static ChatModule chatModule;
+	private static DrawModule drawModule;
+
 	public static void main(String[] args)
 	{
 		server=new main.Server(5555);
+		chatModule=new ChatModule();
+		drawModule=new DrawModule();
 		setupNetworking();
 		server.start();
 	}
 
 	private static void setupNetworking()
 	{
-		server.addListener("drawPosition", new IListener() {
-			@Override
-			public void received(Connection connection, Object object) {
-				server.sendToAll("drawPosition", object);
-			}
-		});
-
-		server.addListener(Tags.chatMessage.name(), new IListener() {
-			@Override
-			public void received(Connection connection, Object o) {
-				server.sendToAll(Tags.chatMessage.name(), o);
-			}
-		});
+		setupModule(chatModule, server);
 
 		server.setDisconnectedAction(new IDisconnected() {
 			@Override
@@ -38,5 +34,10 @@ public class Main {
 				System.out.println("bye connection " + connection.getId());
 			}
 		});
+	}
+
+	private static void setupModule(IModule module, Server server)
+	{
+		module.setup(server);
 	}
 }

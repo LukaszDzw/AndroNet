@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/ChatMessageLayout">
+        <ImageView style="@style/WrappedView"
+                android:src="@drawable/chat_incoming"/>
+        <LinearLayout
+                style="@style/ChatMessageLayoutHorizontal">
+                <TextView
+                          android:id="@+id/chat_message"
+                          style="@style/ChatMessageTextView"
+                          android:background="@color/light_blue"/>
+        </LinearLayout>
+        <TextView
+                android:id="@+id/chat_message_time"
+                style="@style/ChatMessageTime"/>
+</LinearLayout>

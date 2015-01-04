@@ -5,4 +5,55 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="StretchedView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="StretchedHorizontallyView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="StretchedVerticallyView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="WrappedView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- ChatMessage -->
+    <style name="ChatMessageTextView">
+        <item name="android:paddingBottom">@dimen/chat_message_paddingTopBottom</item>
+        <item name="android:paddingTop">@dimen/chat_message_paddingTopBottom</item>
+        <item name="android:paddingLeft">@dimen/chat_message_paddingLeftRight</item>
+        <item name="android:paddingRight">@dimen/chat_message_paddingLeftRight</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">7</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+    <style name="ChatMessageLayout" parent="StretchedHorizontallyView">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">@dimen/chat_message_layout_paddingLeftRight</item>
+        <item name="android:paddingRight">@dimen/chat_message_layout_paddingLeftRight</item>
+    </style>
+    <style name="ChatMessageLayoutHorizontal" parent="StretchedHorizontallyView">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">10</item>
+    </style>
+    <style name="ChatMessageTime" parent="WrappedView">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="BlueButton" parent="WrappedView">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:background">@color/blue</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:paddingLeft">@dimen/chat_name_button_paddingLeftRight</item>
+        <item name="android:paddingRight">@dimen/chat_name_button_paddingLeftRight</item>
+    </style>
+
 </resources>

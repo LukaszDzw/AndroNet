@@ -53,6 +53,7 @@ public abstract class EndPoint {
     public void removeListeners()
     {
         this.listeners.clear();
+        this.disconnectedAction=null;
     }
 
     public void close()

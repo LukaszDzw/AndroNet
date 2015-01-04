@@ -1,4 +1,12 @@
 <resources>
+
+    <dimen name="text_30">30sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="text_12">12sp</dimen>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -6,4 +14,15 @@
     <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
          https://developer.android.com/design/patterns/navigation-drawer.html -->
     <dimen name="navigation_drawer_width">240dp</dimen>
+
+
+    <!-- ChatNameFragment-->
+    <dimen name="chat_name_button_marginTop">15dp</dimen>
+    <dimen name="chat_name_button_paddingLeftRight">5dp</dimen>
+
+    <!-- ChatFragment -->
+    <dimen name="chat_message_paddingTopBottom">10dp</dimen>
+    <dimen name="chat_message_layout_paddingLeftRight">10dp</dimen>
+    <dimen name="chat_message_paddingLeftRight">15dp</dimen>
+
 </resources>

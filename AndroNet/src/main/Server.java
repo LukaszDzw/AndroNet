@@ -85,6 +85,17 @@ public class Server extends EndPoint {
 		}
 	}
 
+	public void sendTo(Connection connection, String tag, Object object)
+	{
+		try {
+			connection.send(tag, object);
+		}
+		catch (UnsupportedEncodingException ex)
+		{
+			System.err.print(ex.toString());
+		}
+	}
+
 	private void send(SelectionKey selKey, String tag, Object object)
 	{
 		Connection keyConnection = (Connection) selKey.attachment();

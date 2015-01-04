@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/ChatMessageLayout">
+    <LinearLayout
+            style="@style/ChatMessageLayoutHorizontal"
+            android:gravity="right">
+        <TextView
+                android:id="@+id/chat_message"
+                style="@style/ChatMessageTextView"
+                android:background="@color/light_gray"/>
+    </LinearLayout>
+    <LinearLayout
+            style="@style/StretchedHorizontallyView"
+            android:weightSum="10"
+            android:gravity="right">
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7">
+                <TextView
+                        android:id="@+id/chat_message_time"
+                        style="@style/ChatMessageTime"/>
+                <View android:layout_width="0dp"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"/>
+                <ImageView style="@style/WrappedView"
+                           android:src="@drawable/chat_outgoing"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

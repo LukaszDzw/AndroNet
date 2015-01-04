@@ -7,9 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
-import pl.umk.andronetandroidclient.network.DrawPoint;
-
-import java.util.Iterator;
+import pl.umk.andronetandroidclient.network.packets.DrawPoint;
 
 /**
  * Created by Lukasz on 2014-12-26.

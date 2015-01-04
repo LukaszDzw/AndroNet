@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/chat_name_layout"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="center">
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="@string/type_name"/>
-    <LinearLayout android:layout_width="wrap_content"
+              android:text="@string/type_name"
+              android:textSize="@dimen/text_30"/>
+    <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal"
-                  android:weightSum="3">
-            <EditText android:layout_width="0dp"
+                  android:weightSum="3"
+                  android:gravity="center_horizontal">
+            <EditText android:id="@+id/chat_name"
+                      android:layout_width="0dp"
                       android:layout_height="wrap_content"
-                      android:layout_weight="1"
-                      android:singleLine="true"/>
+                      android:layout_weight="1.5"
+                      android:singleLine="true"
+                      android:textSize="@dimen/text_20"
+                      android:textColor="@color/blue"
+                      android:textCursorDrawable="@null"/>
     </LinearLayout>
     <Button android:id="@+id/chat_name_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/apply"/>
+            style="@style/BlueButton"
+            android:text="@string/apply"
+            android:layout_marginTop="@dimen/chat_name_button_marginTop"/>
 </LinearLayout>

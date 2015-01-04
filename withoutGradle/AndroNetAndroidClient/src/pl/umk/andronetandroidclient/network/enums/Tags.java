@@ -5,5 +5,8 @@ package pl.umk.andronetandroidclient.network.enums;
  */
 public enum Tags {
     drawPosition,
-    chatMessage
+    chatMessage,
+    registerChat,
+    getChatUsers,
+    disconnected
 }
