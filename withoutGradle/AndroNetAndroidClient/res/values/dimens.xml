@@ -30,4 +30,7 @@
     <!-- Drawing fragment -->
     <dimen name="drawing_palete_widthHeight">50dp</dimen>
 
+    <!-- ColorFragment -->
+    <dimen name="color_layout_margin">10dp</dimen>
+
 </resources>

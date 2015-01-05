@@ -5,6 +5,7 @@
     <color name="light_gray">#e6e6e6</color>
     <color name="gray">#9ea1a1</color>
     <color name="dark_gray">#5c5d5d</color>
+    <color name="text_gray">#707070</color>
     <color name="cyan">#3a847d</color>
     <color name="red">#ff0000</color>
     <color name="green">#00ff00</color>

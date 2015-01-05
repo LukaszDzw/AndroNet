@@ -3,6 +3,7 @@ package server.modules;
 import interfaces.IListener;
 import main.Connection;
 import main.Server;
+import pl.umk.andronetandroidclient.network.enums.Color;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.network.packets.ChangedColor;
 import pl.umk.andronetandroidclient.network.packets.ChatUser;
@@ -19,7 +20,7 @@ import java.util.Map;
  */
 public class DrawModule implements IModule {
 
-    HashMap<Integer, String> users;
+    HashMap<Integer, Color> users;
 
     public DrawModule()
     {
@@ -35,7 +36,6 @@ public class DrawModule implements IModule {
             public void received(Connection connection, Object o) {
                 DrawPoint point=(DrawPoint)o;
                 point.id=connection.getId();
-                //server.sendToAll(Tags.drawPosition.name(), point);
                 server.sendToAllExcept(connection, Tags.drawPosition.name(), point);
             }
         });
@@ -53,25 +53,29 @@ public class DrawModule implements IModule {
         server.addListener(Tags.drawChangeColor.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {
-                String color=(String)o;
+                Color color=(Color)o;
                 users.put(connection.getId(), color);
                 ChangedColor changedColor=new ChangedColor();
                 changedColor.id=connection.getId();
                 changedColor.color=color;
 
-                server.sendToAll(Tags.drawChangeColor.name(), changedColor);
+                server.sendToAllExcept(connection, Tags.drawChangeColor.name(), changedColor);
             }
         });
 
+        //getUsers
         server.addListener(Tags.getDrawerUser.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {
-                for(Map.Entry<Integer, String> element:users.entrySet())
+                for(Map.Entry<Integer, Color> element:users.entrySet())
                 {
-                    DrawUser drawUser = new DrawUser();
-                    drawUser.id=element.getKey();
-                    drawUser.color=element.getValue();
-                    server.sendTo(connection, Tags.getChatUser.name(), drawUser);
+                    ChangedColor drawUser = new ChangedColor();
+                    int id=element.getKey();
+                    if(id!=connection.getId()) {
+                        drawUser.id = id;
+                        drawUser.color = element.getValue();
+                        server.sendTo(connection, Tags.getChatUser.name(), drawUser);
+                    }
                 }
             }
         });

@@ -63,4 +63,16 @@
         <item name="android:src">@drawable/paint</item>
     </style>
 
+    <!-- Colors Fragment -->
+    <style name="SeekBar">
+        <item name="android:layout_width">0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="ColorsTextView" parent="WrappedView">
+        <item name="android:textSize">@dimen/text_24</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+
 </resources>

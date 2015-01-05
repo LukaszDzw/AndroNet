@@ -4,10 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.util.AttributeSet;
 import android.util.SparseArray;
-import android.view.MotionEvent;
 import android.view.View;
 import pl.umk.andronetandroidclient.network.enums.Color;
 import pl.umk.andronetandroidclient.network.packets.DrawPoint;
@@ -17,8 +15,6 @@ import pl.umk.andronetandroidclient.utils.Drawer;
  * Created by Lukasz on 2014-12-26.
  */
 public class DrawingView extends View {
-
-
     private SparseArray<Drawer> mDrawers;
     private Drawer mMyDrawer;
 
@@ -81,6 +77,16 @@ public class DrawingView extends View {
         mDrawers.remove(id);
     }
 
+    public void setColor(int id, Color color)
+    {
+        Drawer drawer = mDrawers.get(id);
+        if(drawer==null)
+        {
+            drawer=addDrawer(id);
+        }
+        drawer.setColor(color);
+    }
+
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
@@ -98,13 +104,13 @@ public class DrawingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawBitmap(mCanvasBitmap, 0, 0, mCanvasPaint);
-        mMyDrawer.drawPath();
         for(int i=0; i<mDrawers.size(); i++)
         {
             int key = mDrawers.keyAt(i);
             Drawer drawer = mDrawers.get(key);
             drawer.drawPath();
         }
+        mMyDrawer.drawPath();
     }
 
     private void setupDrawing()

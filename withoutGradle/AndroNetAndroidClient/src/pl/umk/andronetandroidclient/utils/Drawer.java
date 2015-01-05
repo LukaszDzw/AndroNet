@@ -13,14 +13,10 @@ import pl.umk.andronetandroidclient.network.packets.DrawPoint;
 public class Drawer {
     private Path mDrawPath;
     private Paint mDrawPaint;
-
     private Canvas mDrawCanvas;
     private Canvas mCanvas;
 
-    private Paint mCanvasPaint;//TODO temp
-
     private int mPaintColor = Color.RED.getColorValue();
-
     private boolean mIsdown;
 
     public Drawer(Bitmap canvasBitmap)
@@ -37,7 +33,6 @@ public class Drawer {
 
         mDrawCanvas = new Canvas(canvasBitmap);
         mCanvas = new Canvas(canvasBitmap);
-        mCanvasPaint = new Paint(Paint.DITHER_FLAG);
     }
 
     public void draw(DrawPoint point)

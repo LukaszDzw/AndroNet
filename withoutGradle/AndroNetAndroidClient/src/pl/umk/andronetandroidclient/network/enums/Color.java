@@ -11,12 +11,12 @@ public enum Color{
     public int getColorValue() {
         switch (this) {
             case GREEN:
-                return 0x00ff0000;
+                return 0xff00ff00;
             case BLUE:
-                return 0x0000ff00;
+                return 0xff0000ff;
             case RED:
             default:
-                return 0xff000000;
+                return 0xffff0000;
         }
     }
 }

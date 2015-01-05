@@ -7,7 +7,6 @@ import android.widget.ImageButton;
 import interfaces.IListener;
 import main.Connection;
 import pl.umk.andronetandroidclient.R;
-import pl.umk.andronetandroidclient.network.enums.Action;
 import pl.umk.andronetandroidclient.network.enums.Color;
 import pl.umk.andronetandroidclient.network.packets.ChangedColor;
 import pl.umk.andronetandroidclient.network.packets.DrawPoint;
@@ -15,17 +14,18 @@ import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.utils.MotionEventConvert;
 import pl.umk.andronetandroidclient.widgets.DrawingView;
 
+import java.util.ArrayList;
+
 public class DrawerFragment extends BaseFragment {
 
     private DrawingView mDrawingView;
     private ImageButton mRedColorButton;
     private ImageButton mGreenColorButton;
     private ImageButton mBlueColorButton;
-    private SparseArray<String> mUsers;
+    private SparseArray<Color> mUsers;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         mUsers=new SparseArray<>();
     }
@@ -33,7 +33,6 @@ public class DrawerFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_drawer, container, false);
         mDrawingView=(DrawingView)v.findViewById(R.id.drawer_field);
         mRedColorButton =(ImageButton)v.findViewById(R.id.draw_red);
@@ -81,6 +80,8 @@ public class DrawerFragment extends BaseFragment {
     private void setupNetworking()
     {
         mClient.removeListeners();
+
+        //points
         mClient.addListener(Tags.drawPosition.name(), new IListener() {
             @Override
             public void received(Connection connection, final Object o) {
@@ -90,6 +91,7 @@ public class DrawerFragment extends BaseFragment {
             }
         });
 
+        //disconnected
         mClient.addListener(Tags.disconnected.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {
@@ -98,13 +100,16 @@ public class DrawerFragment extends BaseFragment {
             }
         });
 
+        //changeColor
         mClient.addListener(Tags.drawChangeColor.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {
                 ChangedColor changedColor=(ChangedColor) o;
-                mUsers.put(changedColor.id,changedColor.color);
+                mDrawingView.setColor(changedColor.id, changedColor.color);
             }
         });
+
+        mClient.send(Tags.getDrawerUser.name(), new Object());
     }
 
     private void setColorButtonListener(ImageButton button, final Color color)

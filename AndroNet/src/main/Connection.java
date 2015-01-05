@@ -61,7 +61,9 @@ public class Connection {
             this.writeBuffer.put(json.getBytes("UTF-8"));
         }
 
-        this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        synchronized (selectionKey) {
+            this.selectionKey.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        }
         Selector selector = this.selectionKey.selector();
         selector.wakeup();
     }
