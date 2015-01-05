@@ -7,39 +7,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a0f876-ea53-4c22-a3e0-2c8cde657417" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/drawable/paint.xml" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChatMessage.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChatUser.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\Main$1.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/packets/ChangedColor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/packets/DrawUser.java" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$2$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\ChatUser.class" afterPath="" />
+      <change type="MOVED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\ChatUser.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/packets/ChatUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.apk" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.unaligned.apk" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/AndroNetAndroidClient.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$2.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$3$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$3$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$3.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$4$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$4$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$4.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$5$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$5.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/adapters/ChatMessageAdapter.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/adapters/ChatMessageAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$2.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$3.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$4.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$5.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/ChatModule.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatNameFragment$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatNameFragment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatNameFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/ChatNameFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client$1.class" afterPath="$PROJECT_DIR$/build/main/Client$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client.class" afterPath="$PROJECT_DIR$/build/main/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Connection.class" afterPath="$PROJECT_DIR$/build/main/Connection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/DrawModule$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/DrawModule$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/DrawModule.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/modules/DrawModule.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/utils/Drawer.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/utils/Drawer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment$2.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/DrawerFragment.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView$1.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/widgets/DrawingView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetServer/server/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EndPoint$1.class" afterPath="$PROJECT_DIR$/build/main/EndPoint$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EndPoint$2.class" afterPath="$PROJECT_DIR$/build/main/EndPoint$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/EndPoint.class" afterPath="$PROJECT_DIR$/build/main/EndPoint.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/activities/MainActivity.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/activities/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/NavigationDrawerFragment.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/fragments/NavigationDrawerFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/android/support/v7/appcompat/R$color.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/android/support/v7/appcompat/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$color.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$color.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$dimen.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$dimen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$drawable.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$id.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$integer.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$layout.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$layout.class" />
@@ -48,26 +54,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$style.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$styleable.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Server.class" afterPath="$PROJECT_DIR$/build/main/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/network/enums/Tags.class" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/out/production/AndroNetAndroidClient/pl/umk/andronetandroidclient/network/enums/Tags.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/ChatFragment.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/ChatFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/ChatMessage.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/ChatMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/adapters/ChatMessageAdapter.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/adapters/ChatMessageAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/modules/ChatModule.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/modules/ChatModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/ChatNameFragment.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/ChatNameFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/ChatUser.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/ChatUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/enums/Color.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/enums/Color.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Connection.java" afterPath="$PROJECT_DIR$/src/main/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/modules/DrawModule.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/modules/DrawModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/Drawer.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/utils/Drawer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/DrawerFragment.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/fragments/DrawerFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/widgets/DrawingView.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/widgets/DrawingView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/activities/MainActivity.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/activities/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Server.java" afterPath="$PROJECT_DIR$/src/main/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/enums/Tags.java" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/src/pl/umk/andronetandroidclient/network/enums/Tags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/colors.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/dimens.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_chat.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_chat.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_chat_name.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_chat_name.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/codeStyleSettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_drawer.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/layout/fragment_drawer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/strings.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/styles.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" />
     </list>
@@ -99,8 +100,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="2244">
-              <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+            <state vertical-scroll-proportion="3.5172415" vertical-offset="1224" max-vertical-offset="2363">
+              <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46072507" vertical-offset="1174" max-vertical-offset="2788">
+            <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="2788">
               <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
               <folding />
             </state>
@@ -121,7 +122,7 @@
       <file leaf-file-name="Packet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Packet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -133,6 +134,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
               <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.25679758" vertical-offset="1258" max-vertical-offset="2244">
+              <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -264,10 +275,10 @@
         <option value="$PROJECT_DIR$/src/main/ClientConnection.java" />
         <option value="$PROJECT_DIR$/src/main/Serialization.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IDisconnected.java" />
-        <option value="$PROJECT_DIR$/src/main/Connection.java" />
-        <option value="$PROJECT_DIR$/src/main/Client.java" />
         <option value="$PROJECT_DIR$/src/main/EndPoint.java" />
         <option value="$PROJECT_DIR$/src/main/Server.java" />
+        <option value="$PROJECT_DIR$/src/main/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/Connection.java" />
       </list>
     </option>
   </component>
@@ -377,6 +388,7 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -548,18 +560,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32286555" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14232409" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -568,13 +582,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801595" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -954,13 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5120846" vertical-offset="409" max-vertical-offset="1071">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/interfaces/IListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20543806" vertical-offset="0" max-vertical-offset="662">
@@ -983,24 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="2244">
-          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.101208456" vertical-offset="528" max-vertical-offset="2261">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
@@ -1011,8 +998,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46072507" vertical-offset="1174" max-vertical-offset="2788">
+        <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="2788">
           <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.5172415" vertical-offset="1224" max-vertical-offset="2363">
+          <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5120846" vertical-offset="307" max-vertical-offset="969">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.25679758" vertical-offset="1258" max-vertical-offset="2244">
+          <caret line="76" column="9" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="9" />
           <folding />
         </state>
       </provider>

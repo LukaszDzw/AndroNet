@@ -19,7 +19,7 @@ public class Connection {
     private final ByteBuffer readBuffer, writeBuffer;
 
     private int objectLength, id;
-    private final static int BUFFERCAPACITY = 4096;
+    private final static int BUFFERCAPACITY = 10000;
 
     public Connection(SelectionKey selectionKey, int id)
     {
@@ -33,6 +33,7 @@ public class Connection {
         this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
         this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
         this.readBuffer.clear();
+        this.readBuffer.flip(); //set to read
         this.writeBuffer.clear();
         this.serialization=new Serialization();
     }
@@ -74,13 +75,11 @@ public class Connection {
         //odczytaj wielkość obiektu z bufora
         if(this.objectLength==0)
         {
-            this.readBuffer.flip();
             if(this.readBuffer.remaining()<objectLengthLength)
             {
                 this.readBuffer.compact();
                 bytesRead=socketChannel.read(readBuffer);
             }
-
             this.readBuffer.flip();
             if(readBuffer.remaining()<objectLengthLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
             {
@@ -89,9 +88,10 @@ public class Connection {
             }
 
             this.objectLength=serialization.getObjectLength(readBuffer);
+            System.out.println("dlugosc " + this.objectLength);
             if(this.objectLength>readBuffer.capacity()) throw new IOException("Object is bigger than buffer capacity. Closing connection");
 
-            System.out.println("dlugosc " + this.objectLength);
+
         }
 
         //dopełnij bufor, jeśli za mało wczytał
@@ -109,7 +109,6 @@ public class Connection {
 
         Object object = this.serialization.getObjectFromBuffer(this.readBuffer, this.objectLength);
         this.objectLength=0;
-        this.readBuffer.compact();
 
         return object;
     }

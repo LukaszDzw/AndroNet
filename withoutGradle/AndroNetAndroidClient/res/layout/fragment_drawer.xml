@@ -14,14 +14,17 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true">
         <ImageButton
+            android:id="@+id/draw_red"
             style="@style/PaleteColor"
             android:background="@color/red"
             android:tag="@color/red"/>
         <ImageButton
+            android:id="@+id/draw_green"
             style="@style/PaleteColor"
             android:background="@color/green"
             android:tag="@color/red" />
         <ImageButton
+            android:id="@+id/draw_blue"
             style="@style/PaleteColor"
             android:background="@color/blue"
             android:tag="@color/red" />

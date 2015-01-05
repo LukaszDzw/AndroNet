@@ -6,35 +6,24 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
+import pl.umk.andronetandroidclient.network.enums.Color;
 import pl.umk.andronetandroidclient.network.packets.DrawPoint;
+import pl.umk.andronetandroidclient.utils.Drawer;
 
 /**
  * Created by Lukasz on 2014-12-26.
  */
 public class DrawingView extends View {
 
-    //drawing path
-    private Path mDrawPath;
-    private Path mDrawPath2;
-    //drawing and canvas paint
-    private Paint mDrawPaint, mCanvasPaint;
-    private Paint mDrawPaint2, mCanvasPaint2;
 
-    //initial color
-    private int mPaintColor = 0xFF660000;
-    //canvas
-    private Canvas mDrawCanvas;
-    private Canvas mDrawCanvas2;
+    private SparseArray<Drawer> mDrawers;
+    private Drawer mMyDrawer;
 
-    private Canvas canvas2;
-
-    //canvas bitmap
+    private Paint mCanvasPaint;
     private Bitmap mCanvasBitmap;
-
-    private boolean isdown;
-    private boolean isdown2;
 
     public DrawingView(Context context) {
         super(context);
@@ -51,100 +40,76 @@ public class DrawingView extends View {
         setupDrawing();
     }
 
-    public void draw(DrawPoint point)
+    public void setMyDrawerColor(Color color)
     {
+        mMyDrawer.setColor(color);
+    }
 
-        float touchX = point.x;
-        float touchY = point.y;
+    public void drawFromDevice(DrawPoint point)
+    {
+        mMyDrawer.draw(point);
+        invalidate();
+    }
 
-        if(point.id==1)
-        switch (point.action) {
-            case ACTION_DOWN:
-                mDrawPath.moveTo(touchX, touchY);
-                isdown=true;
-                break;
-            case ACTION_MOVE:
-                if(!isdown) {
-                    mDrawPath.moveTo(touchX, touchY);
-                    isdown=true;
-                }
-                mDrawPath.lineTo(touchX, touchY);
-                break;
-            case ACTION_UP:
-                mDrawCanvas.drawPath(mDrawPath, mDrawPaint);
-                mDrawPath.reset();
-                isdown=false;
-                break;
-            default:
+    public void drawFromSocket(DrawPoint point)
+    {
+        Drawer drawer=mDrawers.get(point.id);
+        if(drawer==null)
+        {
+            drawer=this.addDrawer(point.id);
         }
 
-        if(point.id==2)
-            switch (point.action) {
-                case ACTION_DOWN:
-                    mDrawPath2.moveTo(touchX, touchY);
-                    isdown2=true;
-                    break;
-                case ACTION_MOVE:
-                    if(!isdown2) {
-                        mDrawPath2.moveTo(touchX, touchY);
-                        isdown2=true;
-                    }
-                    mDrawPath2.lineTo(touchX, touchY);
-                    break;
-                case ACTION_UP:
-                    mDrawCanvas2.drawPath(mDrawPath2, mDrawPaint2);
-                    mDrawPath2.lineTo(touchX, touchY); //test
-                    mDrawPath2.reset();
-                    isdown2=false;
-                    break;
-                default:
-            }
-        invalidate();
+        drawer.draw(point);
 
+        this.post(new Runnable() {
+            @Override
+            public void run() {
+                invalidate();
+            }
+        });
+    }
+
+    public Drawer addDrawer(int id)
+    {
+        Drawer drawer=new Drawer(mCanvasBitmap);
+        mDrawers.put(id, drawer);
+        return drawer;
+    }
+
+    public void removeDrawer(int id)
+    {
+        mDrawers.remove(id);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mCanvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        mDrawCanvas = new Canvas(mCanvasBitmap);
-        mDrawCanvas2 = new Canvas(mCanvasBitmap);
-        canvas2=new Canvas(mCanvasBitmap);
+
+        for(int i=0; i<mDrawers.size(); i++)
+        {
+            int key = mDrawers.keyAt(i);
+            Drawer drawer = mDrawers.get(key);
+            drawer.onSizeChanged(mCanvasBitmap);
+        }
+        mMyDrawer=new Drawer(mCanvasBitmap);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawBitmap(mCanvasBitmap, 0, 0, mCanvasPaint);
-        //canvas.drawPath(mDrawPath, mDrawPaint);
-
-        //canvas2.drawBitmap(mCanvasBitmap, 0, 0, mCanvasPaint2);
-        //canvas2.drawPath(mDrawPath2, mDrawPaint2);
+        mMyDrawer.drawPath();
+        for(int i=0; i<mDrawers.size(); i++)
+        {
+            int key = mDrawers.keyAt(i);
+            Drawer drawer = mDrawers.get(key);
+            drawer.drawPath();
+        }
     }
 
     private void setupDrawing()
     {
-        mDrawPath = new Path();
-        mDrawPaint = new Paint();
-
-        mDrawPath2 = new Path();
-        mDrawPaint2 = new Paint();
-
-        mDrawPaint.setColor(mPaintColor);
-        mDrawPaint.setAntiAlias(true);
-        mDrawPaint.setStrokeWidth(20);
-        mDrawPaint.setStyle(Paint.Style.STROKE);
-        mDrawPaint.setStrokeJoin(Paint.Join.ROUND);
-        mDrawPaint.setStrokeCap(Paint.Cap.ROUND);
-
-        mDrawPaint2.setColor(mPaintColor);
-        mDrawPaint2.setAntiAlias(true);
-        mDrawPaint2.setStrokeWidth(20);
-        mDrawPaint2.setStyle(Paint.Style.STROKE);
-        mDrawPaint2.setStrokeJoin(Paint.Join.ROUND);
-        mDrawPaint2.setStrokeCap(Paint.Cap.ROUND);
-
-
+        mDrawers=new SparseArray<>();
         mCanvasPaint = new Paint(Paint.DITHER_FLAG);
-        mCanvasPaint2 = new Paint(Paint.DITHER_FLAG);
     }
 }

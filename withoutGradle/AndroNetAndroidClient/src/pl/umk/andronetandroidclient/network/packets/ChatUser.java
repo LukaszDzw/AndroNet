@@ -1,4 +1,4 @@
-package pl.umk.andronetandroidclient.utils;
+package pl.umk.andronetandroidclient.network.packets;
 
 /**
  * Created by Lukasz on 2015-01-04.

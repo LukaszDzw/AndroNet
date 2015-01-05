@@ -1,8 +1,6 @@
 package pl.umk.andronetandroidclient.fragments;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -15,7 +13,7 @@ import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.adapters.ChatMessageAdapter;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.utils.ChatMessage;
-import pl.umk.andronetandroidclient.utils.ChatUser;
+import pl.umk.andronetandroidclient.network.packets.ChatUser;
 
 import java.util.*;
 
@@ -138,7 +136,7 @@ public class ChatFragment extends BaseFragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mActiveUsersCounter.setText(mUsers.size());
+                        mActiveUsersCounter.setText(String.valueOf(mUsers.size()));
                     }
                 });
             }

@@ -6,7 +6,7 @@ import main.Connection;
 import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.utils.ChatMessage;
-import pl.umk.andronetandroidclient.utils.ChatUser;
+import pl.umk.andronetandroidclient.network.packets.ChatUser;
 import server.interfaces.IModule;
 
 import java.text.SimpleDateFormat;
@@ -49,7 +49,6 @@ public class ChatModule implements IModule {
                 String name=(String) o;
 
                 userMap.put(connection.getId(), name);
-                System.out.println(userMap.values().toString()); //TEMP
                 server.sendTo(connection, Tags.registerChat.name(), connection.getId());
 
                 ChatUser newUser=new ChatUser();

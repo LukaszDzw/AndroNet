@@ -1,7 +1,6 @@
 package pl.umk.andronetandroidclient.adapters;
 
 import android.content.Context;
-import android.text.format.Time;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.utils.ChatMessage;
-import pl.umk.andronetandroidclient.utils.ChatUser;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by Lukasz on 2015-01-03.

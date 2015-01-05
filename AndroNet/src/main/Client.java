@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.nio.channels.CancelledKeyException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
@@ -65,6 +66,10 @@ public class Client extends EndPoint{
 		{
 			System.out.println(ex.toString());
 		}
+		catch (CancelledKeyException ex)
+		{
+			System.out.println(ex.toString());
+		}
 	}
 
 	@Override
@@ -105,7 +110,9 @@ public class Client extends EndPoint{
 						}
 					} catch (IOException ex) {
 						System.out.println("Connection closed by host");
+						System.err.println(ex.toString());
 						this.closeConnection(clientConnection);
+
 					}
 				}
 			}
@@ -122,7 +129,7 @@ public class Client extends EndPoint{
 	private void connect(Selector selector, SocketChannel socketChannel) throws IOException
 	{
 		Socket socket=socketChannel.socket();
-		socket.setTcpNoDelay(true); // TODO przeczytać więcej
+		socket.setTcpNoDelay(true);
 		socket.connect(new InetSocketAddress(ip, port), 5000); // connecting in blocking mode
 
 		socketChannel.configureBlocking(false);
