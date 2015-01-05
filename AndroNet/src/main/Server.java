@@ -101,7 +101,6 @@ public class Server extends EndPoint {
 		Connection keyConnection = (Connection) selKey.attachment();
 		try {
 			keyConnection.send(tag, object);
-			selKey.interestOps(SelectionKey.OP_WRITE);
 		}
 		catch (UnsupportedEncodingException ex)
 		{

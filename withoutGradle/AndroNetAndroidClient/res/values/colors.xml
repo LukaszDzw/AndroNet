@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#4677a5</color>
+    <color name="dark_blue">#4677a5</color>
     <color name="light_blue">#dce5ee</color>
     <color name="light_gray">#e6e6e6</color>
     <color name="gray">#9ea1a1</color>
     <color name="dark_gray">#5c5d5d</color>
+    <color name="cyan">#3a847d</color>
+    <color name="red">#ff0000</color>
+    <color name="green">#00ff00</color>
+    <color name="blue">#0000ff</color>
 </resources>

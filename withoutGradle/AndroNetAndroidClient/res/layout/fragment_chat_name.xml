@@ -20,7 +20,7 @@
                       android:layout_weight="1.5"
                       android:singleLine="true"
                       android:textSize="@dimen/text_20"
-                      android:textColor="@color/blue"
+                      android:textColor="@color/dark_blue"
                       android:textCursorDrawable="@null"/>
     </LinearLayout>
     <Button android:id="@+id/chat_name_button"

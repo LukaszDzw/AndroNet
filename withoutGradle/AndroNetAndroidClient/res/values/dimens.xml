@@ -24,5 +24,10 @@
     <dimen name="chat_message_paddingTopBottom">10dp</dimen>
     <dimen name="chat_message_layout_paddingLeftRight">10dp</dimen>
     <dimen name="chat_message_paddingLeftRight">15dp</dimen>
+    <integer name="chat_window_weight">8</integer>
+    <integer name="chat_buttons_weight">1</integer>
+
+    <!-- Drawing fragment -->
+    <dimen name="drawing_palete_widthHeight">50dp</dimen>
 
 </resources>

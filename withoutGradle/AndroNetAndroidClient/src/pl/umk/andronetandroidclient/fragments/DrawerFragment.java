@@ -1,6 +1,7 @@
 package pl.umk.andronetandroidclient.fragments;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.*;
 import interfaces.IListener;
 import main.Connection;
@@ -83,8 +84,6 @@ public class DrawerFragment extends BaseFragment {
         }
 
         return point;
-
-
     }
 
     private void setupNetworking()

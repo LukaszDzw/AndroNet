@@ -1,23 +1,28 @@
 package server.modules;
 
+import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Connection;
 import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.utils.ChatMessage;
+import pl.umk.andronetandroidclient.utils.ChatUser;
 import server.interfaces.IModule;
 
-import java.util.TreeMap;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by Lukasz on 2015-01-03.
  */
 public class ChatModule implements IModule {
-    private TreeMap<Integer, String> userMap;
+    private HashMap<Integer, String> userMap;
+    private SimpleDateFormat sdf;
 
     public ChatModule()
     {
-        this.userMap=new TreeMap<>();
+        this.userMap=new HashMap<>();
+        this.sdf = new SimpleDateFormat("HH:mm dd.MM.yyyy");
     }
 
     @Override
@@ -32,7 +37,7 @@ public class ChatModule implements IModule {
                 ChatMessage message=new ChatMessage();
                 message.id=connection.getId();
                 message.message=text;
-
+                message.time= sdf.format(new Date());
                 server.sendToAll(Tags.chatMessage.name(), message);
             }
         });
@@ -44,15 +49,28 @@ public class ChatModule implements IModule {
                 String name=(String) o;
 
                 userMap.put(connection.getId(), name);
+                System.out.println(userMap.values().toString()); //TEMP
                 server.sendTo(connection, Tags.registerChat.name(), connection.getId());
+
+                ChatUser newUser=new ChatUser();
+                newUser.id=connection.getId();
+                newUser.name=name;
+                server.sendToAllExcept(connection, Tags.getChatUser.name(), newUser);
             }
         });
 
         //sendAllUsers
-        server.addListener(Tags.getChatUsers.name(), new IListener() {
+        server.addListener(Tags.getChatUser.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {
-                server.sendTo(connection, Tags.getChatUsers.name(), userMap);
+
+                for(Map.Entry<Integer, String> element:userMap.entrySet())
+                {
+                    ChatUser chatUser = new ChatUser();
+                    chatUser.id=element.getKey();
+                    chatUser.name=element.getValue();
+                    server.sendTo(connection, Tags.getChatUser.name(), chatUser);
+                }
             }
         });
 
@@ -62,6 +80,14 @@ public class ChatModule implements IModule {
             public void received(Connection connection, Object o) {
                 userMap.remove(connection.getId());
                 server.sendToAll(Tags.disconnected.name(), connection.getId());
+            }
+        });
+
+        server.setDisconnectedAction(new IDisconnected() {
+            @Override
+            public void disconnected(Connection connection) {
+                System.out.println("bye connection " + connection.getId());
+                userMap.remove(connection.getId());
             }
         });
     }

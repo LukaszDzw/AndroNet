@@ -2,6 +2,7 @@ package pl.umk.andronetandroidclient.adapters;
 
 import android.content.Context;
 import android.text.format.Time;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,10 @@ import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.utils.ChatMessage;
 import pl.umk.andronetandroidclient.utils.ChatUser;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Lukasz on 2015-01-03.
@@ -21,13 +24,13 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
 
     private Context mContext;
     private ArrayList<ChatMessage> mMessages;
-    private ArrayList<ChatUser> mUsers;
+    private SparseArray<String> mUsers;
     private int mMyUserId;
 
     public ChatMessageAdapter(Context context,
                               ArrayList<ChatMessage> values,
                               int myUserId,
-                              ArrayList<ChatUser> users)
+                              SparseArray<String> users)
     {
         super(context, R.layout.view_chat_text_my, values);
         mContext = context;
@@ -42,6 +45,8 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         ChatMessage message=mMessages.get(position);
+        String name=mUsers.get(message.id);
+        if(name==null) name="unknown";
 
         View rowView;
         if (message.id == mMyUserId) {
@@ -53,25 +58,13 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
         }
 
         TextView dateView=(TextView)rowView.findViewById(R.id.chat_message_time);
-        dateView.setText(getTime());
+        dateView.setText(new String(message.time));
 
-        String name=mUsers.
+
         String messageWithUser=new StringBuilder(name).append(": ").append(message.message).toString();
         TextView text = (TextView)rowView.findViewById(R.id.chat_message);
         text.setText(messageWithUser);
 
         return rowView;
-    }
-
-    private String getTime()
-    {
-
-        Time now = new Time();
-        now.setToNow();
-        return now.format("%k:%M:%S");
-
-        /*
-        Calendar c = Calendar.getInstance();
-        return c.getTime().toString();*/
     }
 }

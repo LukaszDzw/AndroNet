@@ -50,10 +50,17 @@
 
     <style name="BlueButton" parent="WrappedView">
         <item name="android:textSize">@dimen/text_20</item>
-        <item name="android:background">@color/blue</item>
+        <item name="android:background">@color/dark_blue</item>
         <item name="android:textColor">@color/light_gray</item>
         <item name="android:paddingLeft">@dimen/chat_name_button_paddingLeftRight</item>
         <item name="android:paddingRight">@dimen/chat_name_button_paddingLeftRight</item>
+    </style>
+
+    <!-- DrawingFragment -->
+    <style name="PaleteColor">
+        <item name="android:layout_width">@dimen/drawing_palete_widthHeight</item>
+        <item name="android:layout_height">@dimen/drawing_palete_widthHeight</item>
+        <item name="android:src">@drawable/paint</item>
     </style>
 
 </resources>

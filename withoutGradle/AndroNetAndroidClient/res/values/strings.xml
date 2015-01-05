@@ -16,5 +16,7 @@
     <string name="text">tekst...</string>
     <string name="type_name">Podaj imię</string>
     <string name="apply">Zatwierdź</string>
+    <string name="active">AKTYWNI</string>
+    <string name="ok">Ok</string>
 
 </resources>

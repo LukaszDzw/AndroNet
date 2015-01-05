@@ -6,4 +6,5 @@ package pl.umk.andronetandroidclient.utils;
 public class ChatMessage {
     public int id;
     public String message;
+    public String time;
 }

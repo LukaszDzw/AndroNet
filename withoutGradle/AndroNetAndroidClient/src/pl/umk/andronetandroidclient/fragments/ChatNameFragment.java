@@ -46,7 +46,7 @@ public class ChatNameFragment extends BaseFragment {
         mChatNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mClient.send(Tags.registerChat.name(), mNameText.getText().toString());
+                mClient.send(Tags.registerChat.name().trim(), mNameText.getText().toString());
             }
         });
         mClient.addListener(Tags.registerChat.name(), new IListener() {

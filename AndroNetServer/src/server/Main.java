@@ -27,13 +27,9 @@ public class Main {
 	private static void setupNetworking()
 	{
 		setupModule(chatModule, server);
+		setupModule(drawModule, server);
 
-		server.setDisconnectedAction(new IDisconnected() {
-			@Override
-			public void disconnected(Connection connection) {
-				System.out.println("bye connection " + connection.getId());
-			}
-		});
+
 	}
 
 	private static void setupModule(IModule module, Server server)

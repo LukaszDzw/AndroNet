@@ -7,6 +7,6 @@ public enum Tags {
     drawPosition,
     chatMessage,
     registerChat,
-    getChatUsers,
+    getChatUser,
     disconnected
 }
