@@ -10,10 +10,7 @@ import android.view.*;
 import android.support.v4.widget.DrawerLayout;
 import main.Client;
 import pl.umk.andronetandroidclient.AndroNetApplication;
-import pl.umk.andronetandroidclient.fragments.ChatFragment;
-import pl.umk.andronetandroidclient.fragments.ChatNameFragment;
-import pl.umk.andronetandroidclient.fragments.DrawerFragment;
-import pl.umk.andronetandroidclient.fragments.NavigationDrawerFragment;
+import pl.umk.andronetandroidclient.fragments.*;
 import pl.umk.andronetandroidclient.R;
 
 
@@ -58,7 +55,7 @@ public class MainActivity extends ActionBarActivity
                 fragment=new DrawerFragment();
                 break;
             default:
-                fragment=new ChatFragment();
+                fragment=new ColorsFragment();
                 break;
         }
 
@@ -121,14 +118,13 @@ public class MainActivity extends ActionBarActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent=new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
         if (id == R.id.action_disconnect) {
-            Intent intent=new Intent(this, ConnectActivity.class);
-            startActivity(intent);
-            mClient.close();
-
+            onDisconnected();
             return true;
         }
 
@@ -137,7 +133,9 @@ public class MainActivity extends ActionBarActivity
 
     private void onDisconnected()
     {
-
+        Intent intent=new Intent(this, ConnectActivity.class);
+        startActivity(intent);
+        mClient.close();
     }
 
     private void switchFragment(Fragment fragment)

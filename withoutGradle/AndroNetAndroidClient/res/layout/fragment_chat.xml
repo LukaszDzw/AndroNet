@@ -32,20 +32,18 @@
                 android:layout_weight="1"
                 android:background="@color/cyan">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/WrappedView"
                     android:textSize="@dimen/text_15"
                     android:text="@string/active"
                     android:textColor="@color/light_gray"
                     android:layout_centerInParent="true"/>
                 <TextView
                     android:id="@+id/chat_users_counter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/WrappedView"
                     android:layout_alignParentRight="true"
                     android:textSize="@dimen/text_20"
                     android:textColor="@color/light_gray"
-                    android:paddingRight="5dp"/>
+                    android:paddingRight="@dimen/chat_button_active_counter_paddingRight"/>
             </RelativeLayout>
             <Button
                 android:id="@+id/chat_button"

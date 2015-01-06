@@ -11,5 +11,7 @@ public enum Tags {
     drawPosition,
     getDrawerUser,
     drawChangeColor,
-    hello
+    hello,
+    getColor,
+    changeColor
 }
