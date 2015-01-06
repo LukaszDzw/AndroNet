@@ -5,7 +5,7 @@ import interfaces.IListener;
 import main.Connection;
 import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
-import pl.umk.andronetandroidclient.utils.ChatMessage;
+import pl.umk.andronetandroidclient.network.packets.ChatMessage;
 import pl.umk.andronetandroidclient.network.packets.ChatUser;
 import server.interfaces.IModule;
 

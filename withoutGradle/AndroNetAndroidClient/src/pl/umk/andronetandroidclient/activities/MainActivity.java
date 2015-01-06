@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.*;
 import android.support.v4.widget.DrawerLayout;
+import main.Client;
+import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.fragments.ChatFragment;
 import pl.umk.andronetandroidclient.fragments.ChatNameFragment;
 import pl.umk.andronetandroidclient.fragments.DrawerFragment;
@@ -18,21 +20,17 @@ import pl.umk.andronetandroidclient.R;
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
-    private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
-    private CharSequence mTitle;
+    private NavigationDrawerFragment mNavigationDrawerFragment; //Fragment managing the behaviors, interactions and presentation of the navigation drawer.
+    private CharSequence mTitle; //Used to store the last screen title
+    private Client mClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AndroNetApplication application=(AndroNetApplication) getApplication();
+        mClient=application.getClient();
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -42,6 +40,8 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
     }
 
     @Override
@@ -124,7 +124,20 @@ public class MainActivity extends ActionBarActivity
             return true;
         }
 
+        if (id == R.id.action_disconnect) {
+            Intent intent=new Intent(this, ConnectActivity.class);
+            startActivity(intent);
+            mClient.close();
+
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void onDisconnected()
+    {
+
     }
 
     private void switchFragment(Fragment fragment)

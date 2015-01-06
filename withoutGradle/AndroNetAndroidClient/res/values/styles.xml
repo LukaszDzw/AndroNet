@@ -65,7 +65,7 @@
 
     <!-- Colors Fragment -->
     <style name="SeekBar">
-        <item name="android:layout_width">0</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
     </style>
@@ -73,6 +73,15 @@
     <style name="ColorsTextView" parent="WrappedView">
         <item name="android:textSize">@dimen/text_24</item>
         <item name="android:textColor">@color/text_gray</item>
+    </style>
+
+    <style name="ConnectEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:textCursorDrawable">@null</item>
     </style>
 
 </resources>

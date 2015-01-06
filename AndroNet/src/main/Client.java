@@ -14,19 +14,22 @@ import java.util.Iterator;
 public class Client extends EndPoint{
 
 	private Connection clientConnection;
-	private final String ip;
-	private final int port;
+	private String ip;
+	private int port;
 	private boolean isConnected;
 
-	public Client(String ip, int port)
+	public void start(String ip, int port)
 	{
+		super.start();
 		this.ip=ip;
 		this.port=port;
-	}
 
-	public void start()
-	{
-		if(this.updateThread!=null) return; //jeżeli klient już nasłuchuje
+
+		if(this.updateThread!=null) {
+			if(this.updateThread.isAlive()) {
+				return; //jeżeli klient nasłuchuje
+			}
+		}
 
 		Runnable listeningTask = new Runnable()
 		{
@@ -77,6 +80,13 @@ public class Client extends EndPoint{
 	{
 		this.isConnected=false;
 		SocketChannel channel=(SocketChannel)this.clientConnection.getSelectionKey().channel();
+		try {
+			channel.close();
+		}
+		catch (IOException e)
+		{
+			System.err.println(e.toString());
+		}
 		super.close();
 	}
 
@@ -112,7 +122,6 @@ public class Client extends EndPoint{
 						System.out.println("Connection closed by host");
 						System.err.println(ex.toString());
 						this.closeConnection(clientConnection);
-
 					}
 				}
 			}

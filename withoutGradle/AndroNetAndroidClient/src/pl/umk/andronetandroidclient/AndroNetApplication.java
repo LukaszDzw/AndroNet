@@ -14,8 +14,12 @@ public class AndroNetApplication extends Application {
     @Override
     public void onCreate()
     {
-        mClient=new Client("192.168.2.242", 5555);
-        mClient.start();
+        mClient=new Client();
+    }
+
+    public void onTerminate()
+    {
+        mClient.close();
     }
 
     public Client getClient()

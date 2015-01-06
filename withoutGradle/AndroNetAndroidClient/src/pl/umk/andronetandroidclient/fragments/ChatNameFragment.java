@@ -12,6 +12,7 @@ import main.Connection;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.activities.MainActivity;
 import pl.umk.andronetandroidclient.network.enums.Tags;
+import pl.umk.andronetandroidclient.utils.KeyboardHider;
 
 /**
  * Created by Lukasz on 2015-01-02.
@@ -29,7 +30,7 @@ public class ChatNameFragment extends BaseFragment {
         mNameText=(EditText)v.findViewById(R.id.chat_name);
         LinearLayout layout=(LinearLayout)v.findViewById(R.id.chat_name_layout);
 
-        setupUI(layout);
+        KeyboardHider.setupUI(layout, getActivity());
         setupNetworking();
         return v;
     }

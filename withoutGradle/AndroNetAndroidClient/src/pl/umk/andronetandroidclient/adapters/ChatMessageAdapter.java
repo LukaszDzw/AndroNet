@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import pl.umk.andronetandroidclient.R;
-import pl.umk.andronetandroidclient.utils.ChatMessage;
+import pl.umk.andronetandroidclient.network.packets.ChatMessage;
 
 import java.util.ArrayList;
 

@@ -36,9 +36,16 @@ public abstract class EndPoint {
         this.disconnectedAction=disconnectedAction;
     }
 
-    public abstract void start();
 
     protected abstract void listen(Selector selector) throws IOException;
+
+    protected void start()
+    {
+        if(this.executorService.isShutdown())
+        {
+            this.executorService = Executors.newSingleThreadExecutor();
+        }
+    }
 
     public void addListener(String tag, IListener listener)
     {
@@ -53,7 +60,6 @@ public abstract class EndPoint {
     public void removeListeners()
     {
         this.listeners.clear();
-        this.disconnectedAction=null;
     }
 
     public void close()

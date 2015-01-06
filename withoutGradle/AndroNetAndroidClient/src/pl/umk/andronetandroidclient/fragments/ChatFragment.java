@@ -12,8 +12,9 @@ import main.Connection;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.adapters.ChatMessageAdapter;
 import pl.umk.andronetandroidclient.network.enums.Tags;
-import pl.umk.andronetandroidclient.utils.ChatMessage;
+import pl.umk.andronetandroidclient.network.packets.ChatMessage;
 import pl.umk.andronetandroidclient.network.packets.ChatUser;
+import pl.umk.andronetandroidclient.utils.KeyboardHider;
 
 import java.util.*;
 
@@ -51,7 +52,7 @@ public class ChatFragment extends BaseFragment {
                 showDialog();
             }
         });
-        setupUI(layout);
+        KeyboardHider.setupUI(layout, getActivity());
         return v;
     }
 

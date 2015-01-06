@@ -25,9 +25,11 @@ public class Server extends EndPoint {
 		this.port = port;
 		this.idNumber = 0;
 	}
-	
+
+	@Override
 	public void start()
 	{
+		super.start();
 		Runnable listeningTask = new Runnable() {
 			@Override
 			public void run() {

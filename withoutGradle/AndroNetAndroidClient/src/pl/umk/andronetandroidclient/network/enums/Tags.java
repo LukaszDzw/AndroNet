@@ -10,5 +10,6 @@ public enum Tags {
     disconnected,
     drawPosition,
     getDrawerUser,
-    drawChangeColor
+    drawChangeColor,
+    hello
 }
