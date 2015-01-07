@@ -8,5 +8,5 @@ import pl.umk.andronetandroidclient.network.enums.Rgb;
 public class ChangedRgbColor {
     public int channel;
     public Rgb type;
-    public int color;
+    public int value;
 }

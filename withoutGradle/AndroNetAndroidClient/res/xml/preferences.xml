@@ -5,8 +5,8 @@
             android:key="prefColorChannel"
             android:title="@string/channel_color"
             android:summary="@string/channel_color_summary"
-            android:entries="@array/updateFrequency"
-            android:entryValues="@array/updateFrequencyValues"
-            />
+            android:entries="@array/channels"
+            android:entryValues="@array/channelsValues"
+            android:defaultValue="1"/>
     </PreferenceCategory>
 </PreferenceScreen>

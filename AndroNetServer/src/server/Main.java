@@ -7,6 +7,7 @@ import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import server.interfaces.IModule;
 import server.modules.ChatModule;
+import server.modules.ColorModule;
 import server.modules.ConnectModule;
 import server.modules.DrawModule;
 
@@ -17,7 +18,7 @@ public class Main {
 	public static void main(String[] args)
 	{
 		server=new main.Server(5555);
-		modules=new IModule[]{new ChatModule(), new DrawModule(), new ConnectModule()};
+		modules=new IModule[]{new ChatModule(), new DrawModule(), new ConnectModule(), new ColorModule()};
 		setupNetworking();
 		server.start();
 	}

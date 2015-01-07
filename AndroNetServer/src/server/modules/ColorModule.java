@@ -4,22 +4,22 @@ import interfaces.IListener;
 import main.Connection;
 import main.Server;
 import pl.umk.andronetandroidclient.network.enums.Tags;
-import pl.umk.andronetandroidclient.network.packets.ChangedColor;
 import pl.umk.andronetandroidclient.network.packets.ChangedRgbColor;
 import pl.umk.andronetandroidclient.network.packets.RgbColor;
 import server.interfaces.IModule;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Lukasz on 2015-01-06.
  */
 public class ColorModule implements IModule {
-    HashMap<Integer, RgbColor> channelColorMap;
+    private HashMap<Integer, RgbColor> channelColorMap;
 
     public ColorModule() {
+        this.channelColorMap=new HashMap<>();
     }
+
     @Override
     public void setup(final Server server) {
 
@@ -28,7 +28,8 @@ public class ColorModule implements IModule {
             @Override
             public void received(Connection connection, Object o) {
                 int channel=(int)o;
-                int color=channelColorMap.get(channel);
+                RgbColor color=getColor(channel);
+
                 server.sendTo(connection, Tags.getColor.name(), color);
             }
         });
@@ -38,33 +39,40 @@ public class ColorModule implements IModule {
             @Override
             public void received(Connection connection, Object o) {
                 ChangedRgbColor changedColor=(ChangedRgbColor)o;
-
-                RgbColor rgbColor = channelColorMap.get(changedColor.id);
-                if(rgbColor==null){
-                    rgbColor=new RgbColor();
-                    rgbColor.
-                    channelColorMap.put()
-                }
-
-                for(Map.Entry<Integer, Integer> user:userChannelMap.entrySet())
-                {
-                    if(user.getKey()==channel)
-                    {
-                        server.sendTo();
-                    }
-                }
+                setColor(changedColor);
+                server.sendToAll(Tags.changeColor.name(), changedColor);
             }
         });
     }
 
-    public void changeColor(ChangedRgbColor changed, RgbColor color)
+    private void setColor(ChangedRgbColor changed)
     {
+        RgbColor color=getColor(changed.channel);
+
         switch (changed.type)
         {
             case RED:
-                color.r=changed.color;
+                color.r=changed.value;
                 break;
-
+            case GREEN:
+                color.g=changed.value;
+                break;
+            case BLUE:
+                color.b=changed.value;
+                break;
         }
+    }
+
+    private RgbColor getColor(int channel)
+    {
+        RgbColor color = channelColorMap.get(channel);
+
+        if(color==null)
+        {
+            color=new RgbColor();
+            channelColorMap.put(channel, color);
+        }
+
+        return color;
     }
 }

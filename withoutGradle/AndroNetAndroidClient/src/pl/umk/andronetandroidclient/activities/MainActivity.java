@@ -10,6 +10,7 @@ import android.view.*;
 import android.support.v4.widget.DrawerLayout;
 import main.Client;
 import pl.umk.andronetandroidclient.AndroNetApplication;
+import pl.umk.andronetandroidclient.enums.FragmentTag;
 import pl.umk.andronetandroidclient.fragments.*;
 import pl.umk.andronetandroidclient.R;
 
@@ -33,12 +34,21 @@ public class MainActivity extends ActionBarActivity
         mTitle = getTitle();
 
 
+
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
 
+        ColorsFragment myFragment = (ColorsFragment)getFragmentManager().findFragmentByTag(FragmentTag.Colors.name());
+        if (myFragment!=null && myFragment.isVisible()) {
+            myFragment.onResume();
+        }
     }
 
     @Override
@@ -46,20 +56,24 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
 
         Fragment fragment;
+        FragmentTag tag;
         switch(position)
         {
             case 0:
                 fragment=new ChatNameFragment();
+                tag=FragmentTag.ChatName;
                 break;
             case 1:
                 fragment=new DrawerFragment();
+                tag=FragmentTag.Drawer;
                 break;
             default:
                 fragment=new ColorsFragment();
+                tag=FragmentTag.Colors;
                 break;
         }
 
-        switchFragment(fragment);
+        switchFragment(fragment, tag);
     }
 
     public void showChatFragment(int id)
@@ -70,7 +84,7 @@ public class MainActivity extends ActionBarActivity
 
         fragment.setArguments(bundle);
 
-        switchFragment(fragment);
+        switchFragment(fragment, FragmentTag.Chat);
     }
 
     public void onSectionAttached(int number) {
@@ -138,12 +152,12 @@ public class MainActivity extends ActionBarActivity
         mClient.close();
     }
 
-    private void switchFragment(Fragment fragment)
+    private void switchFragment(Fragment fragment, FragmentTag tag)
     {
         FragmentManager fragmentManager = getFragmentManager();
 
         fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(R.id.container, fragment, tag.name())
                 .commit();
     }
 }
