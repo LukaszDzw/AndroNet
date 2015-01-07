@@ -55,7 +55,6 @@ public class ChatMessageAdapter extends ArrayAdapter<ChatMessage> {
         TextView dateView=(TextView)rowView.findViewById(R.id.chat_message_time);
         dateView.setText(new String(message.time));
 
-
         String messageWithUser=new StringBuilder(name).append(": ").append(message.message).toString();
         TextView text = (TextView)rowView.findViewById(R.id.chat_message);
         text.setText(messageWithUser);

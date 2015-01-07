@@ -76,6 +76,7 @@
         <item name="android:textColor">@color/text_gray</item>
     </style>
 
+    <!-- Connection Activity -->
     <style name="ConnectEditText">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -83,6 +84,13 @@
         <item name="android:textSize">@dimen/text_20</item>
         <item name="android:textColor">@color/dark_blue</item>
         <item name="android:textCursorDrawable">@null</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="ConnectHeaderTextView" parent="StretchedHorizontallyView">
+        <item name="android:textSize">@dimen/text_30</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:gravity">center</item>
     </style>
 
 </resources>

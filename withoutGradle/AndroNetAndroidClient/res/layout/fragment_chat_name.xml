@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/chat_name_layout"
+              style="@style/StretchedView"
               android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
               android:gravity="center">
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="@string/type_name"
-              android:textSize="@dimen/text_30"
-              android:textColor="@color/text_gray"/>
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
+    <TextView style="@style/ConnectHeaderTextView"
+              android:text="@string/type_name"/>
+    <LinearLayout style="@style/StretchedHorizontallyView"
                   android:orientation="horizontal"
                   android:weightSum="3"
                   android:gravity="center_horizontal">

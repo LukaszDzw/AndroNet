@@ -1,13 +1,10 @@
-package pl.umk.andronetandroidclient.fragments.listeners;
+package pl.umk.andronetandroidclient.listeners;
 
-import android.graphics.Color;
-import android.view.View;
 import android.widget.SeekBar;
 import main.Client;
 import pl.umk.andronetandroidclient.network.enums.Rgb;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.network.packets.ChangedRgbColor;
-import pl.umk.andronetandroidclient.network.packets.RgbColor;
 import pl.umk.andronetandroidclient.utils.Channel;
 import pl.umk.andronetandroidclient.widgets.ColorView;
 

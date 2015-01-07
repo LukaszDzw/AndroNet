@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/StretchedView"
               android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
               android:padding="@dimen/color_layout_margin"
               android:weightSum="10"
               android:gravity="center">
               <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+                  style="@style/StretchedHorizontallyView">
                   <TextView
                       style="@style/ColorsTextView"
                       android:text="R"
@@ -22,8 +20,7 @@
                       android:text="0"/>
               </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                style="@style/StretchedHorizontallyView">
                 <TextView
                     style="@style/ColorsTextView"
                     android:text="G"
@@ -37,8 +34,7 @@
                     android:text="0"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                style="@style/StretchedHorizontallyView">
                 <TextView
                     style="@style/ColorsTextView"
                     android:text="B"
@@ -62,8 +58,7 @@
                 android:background="@drawable/rounded_corner">
                     <pl.umk.andronetandroidclient.widgets.ColorView
                         android:id="@+id/color_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        style="@style/StretchedView"
                         android:background="@color/black"/>
             </LinearLayout>
 </LinearLayout>

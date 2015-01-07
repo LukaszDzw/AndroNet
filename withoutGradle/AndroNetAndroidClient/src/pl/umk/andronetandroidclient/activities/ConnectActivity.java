@@ -4,16 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.network.enums.Tags;
+import pl.umk.andronetandroidclient.utils.KeyboardHider;
 
 /**
  * Created by Lukasz on 2015-01-06.
@@ -23,6 +21,8 @@ public class ConnectActivity extends Activity {
     private EditText mIpField, mPortField;
     private Button mConnectButton;
     private Client mClient;
+    private LinearLayout mLayout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +34,9 @@ public class ConnectActivity extends Activity {
         mIpField=(EditText)findViewById(R.id.connection_ip);
         mPortField=(EditText)findViewById(R.id.connection_port);
         mConnectButton=(Button)findViewById(R.id.connect_button);
+        mLayout=(LinearLayout)findViewById(R.id.connection_name_layout);
+
+        KeyboardHider.setupUI(mLayout, this);
 
         initialize();
     }

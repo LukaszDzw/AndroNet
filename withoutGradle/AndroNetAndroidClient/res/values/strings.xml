@@ -28,7 +28,7 @@
     <string name="connected">Połączono</string>
 
     <!-- ConnectionActivity -->
-    <string name="type_ip">Wprowadź adres serwera i port</string>
+    <string name="type_ip">Wprowadź adres serwera oraz port</string>
     <string name="apply">Zatwierdź</string>
     <string name="connect">Połącz</string>
 

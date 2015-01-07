@@ -1,13 +1,7 @@
 package pl.umk.andronetandroidclient.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import main.Client;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 

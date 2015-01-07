@@ -50,9 +50,14 @@ public class Client extends EndPoint{
 		};
 		this.startListeningThread(listeningTask);
 
+		int counter=0;
 		//block thread for connection
 		try {
-			while (!this.isConnected) Thread.sleep(50);
+			while (!this.isConnected || counter>50)
+			{
+				Thread.sleep(50);
+				counter++;
+			}
 		}
 		catch (InterruptedException ex)
 		{
@@ -72,6 +77,7 @@ public class Client extends EndPoint{
 		catch (CancelledKeyException ex)
 		{
 			System.out.println(ex.toString());
+			this.closeConnection(clientConnection);
 		}
 	}
 
@@ -129,9 +135,15 @@ public class Client extends EndPoint{
 	}
 
 	@Override
-	protected void closeConnection(final Connection connection) throws IOException
+	protected void closeConnection(final Connection connection)
 	{
-		super.closeConnection(connection);
+		try {
+			super.closeConnection(connection);
+		}
+		catch(IOException ex)
+		{
+			System.err.println(ex.toString());
+		}
 		this.close();
 	}
 

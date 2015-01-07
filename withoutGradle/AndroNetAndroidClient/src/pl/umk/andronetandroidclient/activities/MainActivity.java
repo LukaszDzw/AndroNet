@@ -8,7 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.*;
 import android.support.v4.widget.DrawerLayout;
+import interfaces.IDisconnected;
 import main.Client;
+import main.Connection;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.enums.FragmentTag;
 import pl.umk.andronetandroidclient.fragments.*;
@@ -33,12 +35,24 @@ public class MainActivity extends ActionBarActivity
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-
-
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        mClient.setDisconnectedAction(new IDisconnected() {
+            @Override
+            public void disconnected(Connection connection) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+            }
+        });
     }
 
     @Override

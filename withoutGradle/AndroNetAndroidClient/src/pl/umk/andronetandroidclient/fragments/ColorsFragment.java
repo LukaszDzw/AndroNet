@@ -10,7 +10,7 @@ import android.widget.SeekBar;
 import interfaces.IListener;
 import main.Connection;
 import pl.umk.andronetandroidclient.R;
-import pl.umk.andronetandroidclient.fragments.listeners.RGBBarChangeListener;
+import pl.umk.andronetandroidclient.listeners.RGBBarChangeListener;
 import pl.umk.andronetandroidclient.network.enums.Rgb;
 import pl.umk.andronetandroidclient.network.enums.Tags;
 import pl.umk.andronetandroidclient.network.packets.ChangedRgbColor;
