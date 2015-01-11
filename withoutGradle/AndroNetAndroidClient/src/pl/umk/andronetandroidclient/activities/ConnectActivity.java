@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Client;
 import main.Connection;
 import pl.umk.andronetandroidclient.AndroNetApplication;
 import pl.umk.andronetandroidclient.R;
 import pl.umk.andronetandroidclient.network.enums.Tags;
+import pl.umk.andronetandroidclient.utils.IpValidator;
 import pl.umk.andronetandroidclient.utils.KeyboardHider;
 
 /**
@@ -52,7 +54,7 @@ public class ConnectActivity extends Activity {
                 String ip=mIpField.getText().toString();
                 String portString=mPortField.getText().toString();
 
-                if(!(ip==null || portString.isEmpty()))
+                if(IpValidator.validIP(ip) && !portString.isEmpty())
                 {
                     int port=Integer.parseInt(portString);
                     mClient.start(ip, port);
@@ -75,6 +77,18 @@ public class ConnectActivity extends Activity {
                         Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
+                    }
+                });
+            }
+        });
+
+        mClient.setDisconnectedAction(new IDisconnected() {
+            @Override
+            public void disconnected(Connection connection) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(ConnectActivity.this, R.string.cant_connect, Toast.LENGTH_SHORT).show();
                     }
                 });
             }

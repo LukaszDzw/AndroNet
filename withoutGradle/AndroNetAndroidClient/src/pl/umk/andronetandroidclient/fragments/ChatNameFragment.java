@@ -59,6 +59,5 @@ public class ChatNameFragment extends BaseFragment {
                 activity.showChatFragment(id);
             }
         });
-
     }
 }

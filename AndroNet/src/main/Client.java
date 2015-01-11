@@ -53,7 +53,7 @@ public class Client extends EndPoint{
 		int counter=0;
 		//block thread for connection
 		try {
-			while (!this.isConnected || counter>50)
+			while (!this.isConnected && counter<50)
 			{
 				Thread.sleep(50);
 				counter++;
@@ -85,14 +85,6 @@ public class Client extends EndPoint{
 	public void close()
 	{
 		this.isConnected=false;
-		SocketChannel channel=(SocketChannel)this.clientConnection.getSelectionKey().channel();
-		try {
-			channel.close();
-		}
-		catch (IOException e)
-		{
-			System.err.println(e.toString());
-		}
 		super.close();
 	}
 

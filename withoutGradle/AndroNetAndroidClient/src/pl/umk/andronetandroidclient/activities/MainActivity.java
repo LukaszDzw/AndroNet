@@ -164,6 +164,7 @@ public class MainActivity extends ActionBarActivity
         Intent intent=new Intent(this, ConnectActivity.class);
         startActivity(intent);
         mClient.close();
+        finish();
     }
 
     private void switchFragment(Fragment fragment, FragmentTag tag)

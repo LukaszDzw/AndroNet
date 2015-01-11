@@ -117,7 +117,7 @@ public class Server extends EndPoint {
 		SocketChannel socketChannel = serverChannel.accept();
 		socketChannel.configureBlocking(false);
 
-		System.out.println("Incoming connection from: " + socketChannel.getRemoteAddress());
+		System.out.println("Incoming connection from: " + socketChannel.socket().getRemoteSocketAddress());
 
 		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
 		Connection connection=new Connection(selectionKey, idNumber++);
@@ -163,11 +163,10 @@ public class Server extends EndPoint {
 
 	private void setServerOptions(ServerSocketChannel serverSocketChannel, Selector selector) throws IOException
 	{
+		serverSocketChannel.socket().bind(new InetSocketAddress(this.port));
+
 		//non-blocking mode
 		serverSocketChannel.configureBlocking(false);
-
-		//połącz adres z portem
-		serverSocketChannel.bind(new InetSocketAddress(this.port));
 
 		//rejestracja channelu do selectora
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);

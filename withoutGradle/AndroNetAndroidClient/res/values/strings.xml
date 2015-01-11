@@ -24,8 +24,9 @@
 
     <!-- ChatFragmentName -->
     <string name="type_name">Podaj imię</string>
-    <string name="typeAllFields">Wypełnij wszystkie pola</string>
+    <string name="typeAllFields">Wypełnij poprawnie wszystkie pola</string>
     <string name="connected">Połączono</string>
+    <string name="cant_connect">Nie można uzyskać połączenia</string>
 
     <!-- ConnectionActivity -->
     <string name="type_ip">Wprowadź adres serwera oraz port</string>
