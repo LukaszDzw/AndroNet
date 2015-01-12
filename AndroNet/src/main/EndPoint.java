@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by Lukasz on 2014-12-13.
  */
-public abstract class EndPoint {
+abstract class EndPoint {
     protected final Map<String, IListener> listeners;
     protected Thread updateThread;
     protected ExecutorService executorService;

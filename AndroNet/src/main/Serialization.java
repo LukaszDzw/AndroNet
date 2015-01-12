@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 /**
  * Created by Lukasz on 2014-11-24.
  */
-public class Serialization {
+class Serialization {
     private final int objectLengthLength=4;
 
     private final Json json;
