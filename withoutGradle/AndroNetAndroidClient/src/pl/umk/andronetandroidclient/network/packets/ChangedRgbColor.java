@@ -10,3 +10,5 @@ public class ChangedRgbColor {
     public Rgb type;
     public int value;
 }
+
+
