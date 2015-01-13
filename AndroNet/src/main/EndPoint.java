@@ -106,7 +106,8 @@ abstract class EndPoint {
             };
 
             this.executorService.execute(task);
-            connection.close();
         }
+
+        connection.close();
     }
 }

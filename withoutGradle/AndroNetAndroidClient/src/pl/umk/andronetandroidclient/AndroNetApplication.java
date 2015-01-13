@@ -15,11 +15,6 @@ public class AndroNetApplication extends Application {
         mClient=new Client();
     }
 
-    public void onTerminate()
-    {
-        mClient.close();
-    }
-
     public Client getClient()
     {
         return mClient;

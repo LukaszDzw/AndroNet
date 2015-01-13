@@ -13,7 +13,7 @@ import java.nio.channels.SocketChannel;
 /**
  * Created by Lukasz on 2014-12-08.
  */
-class Connection {
+public class Connection {
     private SelectionKey selectionKey;
     private Serialization serialization;
     private final ByteBuffer readBuffer, writeBuffer;
