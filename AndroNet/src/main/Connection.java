@@ -19,7 +19,7 @@ public class Connection {
     private final ByteBuffer readBuffer, writeBuffer;
 
     private int objectLength, id;
-    private final static int BUFFERCAPACITY = 10000;
+    private final static int BUFFERCAPACITY = 1000;
 
     public Connection(SelectionKey selectionKey, int id)
     {
@@ -81,14 +81,13 @@ public class Connection {
             {
                 this.readBuffer.compact();
                 bytesRead=socketChannel.read(readBuffer);
+                this.readBuffer.flip();
             }
-            this.readBuffer.flip();
             if(readBuffer.remaining()<objectLengthLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
             {
                 if(bytesRead==-1) throw new SocketException("Channel is closed");
                 return null;
             }
-
             this.objectLength=serialization.getObjectLength(readBuffer);
             if(this.objectLength>readBuffer.capacity()) throw new IOException("Object is bigger than buffer capacity. Closing connection");
         }

@@ -110,7 +110,8 @@ public class Client extends EndPoint{
 					try {
 						if (key.isWritable()) {
 							this.clientConnection.write();
-						} else if (key.isReadable()) {
+						}
+						if (key.isReadable()) {
 							Object object = this.clientConnection.read();
 							if (object != null) {
 								this.notifyReceived(object, clientConnection);

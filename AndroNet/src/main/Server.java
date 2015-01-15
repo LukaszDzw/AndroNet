@@ -144,12 +144,14 @@ public class Server extends EndPoint {
 
 						if (key.isAcceptable()) {
 							this.accept(key, selector);
-						} else if (key.isReadable()) {
+						}
+						if (key.isReadable()) {
 							Object object = connection.read();
 							if (object != null) {
 								this.notifyReceived(object, connection);
 							}
-						} else if (key.isWritable()) {
+						}
+						if (key.isWritable()) {
 							connection.write();
 						}
 					} catch (IOException ex) {

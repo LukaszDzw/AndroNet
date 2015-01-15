@@ -22,14 +22,7 @@ public class Drawer {
     public Drawer(Bitmap canvasBitmap)
     {
         mDrawPath = new Path();
-        mDrawPaint = new Paint();
-
-        mDrawPaint.setColor(mPaintColor);
-        mDrawPaint.setAntiAlias(true);
-        mDrawPaint.setStrokeWidth(20);
-        mDrawPaint.setStyle(Paint.Style.STROKE);
-        mDrawPaint.setStrokeJoin(Paint.Join.ROUND);
-        mDrawPaint.setStrokeCap(Paint.Cap.ROUND);
+        mDrawPaint=new Painter(mPaintColor);
 
         mDrawCanvas = new Canvas(canvasBitmap);
         mCanvas = new Canvas(canvasBitmap);
@@ -73,6 +66,6 @@ public class Drawer {
 
     public void setColor(Color color)
     {
-        mDrawPaint.setColor(color.getColorValue());
+        mDrawPaint=new Painter(color.getColorValue());
     }
 }
