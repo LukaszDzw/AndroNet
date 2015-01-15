@@ -24,7 +24,8 @@
 
     <!-- ChatFragmentName -->
     <string name="type_name">Podaj imię</string>
-    <string name="typeAllFields">Wypełnij poprawnie wszystkie pola</string>
+    <string name="typeAllFields">Wypełnij wszystkie pola poprawnie</string>
+    <string name="empty_name">Pole nie może być puste</string>
     <string name="connected">Połączono</string>
     <string name="cant_connect">Nie można uzyskać połączenia</string>
 

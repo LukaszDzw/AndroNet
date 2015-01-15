@@ -1,6 +1,7 @@
 package pl.umk.andronetandroidclient.listeners;
 
 import android.widget.SeekBar;
+import android.widget.TextView;
 import main.Client;
 import pl.umk.andronetandroidclient.network.enums.Rgb;
 import pl.umk.andronetandroidclient.network.enums.Tags;
@@ -17,13 +18,15 @@ public class RGBBarChangeListener implements SeekBar.OnSeekBarChangeListener {
     private Rgb mType;
     private Channel mChannel;
     private ColorView mColorview;
+    private TextView mValue;
 
-    public RGBBarChangeListener(Client client, Rgb type, Channel channel, ColorView view)
+    public RGBBarChangeListener(Client client, Rgb type, Channel channel, ColorView view, TextView text)
     {
         mClient=client;
         mType=type;
         mChannel=channel;
         mColorview=view;
+        mValue=text;
     }
 
     @Override
@@ -36,6 +39,7 @@ public class RGBBarChangeListener implements SeekBar.OnSeekBarChangeListener {
             mClient.send(Tags.changeColor.name(), changed);
         }
         mColorview.setColor(mType, i);
+        mValue.setText(String.valueOf(i));
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import interfaces.IListener;
 import main.Connection;
 import pl.umk.andronetandroidclient.R;
@@ -47,6 +48,12 @@ public class ChatNameFragment extends BaseFragment {
         mChatNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name=mNameText.getText().toString();
+                if(name.isEmpty()){
+                    Toast.makeText(getActivity(), R.string.empty_name, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 mClient.send(Tags.registerChat.name().trim(), mNameText.getText().toString());
             }
         });

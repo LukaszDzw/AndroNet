@@ -90,7 +90,6 @@ abstract class EndPoint {
             }
         };
         this.executorService.execute(runnable);
-
     }
 
     protected void closeConnection(final Connection connection) throws IOException

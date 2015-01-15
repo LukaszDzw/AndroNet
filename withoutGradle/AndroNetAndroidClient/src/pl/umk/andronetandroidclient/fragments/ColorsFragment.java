@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import interfaces.IListener;
 import main.Connection;
 import pl.umk.andronetandroidclient.R;
@@ -24,6 +25,7 @@ import pl.umk.andronetandroidclient.widgets.ColorView;
 public class ColorsFragment extends BaseFragment {
     private Channel mMyChannel;
     private SeekBar mRedSeek, mGreenSeek, mBlueSeek;
+    private TextView mRedText, mGreenText, mBlueText;
     private ColorView mColorView;
 
     @Override
@@ -39,6 +41,9 @@ public class ColorsFragment extends BaseFragment {
         mGreenSeek=(SeekBar)v.findViewById(R.id.color_green_seeker);
         mBlueSeek=(SeekBar)v.findViewById(R.id.color_blue_seeker);
         mColorView=(ColorView)v.findViewById(R.id.color_view);
+        mRedText=(TextView)v.findViewById(R.id.color_red_value);
+        mGreenText=(TextView)v.findViewById(R.id.color_green_value);
+        mBlueText=(TextView)v.findViewById(R.id.color_blue_value);
 
         initialize();
         setupNetworking();
@@ -59,9 +64,19 @@ public class ColorsFragment extends BaseFragment {
                 mClient,
                 Rgb.RED,
                 mMyChannel,
-                mColorView);
-        RGBBarChangeListener mSeekBarsChangeListenerGreen=new RGBBarChangeListener(mClient, Rgb.GREEN, mMyChannel, mColorView);
-        RGBBarChangeListener mSeekBarsChangeListenerBlue=new RGBBarChangeListener(mClient, Rgb.BLUE, mMyChannel, mColorView);
+                mColorView,
+                mRedText);
+        RGBBarChangeListener mSeekBarsChangeListenerGreen=new RGBBarChangeListener(
+                mClient,
+                Rgb.GREEN,
+                mMyChannel,
+                mColorView,
+                mGreenText);
+        RGBBarChangeListener mSeekBarsChangeListenerBlue=new RGBBarChangeListener(mClient,
+                Rgb.BLUE,
+                mMyChannel,
+                mColorView,
+                mBlueText);
         mRedSeek.setOnSeekBarChangeListener(mSeekBarsChangeListenerRed);
         mGreenSeek.setOnSeekBarChangeListener(mSeekBarsChangeListenerGreen);
         mBlueSeek.setOnSeekBarChangeListener(mSeekBarsChangeListenerBlue);
