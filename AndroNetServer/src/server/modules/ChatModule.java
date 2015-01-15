@@ -58,7 +58,7 @@ public class ChatModule implements IModule {
             }
         });
 
-        //sendAllUsers
+        //getusers
         server.addListener(Tags.getChatUser.name(), new IListener() {
             @Override
             public void received(Connection connection, Object o) {

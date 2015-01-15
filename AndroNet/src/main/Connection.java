@@ -57,7 +57,7 @@ public class Connection {
         synchronized(writeBuffer) {
             int bufferStart = writeBuffer.position();
             this.writeBuffer.putInt(json.getBytes().length);
-            writeBuffer.position(bufferStart + serialization.getObjectLengthLength());
+            this.writeBuffer.position(bufferStart + serialization.getObjectLengthLength());
             this.writeBuffer.put(json.getBytes("UTF-8"));
         }
 
@@ -90,7 +90,6 @@ public class Connection {
             }
 
             this.objectLength=serialization.getObjectLength(readBuffer);
-            System.out.println("dlugosc " + this.objectLength);
             if(this.objectLength>readBuffer.capacity()) throw new IOException("Object is bigger than buffer capacity. Closing connection");
         }
 
