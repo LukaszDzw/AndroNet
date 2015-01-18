@@ -56,9 +56,10 @@ public class Connection {
 
         synchronized(writeBuffer) {
             int bufferStart = writeBuffer.position();
-            this.writeBuffer.putInt(json.getBytes().length);
+            byte[] jsonBytes=json.getBytes("UTF-8");
+            this.writeBuffer.putInt(jsonBytes.length);
             this.writeBuffer.position(bufferStart + serialization.getObjectLengthLength());
-            this.writeBuffer.put(json.getBytes("UTF-8"));
+            this.writeBuffer.put(jsonBytes);
         }
 
         synchronized (selectionKey) {

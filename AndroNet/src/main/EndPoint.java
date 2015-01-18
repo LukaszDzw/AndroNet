@@ -97,14 +97,7 @@ abstract class EndPoint {
         final IDisconnected disconnectedAction = this.getDisconnectedAction();
         if(disconnectedAction!=null)
         {
-            Runnable task=new Runnable() {
-                @Override
-                public void run() {
-                    disconnectedAction.disconnected(connection);
-                }
-            };
-
-            this.executorService.execute(task);
+            disconnectedAction.disconnected(connection);
         }
 
         connection.close();

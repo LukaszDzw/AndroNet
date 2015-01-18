@@ -117,7 +117,7 @@ public class Client extends EndPoint{
 								this.notifyReceived(object, clientConnection);
 							}
 						}
-					} catch (IOException ex) {
+					} catch (Exception ex) {
 						System.out.println("Connection closed by host");
 						System.err.println(ex.toString());
 						this.closeConnection(clientConnection);
