@@ -144,7 +144,7 @@ public class Client extends EndPoint{
 	{
 		Socket socket=socketChannel.socket();
 		socket.setTcpNoDelay(true);
-		socket.connect(new InetSocketAddress(ip, port), 5000); // connecting in blocking mode
+		socket.connect(new InetSocketAddress(ip, port), 2500); // connecting in blocking mode
 
 		socketChannel.configureBlocking(false);
 		SelectionKey selectionKey=socketChannel.register(selector, SelectionKey.OP_READ);

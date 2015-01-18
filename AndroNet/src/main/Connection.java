@@ -90,7 +90,8 @@ public class Connection {
                 return null;
             }
             this.objectLength=serialization.getObjectLength(readBuffer);
-            if(this.objectLength>readBuffer.capacity()) throw new IOException("Object is bigger than buffer capacity. Closing connection");
+            if(this.objectLength>readBuffer.capacity())
+                throw new IOException("Object is bigger than buffer capacity. Closing connection");
         }
 
         //dopełnij bufor, jeśli za mało wczytał
