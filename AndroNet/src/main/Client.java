@@ -58,10 +58,6 @@ public class Client extends EndPoint{
 				Thread.sleep(50);
 				counter++;
 			}
-			if(counter==50)
-			{
-				this.closeConnection(clientConnection);
-			}
 		}
 		catch (InterruptedException ex)
 		{
