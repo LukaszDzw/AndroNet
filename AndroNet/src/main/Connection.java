@@ -31,7 +31,7 @@ public class Connection {
     {
         this.selectionKey=selectionKey;
         this.readBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
-        this.writeBuffer=ByteBuffer.allocate(BUFFERCAPACITY);
+        this.writeBuffer=ByteBuffer.allocate(3*BUFFERCAPACITY);
         this.readBuffer.clear();
         this.readBuffer.flip(); //set to read
         this.writeBuffer.clear();

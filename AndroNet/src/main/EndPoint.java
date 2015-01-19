@@ -14,9 +14,9 @@ import java.util.concurrent.Executors;
  * Created by Lukasz on 2014-12-13.
  */
 abstract class EndPoint {
-    protected final Map<String, IListener> listeners;
     protected Thread updateThread;
-    protected ExecutorService executorService;
+    private final Map<String, IListener> listeners;
+    private  ExecutorService executorService;
 
     private IDisconnected disconnectedAction;
 
@@ -35,9 +35,6 @@ abstract class EndPoint {
     {
         this.disconnectedAction=disconnectedAction;
     }
-
-
-    protected abstract void listen(Selector selector) throws IOException;
 
     protected void start()
     {
@@ -77,20 +74,20 @@ abstract class EndPoint {
         this.updateThread.start();
     }
 
-    protected void notifyReceived(Object object, final Connection connection)
-    {
-        final Packet packet=(Packet)object;
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                IListener listener = listeners.get(packet.tag);
-                if(listener!=null) {
-                    listener.received(connection, packet.object);
-                }
+protected void notifyReceived(Object object, final Connection connection)
+{
+    final Packet packet=(Packet)object;
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            IListener listener = listeners.get(packet.tag);
+            if(listener!=null) {
+                listener.received(connection, packet.object);
             }
-        };
-        this.executorService.execute(runnable);
-    }
+        }
+    };
+    this.executorService.execute(runnable);
+}
 
     protected void closeConnection(final Connection connection) throws IOException
     {
@@ -100,6 +97,8 @@ abstract class EndPoint {
             disconnectedAction.disconnected(connection);
         }
 
-        connection.close();
+        if(connection!=null) {
+            connection.close();
+        }
     }
 }

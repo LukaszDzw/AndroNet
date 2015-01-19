@@ -58,6 +58,10 @@ public class Client extends EndPoint{
 				Thread.sleep(50);
 				counter++;
 			}
+			if(counter==50)
+			{
+				this.closeConnection(clientConnection);
+			}
 		}
 		catch (InterruptedException ex)
 		{
@@ -92,13 +96,26 @@ public class Client extends EndPoint{
 	{
 		return this.isConnected;
 	}
-	
-	protected void listen(Selector selector) throws IOException
+
+	@Override
+	protected void closeConnection(final Connection connection)
 	{
-        while (!Thread.interrupted()){
-        	 
-            selector.select();
-            Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
+		try {
+			super.closeConnection(connection);
+		}
+		catch(IOException ex)
+		{
+			System.err.println(ex.toString());
+		}
+		this.close();
+	}
+
+	private void listen(Selector selector) throws IOException
+	{
+		while (!Thread.interrupted()){
+
+			selector.select();
+			Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 
 			synchronized (keys) {
 				while (keys.hasNext()) {
@@ -124,20 +141,7 @@ public class Client extends EndPoint{
 					}
 				}
 			}
-        }
-	}
-
-	@Override
-	protected void closeConnection(final Connection connection)
-	{
-		try {
-			super.closeConnection(connection);
 		}
-		catch(IOException ex)
-		{
-			System.err.println(ex.toString());
-		}
-		this.close();
 	}
 
 	private void connect(Selector selector, SocketChannel socketChannel) throws IOException
@@ -152,3 +156,4 @@ public class Client extends EndPoint{
 		this.isConnected=true;
 	}
 }
+

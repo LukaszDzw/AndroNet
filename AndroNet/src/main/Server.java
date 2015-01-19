@@ -16,20 +16,20 @@ import java.util.Map;
 
 
 public class Server extends EndPoint {
-	private final int port;
+	private int port;
 	private int idNumber;
 	private SelectionKey serverSelectionKey;
 
-	public Server(int port)
+	public Server()
 	{
-		this.port = port;
 		this.idNumber = 0;
 	}
 
-	@Override
-	public void start()
+	public void start(int port)
 	{
 		super.start();
+		this.port=port;
+
 		Runnable listeningTask = new Runnable() {
 			@Override
 			public void run() {
@@ -119,12 +119,12 @@ public class Server extends EndPoint {
 
 		System.out.println("Incoming connection from: " + socketChannel.socket().getRemoteSocketAddress());
 
-		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+		SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_READ);
 		Connection connection=new Connection(selectionKey, idNumber++);
 		selectionKey.attach(connection);
 	}
 
-	protected void listen(Selector selector) throws IOException
+	private void listen(Selector selector) throws IOException
 	{
 		while(true)
 		{
@@ -174,3 +174,4 @@ public class Server extends EndPoint {
 		this.serverSelectionKey=serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 	}
 }
+
