@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AndroNetServer2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../AndroNetAndroidClient/out/artifacts/AndroNetServer_jar/AndroNetServer2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

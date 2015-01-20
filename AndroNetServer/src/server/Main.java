@@ -4,7 +4,6 @@ import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Connection;
 import main.Server;
-import pl.umk.andronetandroidclient.network.enums.Tags;
 import server.interfaces.IModule;
 import server.modules.ChatModule;
 import server.modules.ColorModule;

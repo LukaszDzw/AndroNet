@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroNetAndroidClient.iml" filepath="$PROJECT_DIR$/AndroNetAndroidClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../untitled1serv/untitled1serv.iml" filepath="$PROJECT_DIR$/../untitled1serv/untitled1serv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../AndroNetServer/AndroNetServer.iml" filepath="$PROJECT_DIR$/../../AndroNetServer/AndroNetServer.iml" />
+      <module fileurl="file://$USER_HOME$/AppData/Local/Android/android-sdk/extras/android/support/v7/appcompat/appcompat.iml" filepath="$USER_HOME$/AppData/Local/Android/android-sdk/extras/android/support/v7/appcompat/appcompat.iml" />
     </modules>
   </component>
 </project>

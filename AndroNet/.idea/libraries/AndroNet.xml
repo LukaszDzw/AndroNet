@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AndroNet">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/AndroNet.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

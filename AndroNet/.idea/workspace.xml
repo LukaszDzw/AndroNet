@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="name" value="app: pl.umk.andronetandroidclient" />
+        <option name="packageNamePattern" value="pl.umk.andronetandroidclient" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pl.umk.andronetandroidclient" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="AndroNet:jar" />
@@ -7,13 +23,362 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a0f876-ea53-4c22-a3e0-2c8cde657417" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/app/libs/AndroNet.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client$1.class" afterPath="$PROJECT_DIR$/build/main/Client$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/AndroNet.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/AndroNetServer2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/libs1.xml" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\.idea\artifacts\AndroNet1_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\.idea\artifacts\AndroNet_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\.idea\gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\app.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\libs\AndroNet.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\proguard-rules.pro" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\androidTest\java\pl\umk\andronetandroidclient\app\ApplicationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\Activity\MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\AndroNetApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\Dupa.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\fragment\DrawerFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\fragment\NavigationDrawerFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\java\pl\umk\andronetandroidclient\app\widgets\DrawingView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-hdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-hdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-mdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-mdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xhdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xhdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xxhdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xxhdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\drawable-xxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\layout\activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\layout\fragment_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\layout\fragment_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\layout\fragment_navigation_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\menu\global.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\menu\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\values-w820dp\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\values\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\app\src\main\res\values\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\build.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\gradle.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\gradlew" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\gradlew.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetAndroidClient\settings.gradle" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\cache.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\cache.properties.lock" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\fileHashes.bin" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\fileSnapshots.bin" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\outputFileStates.bin" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.gradle\2.1\taskArtifacts\taskArtifacts.bin" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\AndroNetClient.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\AbstractLayout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\DimensionInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\GridConstraints.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\GridLayoutManager.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\HorizontalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\LayoutState.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\Spacer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\SupportCode$TextWithMnemonic.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\SupportCode.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\Util.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\build\com\intellij\uiDesigner\core\VerticalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\gradle\wrapper\gradle-wrapper.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\gradle\wrapper\gradle-wrapper.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\gradlew" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\gradlew.bat" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\client\Frame.form" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\client\Frame.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\AndroNetClient\src\client\Main.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\withoutGradle.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\artifacts\AndroNetServer_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\libraries\AndroNet.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\libraries\android_support_v4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\libraries\gradle_wrapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\libraries\libs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\AndroNetAndroidClient.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\build.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\gen\pl\umk\andronetandroidclient\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\gen\pl\umk\andronetandroidclient\Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\gen\pl\umk\andronetandroidclient\R.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\libs\android-support-v4.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\libs\android-support-v7-appcompat.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\local.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$bool.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$integer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\android\support\v7\appcompat\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\AndroNetApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$array.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$bool.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$integer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\R$menu.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\ConnectActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\ConnectActivity$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\ConnectActivity$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\ConnectActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\MainActivity$1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\MainActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\MainActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\activities\SettingsActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\adapters\ChatMessageAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\enums\FragmentTag.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\BaseFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$3$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$4$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$5$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\ChatFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\DrawerFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment$NavigationDrawerCallbacks.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\enums\Action.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\enums\Color$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\enums\Color.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\enums\Rgb.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\enums\Tags.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChangedColor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChangedRgbColor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChatMessage.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\ChatUser.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\DrawPoint.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\DrawUser.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\network\packets\RgbColor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\Channel.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\Drawer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\Drawer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\IpValidator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\KeyboardHider$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\KeyboardHider.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\MotionEventConvert.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\utils\Painter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\widgets\ColorView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\widgets\ColorView$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\widgets\ColorView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\widgets\DrawingView$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetAndroidClient\pl\umk\andronetandroidclient\widgets\DrawingView.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\META-INF\MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\Main.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\interfaces\IModule.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ChatModule.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ColorModule$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ColorModule$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ColorModule$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ColorModule.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ConnectModule$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\ConnectModule.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\DrawModule$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\DrawModule$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\DrawModule$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\DrawModule$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\AndroNetServer\server\modules\DrawModule.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$anim.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$bool.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$color.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$dimen.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$integer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$style.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\out\production\appcompat\android\support\v7\appcompat\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\project.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-hdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-hdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-ldpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-mdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-mdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xhdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xhdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xxhdpi\chat_incoming.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xxhdpi\chat_outgoing.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xxhdpi\drawer_shadow.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xxhdpi\ic_drawer.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable-xxhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable\chat_incoming.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable\chat_outgoing.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable\paint.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\drawable\rounded_corner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\activity_connection.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\activity_main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\fragment_chat.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\fragment_chat_name.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\fragment_colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\fragment_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\fragment_navigation_drawer.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\view_chat_text_my.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\layout\view_chat_text_other.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\menu\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values-land\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values-w820dp\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values\arrays.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values\colors.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values\dimens.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\values\styles.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\res\xml\preferences.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\AndroNetApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\activities\ConnectActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\activities\MainActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\activities\SettingsActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\adapters\ChatMessageAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\enums\FragmentTag.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\BaseFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\ChatFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\ChatNameFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\ColorsFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\DrawerFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\fragments\NavigationDrawerFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\listeners\RGBBarChangeListener.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\enums\Action.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\enums\Color.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\enums\Rgb.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\enums\Tags.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\ChangedColor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\ChangedRgbColor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\ChatMessage.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\ChatUser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\DrawPoint.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\DrawUser.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\network\packets\RgbColor.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\Channel.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\Drawer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\IpValidator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\KeyboardHider.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\MotionEventConvert.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\utils\Painter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\widgets\ColorView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\AndroNetAndroidClient\src\pl\umk\andronetandroidclient\widgets\DrawingView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\.idea\workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\ant.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\build.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\gen\com\example\serverTest\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\gen\com\example\serverTest\Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\gen\com\example\serverTest\R.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\local.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\MyActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\MyActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\com\example\serverTest\R.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\serverTest.apk" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\out\production\serverTest\serverTest.unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\proguard-project.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\project.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\drawable-ldpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\drawable-xhdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\layout\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\serverTest.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projekty\AndroNet\withoutGradle\serverTest\src\com\example\serverTest\MyActivity.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/main/Client.class" afterPath="$PROJECT_DIR$/build/main/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Connection.java" afterPath="$PROJECT_DIR$/src/main/Connection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/AndroNetAndroidClient.iml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/AndroNetAndroidClient.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" afterPath="$PROJECT_DIR$/../AndroNetServer/AndroNetServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/AndroNet_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/AndroNet_jar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" afterPath="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/misc.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../AndroNetAndroidClient/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../withoutGradle/AndroNetAndroidClient/.idea/workspace.xml" />
     </list>
     <ignored path="AndroNet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,9 +408,13 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2516">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="2584">
               <caret line="148" column="57" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="57" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1857#1858#0" expanded="false" />
+                <element signature="e#1887#1888#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,7 +424,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="731">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="34" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#382#383#0" expanded="false" />
+                <element signature="e#418#419#0" expanded="false" />
+                <element signature="e#476#477#0" expanded="false" />
+                <element signature="e#537#538#0" expanded="false" />
+                <element signature="e#1150#1151#0" expanded="false" />
+                <element signature="e#1196#1197#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,11 +457,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41337386" vertical-offset="731" max-vertical-offset="2244">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="113" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="2244">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AndroNetServer/src/server/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrawModule.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AndroNetServer/src/server/modules/DrawModule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1088">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../AndroNetAndroidClient/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0778626" vertical-offset="0" max-vertical-offset="1734">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroNetApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -93,9 +515,13 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2805">
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2856">
               <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#565#566#0" expanded="false" />
+                <element signature="e#589#590#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,6 +658,7 @@
         <option value="$PROJECT_DIR$/src/main/EndPoint.java" />
         <option value="$PROJECT_DIR$/src/main/Client.java" />
         <option value="$PROJECT_DIR$/src/main/Connection.java" />
+        <option value="$PROJECT_DIR$/../AndroNetServer/src/server/Main.java" />
       </list>
     </option>
   </component>
@@ -264,9 +691,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -282,7 +706,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AndroNet" />
+              <option name="myItemId" value="AndroNetAndroidClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,7 +716,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AndroNet" />
+              <option name="myItemId" value="AndroNetAndroidClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -300,7 +724,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="andronetandroidclient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,32 +735,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AndroNet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroNet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroNet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -347,17 +752,20 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../withoutGradle" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Android/android-sdk/extras/android/support/v7/appcompat" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.101:5555" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android Application.AndroNetAndroidClient">
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -511,7 +919,49 @@
       <listeners />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="false" name="AndroNetAndroidClient" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="AndroNetAndroidClient" />
+      <option name="ACTIVITY_CLASS" value="pl.umk.andronetandroidclient.activities.ConnectActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Server" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="server.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AndroNetServer" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.AndroNetAndroidClient" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -547,33 +997,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868525" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3218842" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.327451" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32973504" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32973504" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20522387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09808102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -595,7 +1048,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -604,37 +1057,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2805">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2227">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="255">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/EndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1105">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Serialization.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1122">
@@ -933,7 +1355,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="2805">
           <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#565#566#0" expanded="false" />
+            <element signature="e#589#590#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -941,7 +1367,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="34" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#382#383#0" expanded="false" />
+            <element signature="e#418#419#0" expanded="false" />
+            <element signature="e#476#477#0" expanded="false" />
+            <element signature="e#537#538#0" expanded="false" />
+            <element signature="e#1150#1151#0" expanded="false" />
+            <element signature="e#1196#1197#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -965,14 +1399,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2516">
           <caret line="148" column="57" selection-start-line="148" selection-start-column="57" selection-end-line="148" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1857#1858#0" expanded="false" />
+            <element signature="e#1887#1888#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41337386" vertical-offset="731" max-vertical-offset="2244">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="113" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="2244">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNetAndroidClient/src/pl/umk/andronetandroidclient/AndroNetApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNetServer/src/server/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNetServer/src/server/modules/DrawModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1088">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AndroNetAndroidClient/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0778626" vertical-offset="0" max-vertical-offset="1734">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -996,7 +1471,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1031,7 +1506,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>AndroNet</last-edited>
+          <last-edited>AndroNetAndroidClient</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1055,7 +1530,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib</last-edited>
+          <last-edited>libs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

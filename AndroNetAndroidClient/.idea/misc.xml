@@ -33,9 +33,9 @@
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4258957052924" />
-        <entry key="$PROJECT_DIR$/../Andronet" value="2839233223618" />
-        <entry key="$PROJECT_DIR$/../../javaCourse" value="2832735047403" />
+        <entry key="$PROJECT_DIR$/../../AndroNetAndroidClient" value="4258957052924" />
+        <entry key="$PROJECT_DIR$/../../Andronet" value="2839233223618" />
+        <entry key="$PROJECT_DIR$/../../../javaCourse" value="2832735047403" />
         <entry key="D:/pomysły WormShot/1.4.1/test" value="8503854021299" />
       </map>
     </option>
@@ -53,8 +53,11 @@
   <component name="ProjectModuleManager">
     <modules />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="Android API 20 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToClass.includeLibraries" value="false" />
