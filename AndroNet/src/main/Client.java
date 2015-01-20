@@ -45,6 +45,7 @@ public class Client extends EndPoint{
 				catch(IOException ex)
 				{
 					System.err.print(ex);
+					closeConnection(clientConnection);
 				}
 			}
 		};
@@ -52,6 +53,7 @@ public class Client extends EndPoint{
 
 		int counter=0;
 		//block thread for connection
+
 		try {
 			while (!this.isConnected && counter<50)
 			{
