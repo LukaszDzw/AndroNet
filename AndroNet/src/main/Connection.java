@@ -69,49 +69,53 @@ public class Connection {
         selector.wakeup();
     }
 
-public Object read() throws IOException {
-    int objectLengthLength=this.serialization.getObjectLengthLength();
-    int bytesRead=0;
+    public Object read() throws IOException {
+        int objectLengthLength=this.serialization.getObjectLengthLength();
+        int bytesRead=0;
 
-    SocketChannel socketChannel=(SocketChannel)this.selectionKey.channel();
+        SocketChannel socketChannel=(SocketChannel)this.selectionKey.channel();
 
-    //odczytaj wielkość obiektu z bufora
-    if(this.objectLength==0)
-    {
-        if(this.readBuffer.remaining()<objectLengthLength)
+        //odczytaj wielkość obiektu z bufora
+        if(this.objectLength==0)
+        {
+            if(this.readBuffer.remaining()<objectLengthLength)
+            {
+                this.readBuffer.compact();
+                bytesRead=socketChannel.read(readBuffer);
+                this.readBuffer.flip();
+            }
+
+            //jeżeli bufor się jeszcze odpowiednio nie zapełnił
+            if(readBuffer.remaining()<objectLengthLength)
+            {
+                if(bytesRead==-1) throw new SocketException("Channel is closed");
+                return null;
+            }
+            this.objectLength=serialization.getObjectLength(readBuffer);
+            if(this.objectLength>readBuffer.capacity())
+                throw new IOException("Object is bigger than buffer capacity. Closing connection");
+        }
+
+        //dopełnij bufor, jeśli za mało wczytał
+        if(this.readBuffer.remaining()<this.objectLength)
         {
             this.readBuffer.compact();
             bytesRead=socketChannel.read(readBuffer);
             this.readBuffer.flip();
+
+            //jeżeli bufor się jeszcze odpowiednio nie zapełnił
+            if(readBuffer.remaining()<this.objectLength)
+            {
+                if(bytesRead==-1) throw new SocketException("Channel is closed");
+                return null;
+            }
         }
-        if(readBuffer.remaining()<objectLengthLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
-        {
-            if(bytesRead==-1) throw new SocketException("Channel is closed");
-            return null;
-        }
-        this.objectLength=serialization.getObjectLength(readBuffer);
-        if(this.objectLength>readBuffer.capacity())
-            throw new IOException("Object is bigger than buffer capacity. Closing connection");
+
+        Object object = this.serialization.getObjectFromBuffer(this.readBuffer, this.objectLength);
+        this.objectLength=0;
+
+        return object;
     }
-
-    //dopełnij bufor, jeśli za mało wczytał
-    if(this.readBuffer.remaining()<this.objectLength)
-    {
-        this.readBuffer.compact();
-        bytesRead=socketChannel.read(readBuffer);
-        this.readBuffer.flip();
-        if(readBuffer.remaining()<this.objectLength) //jeżeli bufor się jeszcze odpowiednio nie zapełnił
-        {
-            if(bytesRead==-1) throw new SocketException("Channel is closed");
-            return null;
-        }
-    }
-
-    Object object = this.serialization.getObjectFromBuffer(this.readBuffer, this.objectLength);
-    this.objectLength=0;
-
-    return object;
-}
 
     public void write() throws IOException
     {
