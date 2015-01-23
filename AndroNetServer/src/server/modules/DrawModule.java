@@ -74,7 +74,7 @@ public class DrawModule implements IModule {
                     if(id!=connection.getId()) {
                         drawUser.id = id;
                         drawUser.color = element.getValue();
-                        server.sendTo(connection, Tags.getChatUser.name(), drawUser);
+                        server.sendTo(connection, Tags.drawChangeColor.name(), drawUser);
                     }
                 }
             }

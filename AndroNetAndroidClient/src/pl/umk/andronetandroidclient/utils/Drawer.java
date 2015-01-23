@@ -24,8 +24,10 @@ public class Drawer {
         mDrawPath = new Path();
         mDrawPaint=new Painter(mPaintColor);
 
-        mDrawCanvas = new Canvas(canvasBitmap);
-        mCanvas = new Canvas(canvasBitmap);
+        if(canvasBitmap!=null) {
+            mDrawCanvas = new Canvas(canvasBitmap);
+            mCanvas = new Canvas(canvasBitmap);
+        }
     }
 
     public void draw(DrawPoint point)

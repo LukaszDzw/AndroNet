@@ -39,14 +39,9 @@ public class DrawerFragment extends BaseFragment {
         mGreenColorButton = (ImageButton)v.findViewById(R.id.draw_green);
         mBlueColorButton = (ImageButton)v.findViewById(R.id.draw_blue);
 
+        mDrawingView.refreshDrawableState();
         initialize();
         return v;
-    }
-
-    @Override
-    public void onStop()
-    {
-        super.onStop();
     }
 
     @Override
@@ -109,7 +104,7 @@ public class DrawerFragment extends BaseFragment {
             }
         });
 
-        mClient.send(Tags.getDrawerUser.name(), new Object());
+       mClient.send(Tags.getDrawerUser.name(), new Object());
     }
 
     private void setColorButtonListener(ImageButton button, final Color color)
