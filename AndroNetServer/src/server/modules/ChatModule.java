@@ -81,13 +81,5 @@ public class ChatModule implements IModule {
                 server.sendToAll(Tags.disconnected.name(), connection.getId());
             }
         });
-
-        server.setDisconnectedAction(new IDisconnected() {
-            @Override
-            public void disconnected(Connection connection) {
-                System.out.println("bye connection " + connection.getId());
-                userMap.remove(connection.getId());
-            }
-        });
     }
 }

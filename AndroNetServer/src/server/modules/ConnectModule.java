@@ -1,5 +1,6 @@
 package server.modules;
 
+import interfaces.IDisconnected;
 import interfaces.IListener;
 import main.Connection;
 import main.Server;
@@ -16,6 +17,12 @@ public class ConnectModule implements IModule {
             @Override
             public void received(Connection connection, Object o) {
                 server.sendTo(connection, Tags.hello.name(), o);
+            }
+        });
+        server.setDisconnectedAction(new IDisconnected() {
+            @Override
+            public void disconnected(Connection connection) {
+                System.out.println("bye connection " + connection.getId());
             }
         });
     }

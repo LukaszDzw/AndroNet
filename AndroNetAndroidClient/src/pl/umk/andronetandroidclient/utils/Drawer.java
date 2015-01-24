@@ -14,7 +14,6 @@ public class Drawer {
     private Path mDrawPath;
     private Paint mDrawPaint;
     private Canvas mDrawCanvas;
-    private Canvas mCanvas;
 
     private int mPaintColor = Color.RED.getColorValue();
     private boolean mIsdown;
@@ -26,7 +25,6 @@ public class Drawer {
 
         if(canvasBitmap!=null) {
             mDrawCanvas = new Canvas(canvasBitmap);
-            mCanvas = new Canvas(canvasBitmap);
         }
     }
 
@@ -63,7 +61,6 @@ public class Drawer {
     public void onSizeChanged(Bitmap canvasBitmap)
     {
         mDrawCanvas = new Canvas(canvasBitmap);
-        mCanvas = new Canvas(canvasBitmap);
     }
 
     public void setColor(Color color)

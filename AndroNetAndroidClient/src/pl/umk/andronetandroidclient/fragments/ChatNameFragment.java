@@ -54,7 +54,7 @@ public class ChatNameFragment extends BaseFragment {
                     return;
                 }
 
-                mClient.send(Tags.registerChat.name().trim(), mNameText.getText().toString());
+                mClient.send(Tags.registerChat.name(), mNameText.getText().toString().trim());
             }
         });
         mClient.addListener(Tags.registerChat.name(), new IListener() {

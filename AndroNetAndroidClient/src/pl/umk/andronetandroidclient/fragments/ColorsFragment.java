@@ -72,7 +72,8 @@ public class ColorsFragment extends BaseFragment {
                 mMyChannel,
                 mColorView,
                 mGreenText);
-        RGBBarChangeListener mSeekBarsChangeListenerBlue=new RGBBarChangeListener(mClient,
+        RGBBarChangeListener mSeekBarsChangeListenerBlue=new RGBBarChangeListener(
+                mClient,
                 Rgb.BLUE,
                 mMyChannel,
                 mColorView,
