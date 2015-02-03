@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="AndroNetAndroidClient">
+    <output-path>$PROJECT_DIR$/out/artifacts/AndroNetAndroidClient</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="keyAlias" value="AndroidKey" />
+        <option name="keyPassword" value="bHVrYXN6MjIy" />
+        <option name="keyStorePassword" value="bHVrYXN6OTk5" />
+        <option name="keyStoreUrl" value="file://$USER_HOME$/keys/android.jks" />
+        <option name="proGuardCfgFiles">
+          <list>
+            <option value="file://%MODULE_SDK_HOME%/tools/proguard/proguard-android.txt" />
+          </list>
+        </option>
+        <option name="signingMode" value="DEBUG_WITH_CUSTOM_CERTIFICATE" />
+      </options>
+    </properties>
+    <root id="archive" name="AndroNetAndroidClient.apk">
+      <element id="android-final-package" facet="AndroNetAndroidClient/android/Android" />
+    </root>
+  </artifact>
+</component>

@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="AndroNet" level="project" />
-    <orderEntry type="module" module-name="AndroNetAndroidClient" />
+    <orderEntry type="module" module-name="AndroNetAndroidClient" exported="" />
   </component>
 </module>

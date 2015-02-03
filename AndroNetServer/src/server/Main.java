@@ -1,8 +1,5 @@
 package server;
 
-import interfaces.IDisconnected;
-import interfaces.IListener;
-import main.Connection;
 import main.Server;
 import server.interfaces.IModule;
 import server.modules.ChatModule;

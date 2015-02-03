@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AndroNetServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AndroNetServer_jar</output-path>
+    <root id="archive" name="AndroNetServer.jar">
+      <element id="module-output" name="AndroNetServer" />
+      <element id="module-output" name="AndroNetAndroidClient" />
+      <element id="module-output" name="appcompat" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../AndroNetAndroidClient/libs/android-support-v4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../AndroNetAndroidClient/libs/android-support-v7-appcompat.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/AndroNet.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
