@@ -25,23 +25,23 @@ public class ConnectActivity extends Activity {
     private Client mClient;
     private LinearLayout mLayout;
 
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_connection);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_connection);
 
-    AndroNetApplication application=(AndroNetApplication)getApplication();
-    mClient=application.getClient();
+        AndroNetApplication application=(AndroNetApplication)getApplication();
+        mClient=application.getClient();
 
-    mIpField=(EditText)findViewById(R.id.connection_ip);
-    mPortField=(EditText)findViewById(R.id.connection_port);
-    mConnectButton=(Button)findViewById(R.id.connect_button);
-    mLayout=(LinearLayout)findViewById(R.id.connection_name_layout);
+        mIpField=(EditText)findViewById(R.id.connection_ip);
+        mPortField=(EditText)findViewById(R.id.connection_port);
+        mConnectButton=(Button)findViewById(R.id.connect_button);
+        mLayout=(LinearLayout)findViewById(R.id.connection_name_layout);
 
-    KeyboardHider.setupUI(mLayout, this);
+        KeyboardHider.setupUI(mLayout, this);
 
-    initialize();
-}
+        initialize();
+    }
 
     private void initialize()
     {
