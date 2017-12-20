@@ -1,5 +1,93 @@
-Andronet
+# AndroNet
+AndroNet is a client-server library based on JAVA.NIO framework. It's ready to use to create server and client on Java devices (PC - Linux, Windows, OS X or mobile - Android).  
 
-Jest to biblioteka klient-serwer napisana w oparciu o pakiet Java.NIO. W pe³ni przygotowana do u¿ycia zarówno do roli klienta jak i serwera na urz¹dzeniach wyposa¿onych w Javê (Android lub PC).
+### Usage
+Create jar from AndroNet project or attach whole AndroNet project to your project.
 
-opis u¿ycia:
+Server: basic usage
+```java
+    Server server=new Server();
+    String CHAT_TAG="CHAT_MESSAGE_TAG";
+    
+    IModule module=new IModule()
+    {
+        @Override
+        public void setup(Server server)
+        {
+            //add listener for objects with tag CHAT_TAG
+            server.addListener(CHAT_TAG, new IListener() {
+                @Override
+                public void received(Connection connection, Object o) {
+                    String text = (String)o;
+                    if (text==null) return;
+                    
+                    //do something with text e.g. send to others
+                    server.sendToAll(CHAT_TAG, text);
+                }
+            });
+        }
+    }
+    
+    module.setup(server);
+    server.start(5555);
+```
+
+Client Android: basic usage
+```java
+    Client mClient=new Client();
+    mClient.start("localhost", 5555);
+    
+    String CHAT_TAG="CHAT_MESSAGE_TAG";
+    
+    //add listener for objects with tag CHAT_TAG
+    mClient.addListener(CHAT_TAG, new IListener() {
+    @Override
+    public void received(Connection connection, Object o) {
+        String message=(String)o;
+        if(message==null) return;
+        
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ConnectActivity.this, message, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    
+    //send message
+    mClient.send(CHAT_TAG, "Example message");
+});
+    
+```
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+
+   [dill]: <https://github.com/joemccann/dillinger>
+   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
+   [john gruber]: <http://daringfireball.net>
+   [df1]: <http://daringfireball.net/projects/markdown/>
+   [markdown-it]: <https://github.com/markdown-it/markdown-it>
+   [Ace Editor]: <http://ace.ajax.org>
+   [node.js]: <http://nodejs.org>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>
+
+   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
+   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
+   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
+   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
+   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
